@@ -1,0 +1,21 @@
+{
+  "name": "fleeg-webapp",
+  "version": "0.3.0-beta",
+  "description": "Fleeg Web App",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fleeg/fleeg-webapp.git"
+  },
+  "author": "Fleeg",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Fleeg/fleeg-webapp/issues"
+  },
+  "homepage": "https://github.com/Fleeg/fleeg-webapp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^4.0.1",
+    "pug": "^2.0.3"
+  }
+}
