@@ -5,48 +5,57 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 
-    // Including bootstrap 4 with Lux theme
+    // including bootstrap 4 with Lux theme
     link(rel='stylesheet' href='theme/lux-bootstrap.min.css')
 
-  body
-    .container-fluid
+    // including icons from font awsome
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous")
 
+  body
+    .header.position-absolute.w-100.h-50.bg-primary
+    .container-fluid
       // navbar top
-      nav.navbar.navbar-expand
+      nav.navbar.navbar-expand.navbar-dark
         a.navbar-brand(href='#') 
-          h1 Fleeg  
+          h1.text-light Fleeg  
             small
               small
                 small
                   small.text-muted Beta
         .navbar-collapse.justify-content-end
           .navbar-nav
-            .nav-item
+            .nav-item.d-none.d-md-block
               a.nav-link(href='#') About
-            .nav-item
-              a.nav-link(href='#') Signin
-      
-      // meddle search button
-      .container
-        .input-group.input-group-lg
-          input.form-control.py-3.px-3(type='text' placeholder='Search for any link or people')
-          .input-group-append
-            button.btn.py-3.px-3(type='button', title='Search') Search
-        
+            .nav-item.mr-2
+              a.nav-link(href='#') Sign in
+
+      // middle search input and button
+      .container.text-center
+        .row
+          .col-lg-10.mx-auto
+            h1.text-light.display-1 F
+            .input-group.input-group-lg
+              input.form-control.py-3.px-3(type='text' placeholder='Search for any link or people')
+              .input-group-append
+                button.btn.btn-success.py-3.px-3(type='button') 
+                  i.fas.fa-search.px-1.d-md-none
+                  span.d-none.d-md-inline Search
 
       // navbar footer
       nav.navbar.navbar-expand.fixed-bottom
-        .navbar-nav
-          .nav-item
-            | 2018 Foss
-        .navbar-collapse.justify-content-end
+        .navbar-collapse.justify-content-center
           .navbar-nav
-            .nav-item
+            .nav-item.small.mr-3
+              p.nav-link 2018 Foss
+            .nav-item.small.mr-1
+              a.nav-link(href='#') About
+            .nav-item.small.mr-1
               a.nav-link(href='#') Terms
-            .nav-item
+            .nav-item.small.mr-1
               a.nav-link(href='#') Privacy
 
-    // Include bootstrap JS
+    // including bootstrap JS
     script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
           integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
 
