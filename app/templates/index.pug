@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='en').h-100
   head
     title Fleeg
     meta(charset='utf-8')
@@ -7,18 +7,22 @@ html(lang='en')
 
     // including bootstrap 4 with Lux theme
     link(rel='stylesheet' href='theme/lux-bootstrap.min.css')
+    
+    // including bootstrap 4 with Lux theme
+    link(rel='stylesheet' href='theme/custom.css')
 
     // including icons from font awsome
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
     integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous")
 
-  body
-    .header.position-absolute.w-100.h-50.bg-primary
-    .container-fluid
+  body.h-100
+    .position-absolute.h-50.w-100.bg-primary
+    .container-fluid.h-100
+
       // navbar top
-      nav.navbar.navbar-expand.navbar-dark
+      nav.navbar.navbar-expand.navbar-dark.fixed-top
         a.navbar-brand(href='#') 
-          h1.text-light Fleeg  
+          h1.text-light Fleeg
             small
               small
                 small
@@ -27,33 +31,36 @@ html(lang='en')
           .navbar-nav
             .nav-item.d-none.d-md-block
               a.nav-link(href='#') About
-            .nav-item.mr-2
+            .nav-item.mr-2.mr-lg-5
               a.nav-link(href='#') Sign in
 
       // middle search input and button
-      .container.text-center
-        .row
-          .col-lg-10.mx-auto
-            h1.text-light.display-1 F
-            .input-group.input-group-lg
-              input.form-control.py-3.px-3(type='text' placeholder='Search for any link or people')
+      .container.h-100
+        .h-25
+        .row.h-25
+          .col.text-center
+            h1.display-1.text-light F
+        .row.h-25
+          .col-md-10.mx-auto
+            .input-group.input-group-lg.mt--3
+              input.form-control.p-3(type='text' placeholder='Search for any link or people')
               .input-group-append
-                button.btn.btn-success.py-3.px-3(type='button') 
+                button.btn.btn-success.p-3(type='button') 
                   i.fas.fa-search.px-1.d-md-none
                   span.d-none.d-md-inline Search
 
-      // navbar footer
-      nav.navbar.navbar-expand.fixed-bottom
-        .navbar-collapse.justify-content-center
-          .navbar-nav
-            .nav-item.small.mr-3
-              p.nav-link 2018 Foss
-            .nav-item.small.mr-1
-              a.nav-link(href='#') About
-            .nav-item.small.mr-1
-              a.nav-link(href='#') Terms
-            .nav-item.small.mr-1
-              a.nav-link(href='#') Privacy
+        // navbar footer
+        nav.navbar.navbar-expand
+          .navbar-collapse.justify-content-center
+            .navbar-nav
+              .nav-item.small.mr-3
+                p.nav-link 2018 Fleeg
+              .nav-item.small.mr-1
+                a.nav-link(href='#') About
+              .nav-item.small.mr-1
+                a.nav-link(href='#') Terms
+              .nav-item.small.mr-1
+                a.nav-link(href='#') Privacy
 
     // including bootstrap JS
     script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
