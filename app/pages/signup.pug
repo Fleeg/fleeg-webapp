@@ -1,0 +1,32 @@
+extends templates/base.pug
+
+block content
+  .bg-primary
+    include templates/header-external.pug
+  
+  .container
+    .row.my-md-5
+      .col-md-6.mx-auto
+        form.form-block(action='#')
+          .row.my-3
+            .col
+              h2.display-5 Sign Up
+          .row.mb-3
+            .col
+              input.form-control.mb-2(type='text' placeholder='Username')
+              input.form-control.mb-2(type='email' placeholder='Email')
+              .input-group
+                input.form-control.p-3(type='password' placeholder='Password')
+                .input-group-append
+                  button.btn.p-3.px-4(type='button')
+                    i.fas.fa-eye-slash
+          .row.text-center.mb-3
+            .col-12.col-md-7.float-right
+              a.btn.align-text-bottom(href='reset-account.html') Forgot password?
+            .col-12.col-md-5
+              button.btn.btn-block.btn-success(type='button') Sign Up 
+          .row.text-center.my-4.my-md-5
+            .col
+              a(href='signin.html') Do you have an account? Sign in here!
+
+    include templates/footer.pug

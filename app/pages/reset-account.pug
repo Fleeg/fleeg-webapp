@@ -1,0 +1,24 @@
+extends templates/base.pug
+
+block content
+  .bg-primary
+    include templates/header-external.pug
+
+  .container
+    .row.my-md-5
+      .col-md-6.mx-auto
+        form.form-block(action='#')
+          .row.my-3
+            .col
+              h2.display-5 Reset Password
+          .row.mb-3
+            .col
+              input.form-control.mb-2(type='text' placeholder='Email')
+          .row.text-center.mb-3
+            .col-12.col-md-6.offset-md-3
+              button.btn.btn-block.btn-success(type='button') Reset Password 
+          .row.text-center.my-4.my-md-5
+            .col-12
+               a(href='signup.html') Don't have an account? Sign up here!
+
+    include templates/footer.pug

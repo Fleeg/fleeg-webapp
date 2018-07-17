@@ -1,0 +1,24 @@
+extends templates/base.pug
+
+block content
+  .position-absolute.h-50.w-100.bg-primary
+  .fixed-top
+    include templates/header-external.pug
+  
+  // middle search input and button
+  .container-fluid.h-100
+    .h-25
+    .row.h-25
+      .col.text-center.mt--4
+        h2.display-3.d-md-none.text-light F
+        h2.display-1.d-none.d-md-block.text-light F
+    .row.h-25.mt--4
+      .col-md-10.col-lg-7.mx-auto
+        .input-group.input-group-lg
+          input.form-control.p-3(type='text' placeholder='Search for any link or people')
+          .input-group-append
+            button.btn.btn-success.p-3.px-4(type='button')
+              i.fas.fa-search.px-1.d-md-none
+              span.d-none.d-md-inline Search
+
+    include templates/footer.pug

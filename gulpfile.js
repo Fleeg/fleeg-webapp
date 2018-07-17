@@ -8,12 +8,12 @@ gulp.task('theme', () =>
 
 // Generate html
 gulp.task('pug', () =>
-  gulp.src('app/templates/*.pug')
+  gulp.src('app/pages/**/*.pug')
       .pipe(pug())
       .pipe(gulp.dest('build')))
 
 
 gulp.task('watch', () =>
-  gulp.watch('app/templates/*.pug', ['pug']))
+  gulp.watch('app/pages/**/*.pug', ['pug']))
 
 gulp.task('default', ['theme', 'pug', 'watch'])
