@@ -1,0 +1,65 @@
+doctype html
+html.h-100(lang='en')
+  head
+    title Fleeg
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    // including bootstrap 4 with Lux theme
+    link(rel='stylesheet' href='theme/lux-bootstrap.min.css')
+
+    // including custom classes not supported by custom
+    link(rel='stylesheet' href='theme/custom.css')
+
+    // including icons from font awsome
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.1.0/css/all.css' crossorigin='anonymous'
+        integrity='sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt')
+
+  body.h-100
+    .position-absolute.h-50.w-100.bg-primary
+    .container-fluid.h-100
+
+      // navbar top
+      nav.navbar.navbar-expand.navbar-dark.fixed-top
+        a.navbar-brand(href='index.html') 
+          h1.text-light Fleeg
+            small
+              small
+                small
+                  small.text-muted Beta
+        .navbar-collapse.justify-content-end
+          .navbar-nav
+            .nav-item.d-none.d-md-block
+              a.nav-link(href='#') About
+            .nav-item.mr-2.mr-lg-5
+              a.nav-link(href='signin.html') Sign in
+
+      // middle search input and button
+      .container.h-100
+        .h-25
+        
+        // content block
+        block content
+      
+        // navbar footer
+        nav.navbar.navbar-expand
+          .navbar-collapse.justify-content-center
+            .navbar-nav
+              .nav-item.small.mr-3
+                p.nav-link 2018 Fleeg
+              .nav-item.small.mr-1
+                a.nav-link(href='#') About
+              .nav-item.small.mr-1
+                a.nav-link(href='#') Terms
+              .nav-item.small.mr-1
+                a.nav-link(href='#') Privacy
+
+    // including bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' crossorigin='anonymous'
+          integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN')
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' crossorigin='anonymous'
+          integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q')
+
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' crossorigin='anonymous'
+          integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl')

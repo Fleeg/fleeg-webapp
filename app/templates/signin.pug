@@ -1,0 +1,21 @@
+extends template-external.pug
+
+block content
+  .row.h-50
+    .col-md-6.mx-auto
+      form.form-block(action='#')
+        .row.mb-3
+          .col
+            h1.text-light Sign In
+        .row.mb-3
+          .col
+            input.form-control.mb-2(type='text' placeholder='Username or email')
+            input.form-control(type='password' placeholder='Password')
+        .row.text-center.mb-1.mb-md-3
+          .col
+            button.w-100.w-md-50.btn.btn-success.float-md-right(type='button') Sign In 
+            a.btn(href='#') Forgot password?
+        .row
+          .col.text-center.mb-5
+            a(href='#') 
+              small Don't have an account? Sign up here!
