@@ -1,5 +1,5 @@
 doctype html
-html(lang='en').h-100
+html.h-100(lang='en')
   head
     title Fleeg
     meta(charset='utf-8')
@@ -7,13 +7,13 @@ html(lang='en').h-100
 
     // including bootstrap 4 with Lux theme
     link(rel='stylesheet' href='theme/lux-bootstrap.min.css')
-    
-    // including bootstrap 4 with Lux theme
+
+    // including custom classes not supported by custom
     link(rel='stylesheet' href='theme/custom.css')
 
     // including icons from font awsome
-    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" 
-    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous")
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.1.0/css/all.css' crossorigin='anonymous'
+        integrity='sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt')
 
   body.h-100
     .position-absolute.h-50.w-100.bg-primary
@@ -38,14 +38,15 @@ html(lang='en').h-100
       .container.h-100
         .h-25
         .row.h-25
-          .col.text-center
-            h1.display-1.text-light F
-        .row.h-25
+          .col.text-center.mt--4
+            h1.display-3.d-md-none.text-light F
+            h1.display-1.d-none.d-md-block.text-light F
+        .row.h-25.mt--4
           .col-md-10.mx-auto
-            .input-group.input-group-lg.mt--3
+            .input-group.input-group-lg
               input.form-control.p-3(type='text' placeholder='Search for any link or people')
               .input-group-append
-                button.btn.btn-success.p-3(type='button') 
+                button.btn.btn-success.p-3.px-4(type='button')
                   i.fas.fa-search.px-1.d-md-none
                   span.d-none.d-md-inline Search
 
@@ -63,11 +64,11 @@ html(lang='en').h-100
                 a.nav-link(href='#') Privacy
 
     // including bootstrap JS
-    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
-          integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' crossorigin='anonymous'
+          integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN')
 
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'
-          integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' crossorigin='anonymous'
+          integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q')
 
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
-          integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' crossorigin='anonymous'
+          integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl')
