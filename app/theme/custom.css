@@ -6,10 +6,51 @@
  *
  */
 
+/* Bootstrap strcuture complements */
+
+.h-10 {
+  height: 10%;
+}
+
+.h-15 {
+  height: 15%;
+}
+
+.h-20 {
+  height: 20%;
+}
+
+.h-30 {
+  height: 30%;
+}
+
+
 .mt--4 {
   margin-top: -2em;
 }
 
-.fixed-hight-15 {
-  height: 15em;
+.bg-none {
+  background: none;
+}
+
+/* Cutomization over theme */
+
+input[type], input[type]:focus {
+  background-color: white;
+  border-width: 1px;
+}
+
+input[type]:focus {
+  background-color: white;
+  border-width: none;
+}
+
+.input-group {
+  border: 1px solid lightgrey;
+}
+
+.input-group input[type], .input-group input[type]:focus {
+    background-color: white;
+    border: none;
+  }
 }

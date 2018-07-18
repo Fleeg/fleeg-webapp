@@ -4,7 +4,7 @@ block content
   .bg-primary
     include templates/header-external.pug
 
-  .container
+  .container.h-75
     .row.my-md-5
       .col-md-6.mx-auto
         form.form-block(action='#')
@@ -13,7 +13,7 @@ block content
               h2.display-5 Reset Password
           .row.mb-3
             .col
-              input.form-control.mb-2(type='text' placeholder='Email')
+              input.form-control.p-3.mb-2(type='text' placeholder='Email')
           .row.text-center.mb-3
             .col-12.col-md-6.offset-md-3
               button.btn.btn-block.btn-success(type='button') Reset Password 
@@ -21,4 +21,5 @@ block content
             .col-12
                a(href='signup.html') Don't have an account? Sign up here!
 
+    .h-30
     include templates/footer.pug

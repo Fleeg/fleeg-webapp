@@ -4,7 +4,7 @@ block content
   .bg-primary
     include templates/header-external.pug
   
-  .container
+  .container.h-75
     .row.my-md-5
       .col-md-6.mx-auto
         form.form-block(action='#')
@@ -13,12 +13,12 @@ block content
               h2.display-5 Sign Up
           .row.mb-3
             .col
-              input.form-control.mb-2(type='text' placeholder='Username')
-              input.form-control.mb-2(type='email' placeholder='Email')
+              input.form-control.p-3.mb-2(type='text' placeholder='Username')
+              input.form-control.p-3.mb-2(type='email' placeholder='Email')
               .input-group
                 input.form-control.p-3(type='password' placeholder='Password')
                 .input-group-append
-                  button.btn.p-3.px-4(type='button')
+                  button.btn.p-3.px-4.bg-none.text-dark(type='button')
                     i.fas.fa-eye-slash
           .row.text-center.mb-3
             .col-12.col-md-7.float-right
@@ -29,4 +29,5 @@ block content
             .col
               a(href='signin.html') Do you have an account? Sign in here!
 
+    .h-20
     include templates/footer.pug
