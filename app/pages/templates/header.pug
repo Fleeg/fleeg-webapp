@@ -1,28 +1,32 @@
-// navbar top
-nav.navbar.navbar-expand.border-bottom
-  a.navbar-brand(href='index.html') 
-    h1 Fleeg
-      small
+include search.pug
+
+mixin header(external=false, search=false)
+  - var navbarclass = search ? 'border-bottom' : 'navbar-dark'
+  - var h1class = search ? '' : 'text-light'
+  
+  // navbar top
+  nav.navbar.navbar-expand(class=navbarclass)
+    a.navbar-brand(href='index.html')
+      h1(class=h1class) Fleeg
         small
           small
-            small.text-muted Beta
+            small
+              small.text-muted Beta
 
-  //search bar
-  .justify-content-center.col-6
-    form.form-block(action='main.html')
-      .input-group.input-group-lg
-        input.form-control.p-3.input-bg-none(name='q' type='text' placeholder='Search for any link or people')
-        .input-group-append
-          button.btn.p-3.bg-none.text-dark
-            i.fas.fa-user-secret
-        .input-group-append
-          button.btn.p-3.bg-none.text-success(type='submit')
-            i.fas.fa-search
-  
-  // right menu
-  .navbar-collapse.justify-content-end
-    .navbar-nav
-      .nav-item.d-none.d-md-block
-        a.nav-link(href='about.html') About
-      .nav-item.mr-2.mr-lg-5
-        a.nav-link(href='signin.html') Sign in
+    if search
+      .col-6.d-none.d-md-inline
+        +searchbar(false)
+          
+
+    if external
+      // external right menu
+      .navbar-collapse.justify-content-end
+        .navbar-nav
+          .nav-item.d-none.d-md-block
+            a.nav-link(href='about.html') About
+          .nav-item.mr-2.mr-lg-5
+            a.nav-link(href='signin.html') Sign in
+
+    if search
+      .d-block.d-md-none
+        +searchbar(false)

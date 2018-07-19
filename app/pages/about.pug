@@ -1,8 +1,9 @@
 extends templates/base.pug
+include templates/header.pug
 
 block content
   .bg-primary
-    include templates/header-external.pug
+    +header(true)
   
   .container
     .row.my-md-5
@@ -11,7 +12,7 @@ block content
           .col-8
             h2.display-5 About
           .col-4
-            a(href='signup.html').float-right.btn.btn-outline-success.text-success Get Started
+            a(href='signup.html').float-right.btn.btn-outline-success Get Started
         .row.my-5
           .container
             .row.mb-3

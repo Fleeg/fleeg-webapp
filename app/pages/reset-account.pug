@@ -1,8 +1,9 @@
 extends templates/base.pug
+include templates/header.pug
 
 block content
   .bg-primary
-    include templates/header-external.pug
+    +header(true)
 
   .container.h-75
     .row.my-md-5

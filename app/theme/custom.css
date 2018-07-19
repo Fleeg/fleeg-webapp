@@ -7,7 +7,6 @@
  */
 
 /* Bootstrap strcuture complements */
-
 .h-10 {
   height: 10%;
 }
@@ -34,23 +33,38 @@
 }
 
 /* Cutomization over theme */
-
-input[type], input[type]:focus {
+input[type], textarea {
   background-color: white;
-  border-width: 1px;
-}
-
-input[type]:focus {
-  background-color: white;
-  border-width: none;
+  border: 1px solid lightgrey;
 }
 
 .input-group {
   border: 1px solid lightgrey;
 }
 
-.input-group input[type], .input-group input[type]:focus {
-    background-color: white;
-    border: none;
-  }
+input[type]:focus, textarea:focus,
+.input-group input[type]:focus, .form-control:focus {
+  background-color: white;
+  border-width: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 1px solid lightgrey;
+}
+
+.btn:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* Colors */
+.text-green {
+  color: #468847;
+}
+
+.border-green {
+  border: 1px solid #468847;
+}
+
+.bg-green {
+  background-color: #468847;
 }

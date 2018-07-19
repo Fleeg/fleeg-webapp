@@ -13,7 +13,9 @@ gulp.task('pug', () =>
       .pipe(gulp.dest('build')))
 
 
-gulp.task('watch', () =>
-  gulp.watch('app/pages/**/*.pug', ['pug']))
+gulp.task('watch', () => {
+  gulp.watch('app/pages/**/*.pug', ['pug'])
+  gulp.watch('app/theme/*.css', ['theme'])
+})
 
 gulp.task('default', ['theme', 'pug', 'watch'])

@@ -1,8 +1,9 @@
 extends templates/base.pug
+include templates/header.pug
 
 block content
   .bg-primary
-    include templates/header-external.pug
+    +header(true)
   
   .container.h-75
     .row.my-md-5
@@ -11,14 +12,16 @@ block content
           .row.my-3
             .col
               h2.display-5 Sign In
+
           .row.mb-3
             .col
               input.form-control.p-3.mb-2(type='text' placeholder='Username or email')
               .input-group
-                input.form-control.p-3(type='password' placeholder='Password')
+                input.form-control.p-3.border-0(type='password' placeholder='Password')
                 .input-group-append
-                  button.btn.p-3.px-4.bg-none.text-dark(type='button')
+                  button.btn.p-3.bg-none.text-dark(type='button')
                     i.fas.fa-eye-slash
+
           .row.text-center.mb-3
             .col-12.col-md-7
               a.btn.align-text-bottom(href='reset-account.html') Forgot password?
