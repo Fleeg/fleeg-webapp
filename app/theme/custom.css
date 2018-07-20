@@ -40,6 +40,14 @@
   border-bottom: solid;
 }
 
+.h-scroll {
+  flex-flow: nowrap;
+  white-space: nowrap;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+}
+
+
 /* Cutomization over theme */
 input[type], textarea {
   background-color: white;
@@ -62,17 +70,4 @@ input[type]:focus, textarea:focus,
 .btn:focus {
   box-shadow: none;
   -webkit-box-shadow: none;
-}
-
-/* Colors */
-.text-green {
-  color: #468847;
-}
-
-.border-green {
-  border: 1px solid #468847;
-}
-
-.bg-green {
-  background-color: #468847;
 }

@@ -4,14 +4,16 @@ include templates/header.pug
 block content
   +header(true, true)
 
-  .col.offset-md-2.col-md-5.my-2
-    .nav.nav-pills.navbar-expand
-      a.btn.nav-link.px-2.text-success.border-bottom-solid(href='#') All
-      a.btn.nav-link.px-2.text-body(href='#') Articles
-      a.btn.nav-link.px-2.text-body(href='#') Images
-      a.btn.nav-link.px-2.text-body(href='#') Videos
-      a.btn.nav-link.px-2.text-body(href='#') Documents
-      a.btn.nav-link.px-2.text-body(href='#') People
+  .px-2.py-lg-2
+    .col.col-lg-10.offset-lg-2.px-0
+      .nav.nav-pills.h-scroll
+        a.btn.nav-link.pb-0.text-success.border-bottom-solid(href='#') All
+        a.btn.nav-link.pb-0.text-body(href='#') Articles
+        a.btn.nav-link.pb-0.text-body(href='#') Images
+        a.btn.nav-link.pb-0.text-body(href='#') Videos
+        a.btn.nav-link.pb-0.text-body(href='#') Documents
+        a.btn.nav-link.pb-0.text-body(href='#') People
+
 
 
   include templates/footer.pug
