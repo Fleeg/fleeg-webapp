@@ -32,6 +32,10 @@
   background: none;
 }
 
+.d-flex-wrap {
+  flex-flow: wrap;
+}
+
 /* Cutomization over theme */
 input[type], textarea {
   background-color: white;

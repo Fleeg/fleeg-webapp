@@ -1,24 +1,24 @@
 mixin searchbar(secret=true, header=true)
   // search bar
   form.form-block(action='main.html')
-    
+
     if header
-      .input-group.input-group-lg
-        input.form-control.p-3.border-0(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
+      .input-group.input-group
+        input.form-control.p-2.px-md-3.border-0(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
 
         if secret
           .input-group-append
-            button.btn.p-3.bg-none.text-dark
+            button.btn.p-2.px-md-3.bg-none.text-dark
               i.fas.fa-user-secret
 
         .input-group-append
-          button.btn.p-3.px-md-4.bg-white.text-success(type='submit')
+          button.btn.p-2.px-md-3.bg-white.text-success(type='submit')
             i.fas.fa-search
 
     else
       .input-group.input-group-lg.border-0
-        input.form-control.p-3.p-md-4(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
+        input.form-control.p-3(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
         .input-group-append
-          button.btn.btn-success.p-3.p-md-4(type='submit')
+          button.btn.btn-success.p-3(type='submit')
             i.fas.fa-search.px-1.d-md-none
             span.d-none.d-md-inline Search

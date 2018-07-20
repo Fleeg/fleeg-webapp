@@ -1,22 +1,24 @@
 include search.pug
 
 mixin header(external=false, search=false)
-  - var navbarclass = search ? 'border-bottom' : 'navbar-dark'
-  - var h1class = search ? '' : 'text-light'
-  
+  - var navbarclass = search ? 'border-bottom py-2' : 'navbar-dark'
+  - var h1class = !search ? 'text-light' : ''
+
   // navbar top
-  nav.navbar.navbar-expand(class=navbarclass)
-    a.navbar-brand(href='index.html')
-      h1(class=h1class) Fleeg
-        small
+  nav.navbar.navbar-expand.d-flex-wrap(class=navbarclass)
+    .col-6.col-md-2
+      a.navbar-brand(href='index.html')
+        h1(class=h1class) Fleeg
           small
             small
-              small.text-muted Beta
+              small
+                small.text-muted Beta
 
     if search
-      .col-6.d-none.d-md-inline
+      .col-5.d-none.d-lg-inline.pl-xl-0
         +searchbar(false)
-          
+    else
+      .offset-lg-5
 
     if external
       // external right menu
@@ -28,5 +30,5 @@ mixin header(external=false, search=false)
             a.nav-link(href='signin.html') Sign in
 
     if search
-      .d-block.d-md-none
+      .col-12.d-block.d-lg-none
         +searchbar(false)
