@@ -36,6 +36,10 @@
   flex-flow: wrap;
 }
 
+.border-bottom-solid {
+  border-bottom: solid;
+}
+
 /* Cutomization over theme */
 input[type], textarea {
   background-color: white;
