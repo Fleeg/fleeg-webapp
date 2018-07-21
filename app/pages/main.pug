@@ -3,17 +3,44 @@ include templates/header.pug
 
 block content
   +header(true, true)
-
+  
+  // nav with menu filters
   .px-2.py-lg-2
     .col.col-lg-10.offset-lg-2.px-0
-      .nav.nav-pills.h-scroll
+      .nav.nav-pills.sticky-top.h-scroll
         a.btn.nav-link.pb-0.text-success.border-bottom-solid(href='#') All
         a.btn.nav-link.pb-0.text-body(href='#') Articles
         a.btn.nav-link.pb-0.text-body(href='#') Images
         a.btn.nav-link.pb-0.text-body(href='#') Videos
         a.btn.nav-link.pb-0.text-body(href='#') Documents
         a.btn.nav-link.pb-0.text-body(href='#') People
+  
+  .container-fluid.py-4
+    .row
+      .col.col-lg-4.offset-lg-2.px-0
+        .card
+          .row.height-card
+            a.col-4.image-card(style='background-image: url("https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1")')
+            .col-8.card-block
+                span.h4.card-title.text-dark Title Card
+                p.card-text Some text about this card.
+                a.btn Button
+                .card-text.bg-none
+                  small.text-muted Some items in footer of card.
+      
+      .col.col-lg-4
+        .card
+          .row.height-card
+            a.col-4.image-card(style='background-image: url("https://cdn-images-1.medium.com/max/400/0*aZlilaPzxXZeBzwp.")')
+            .col
+              .card-block
+                span.h4.card-title.text-dark Title Card
+                p.card-text Some text about this card.
+                a.btn Button
+                .card-text.bg-none
+                  small.text-muted Some items in footer of card.
 
 
+  //include templates/footer.pug
 
-  include templates/footer.pug
+

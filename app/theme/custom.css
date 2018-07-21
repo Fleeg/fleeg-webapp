@@ -23,7 +23,6 @@
   height: 30%;
 }
 
-
 .mt--4 {
   margin-top: -2em;
 }
@@ -70,4 +69,17 @@ input[type]:focus, textarea:focus,
 .btn:focus {
   box-shadow: none;
   -webkit-box-shadow: none;
+}
+
+.height-card {
+  height: 255px;
+}
+
+.image-card {
+  background-position: 50% 50%;
+  background-origin: border-box;
+  background-size: cover;
+  background-color: lightgrey;
+  height: 100%;
+  width: 100%;
 }
