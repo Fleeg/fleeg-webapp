@@ -27,6 +27,10 @@
   margin-top: -2em;
 }
 
+.mt--1 {
+  margin-bottom: -0.25em;
+}
+
 .bg-none {
   background: none;
 }
@@ -39,6 +43,10 @@
   border-bottom: solid;
 }
 
+.font-09 {
+  font-size: 0.9rem;
+}
+
 .h-scroll {
   flex-flow: nowrap;
   white-space: nowrap;
@@ -46,33 +54,12 @@
   -webkit-overflow-scrolling: touch;
 }
 
-
-/* Cutomization over theme */
-input[type], textarea {
-  background-color: white;
-  border: 1px solid lightgrey;
-}
-
-.input-group {
-  border: 1px solid lightgrey;
-}
-
-input[type]:focus, textarea:focus,
-.input-group input[type]:focus, .form-control:focus {
-  background-color: white;
-  border-width: none;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  border: 1px solid lightgrey;
-}
-
-.btn:focus {
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
 .height-card {
-  height: 255px;
+  height: 240px;
+}
+
+.height-card-block {
+  height: 165px;
 }
 
 .image-card {
@@ -82,4 +69,70 @@ input[type]:focus, textarea:focus,
   background-color: lightgrey;
   height: 100%;
   width: 100%;
+}
+
+a.no-hover:hover {
+  text-decoration: none;
+}
+
+.avatar-small {
+  max-height: 40px;
+  max-width:  40px;
+}
+
+
+/* Cutomization over theme */
+body {
+  letter-spacing: 0.5px;
+}
+
+input[type], textarea {
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 0.15rem;
+}
+
+.input-group {
+  border: 1px solid lightgrey;
+  border-radius: 0.15rem;
+}
+
+input[type]:focus, textarea:focus,
+.input-group input[type]:focus, .form-control:focus {
+  background-color: white;
+  border-width: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 1px solid lightgrey;
+  border-radius: 0.15rem;
+}
+
+.btn {
+  border-radius: 0.15rem;
+}
+
+.btn:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+[class*="btn-outline-"] {
+  border-width: 1px;
+}
+
+small, .small {
+  font-size: 85%;
+}
+
+.sticky-top {
+  top: -0.1em;
+}
+
+.shadow-sm {
+  -webkit-box-shadow: 0 0.05rem 0.05rem rgba(0,0,0,0.075) !important;
+  box-shadow: 0 0.05rem 0.05rem rgba(0,0,0,0.075) !important;
+}
+
+.rounded {
+  border-radius: 0.15rem !important;
 }

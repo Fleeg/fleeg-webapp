@@ -3,44 +3,60 @@ include templates/header.pug
 
 block content
   +header(true, true)
-  
-  // nav with menu filters
-  .px-2.py-lg-2
-    .col.col-lg-10.offset-lg-2.px-0
-      .nav.nav-pills.sticky-top.h-scroll
-        a.btn.nav-link.pb-0.text-success.border-bottom-solid(href='#') All
-        a.btn.nav-link.pb-0.text-body(href='#') Articles
-        a.btn.nav-link.pb-0.text-body(href='#') Images
-        a.btn.nav-link.pb-0.text-body(href='#') Videos
-        a.btn.nav-link.pb-0.text-body(href='#') Documents
-        a.btn.nav-link.pb-0.text-body(href='#') People
-  
-  .container-fluid.py-4
-    .row
-      .col.col-lg-4.offset-lg-2.px-0
-        .card
-          .row.height-card
-            a.col-4.image-card(style='background-image: url("https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1")')
-            .col-8.card-block
-                span.h4.card-title.text-dark Title Card
-                p.card-text Some text about this card.
-                a.btn Button
-                .card-text.bg-none
-                  small.text-muted Some items in footer of card.
-      
-      .col.col-lg-4
-        .card
-          .row.height-card
-            a.col-4.image-card(style='background-image: url("https://cdn-images-1.medium.com/max/400/0*aZlilaPzxXZeBzwp.")')
-            .col
-              .card-block
-                span.h4.card-title.text-dark Title Card
-                p.card-text Some text about this card.
-                a.btn Button
-                .card-text.bg-none
-                  small.text-muted Some items in footer of card.
+  .container-fluid.px-0.pt-1
+    // nav with menu filters
+    .bg-white.px-2.sticky-top.shadow-sm
+      .col.col-lg-10.offset-lg-2.px-0
+        .nav.nav-pills.h-scroll.pb-2
+          a.btn.nav-link.pb-0.text-success.border-bottom-solid(href='#') All
+          a.btn.nav-link.pb-0(href='#') Articles
+          a.btn.nav-link.pb-0(href='#') Images
+          a.btn.nav-link.pb-0(href='#') Videos
+          a.btn.nav-link.pb-0(href='#') Documents
+          a.btn.nav-link.pb-0(href='#') People
+
+    // links cards
+    each imgid in [['lHVdOD-zSEdfvq77', 'Eu_lLnqjWKGm2UK1'], ['qcgD8m1RVn-0Grss', '5Ydk4DROjj7bNVOB'], ['aZlilaPzxXZeBzwp.', '2rS1lwtMx1lYgIEH']]
+      .row.mx-0.mt-2.mt-md-3
+        .col-12.col-md-6.col-lg-4.offset-lg-2
+          .row.height-card.border.rounded
+            a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgid[0] + '")')
+            .col-8.card-block.py-3 
+              a.d-block.no-hover.height-card-block.mb-1(href='#')
+                .card-title.h4.text-dark.mb-1 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+                .card-text
+                  .small.text-success.mb-1 https://mylink.test.com/article/a-title-of-some-link
+                  .text-body Curabitur euismod at urna sed imperdiet. Nam pellentes ...
+              .card-text.row
+                .col-3.col-md-2
+                  a(href='#')
+                    img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
+                .col-7.col-md-8.d-block.px-1.px-md-3
+                  a.small.d-inline-block.text-truncate.mt--1(href='#' style="max-width: 100%;") Johny Stratuss Anntjel Majetknlokkk
+                  .small.d-inline-block.text-truncate Jan 29 - 704 bookmarks
+                .col-2.p
+                  a.text-body(href='#')
+                    i.far.fa-bookmark.font-09
+
+        .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
+          .row.height-card.border.rounded
+            a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgid[1] + '")')
+            .col-8.card-block.py-3 
+              a.d-block.no-hover.height-card-block.mb-1(href='#')
+                .card-title.h4.text-dark.mb-1 Etiam Sapien Magna, Aliquet ut Eros Sed
+                .card-text
+                  .small.text-success.mb-1 https://mylink.test.com/article/a-title-of-some-link
+                  .text-body Praesent tincidunt nisi nec euismod consectetur.
+              .card-text.row
+                .col-3.col-md-2
+                  a(href='#')
+                    img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+                .col-7.col-md-8.d-block.px-1.px-md-3
+                  a.small.d-inline-block.text-truncate.mt--1(href='#' style="max-width: 100%;") Angel Johnyson
+                  .small.d-inline-block.text-truncate Jun 7 - 3k bookmarks
+                .col-2.p
+                  a.text-body(href='#')
+                    i.far.fa-bookmark.font-09
 
 
-  //include templates/footer.pug
-
-
+  include templates/footer.pug
