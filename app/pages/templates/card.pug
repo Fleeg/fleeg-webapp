@@ -1,0 +1,46 @@
+mixin article(imgs)
+  .row.mx-0.mt-2.mt-md-3
+    .col-12.col-md-6.col-lg-4.offset-lg-2
+      .row.height-card.border.rounded
+        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+        .col-8.card-block.py-3
+          a.d-block.no-hover.height-card-block.mb-1(href='#')
+            .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+            .card-text
+              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+              .text-body.crop-text.crop-text-3.
+                Curabitur aliquet nisl libero, sit amet varius mauris iaculis nec. Aliquam erat volutpat. Mauris non auctor nibh.
+                Nam pellentesque convallis velit vel posuere. Maecenas tristique nulla in nulla malesuada mollis.
+          .card-text.row
+            .col-3.col-md-2
+              a(href='#')
+                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
+            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-xl-2
+              .small.text-truncate
+                a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
+              .small.d-inline-block.text-truncate Fab 19 - 704 bookmarks
+            .col-2.p
+              a.text-body(href='#')
+                i.far.fa-bookmark.font-09
+
+    .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
+      .row.height-card.border.rounded
+        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[1] + '")')
+        .col-8.card-block.py-3
+          a.d-block.no-hover.height-card-block.mb-1(href='#')
+            .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
+            .card-text
+              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+              .text-body.crop-text.crop-text-3.
+                Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
+          .card-text.row
+            .col-3.col-md-2
+              a(href='#')
+                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+            .col-7.col-md-8.d-block.px-1.px-md-4.px-xl-2
+              .small.text-truncate
+                a(href='#') Angel Johnyson
+              .small.d-inline-block.text-truncate Jun 7 - 3k bookmarks
+            .col-2
+              a.text-body(href='#')
+                i.far.fa-bookmark.font-09
