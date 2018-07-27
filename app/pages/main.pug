@@ -16,21 +16,28 @@ block content
           a.btn.nav-link.pb-0(href='#') Documents
           a.btn.nav-link.pb-0(href='#') People
 
+    .row.mx-0.mt-2.mt-md-3
+      .col.col-lg-8.offset-lg-2.p-0
+        h3.my-2.my-md-4.border-bottom.py-1 
+          span.ml-2.px-3.title-card-list Top 4 Links
     // links top cards
-    each imgs in [['lHVdOD-zSEdfvq77', 'Eu_lLnqjWKGm2UK1'], ['qcgD8m1RVn-0Grss', '5Ydk4DROjj7bNVOB']]
-      +article(imgs)
+    +article(['lHVdOD-zSEdfvq77', 'Eu_lLnqjWKGm2UK1'])
+    +article(['qcgD8m1RVn-0Grss', '5Ydk4DROjj7bNVOB'])
 
     .row.mx-0.mt-2.mt-md-3
-      .col.offset-lg-2
-        h4.mb-2.mb-md-4 People
-        .row
+      .col.col-lg-8.offset-lg-2.px-0.py-2.bg-lightgrey
+        .row.m-0.p-0
+          .col
+            h2.my-2.my-md-4
+              span.ml-2.px-3 People
+        .row.mx-0.p-4
           .col-4.px-0
             .row
-              .col-3
+              .col.col-md-3
                 a(href='#')
                   img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-              .col-9.d-block
-                .h4.text-dark
+              .col.col-md-9
+                .height-card-user.h4.text-dark
                   a.crop-text.crop-text-2(href='#') Johny Stratuss Anntjel Majetkwonlooyk
                 .d-block.mb-2
                   small 1.3k Followers
@@ -38,11 +45,11 @@ block content
                   button.btn.btn-sm.btn-outline-success Follow
           .col-4.px-0
             .row
-              .col-3
+              .col.col-md-3
                 a(href='#')
                   img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-              .col-9.d-block
-                .h4.text-dark
+              .col.col-md-9
+                .height-card-user.h4.text-dark
                   a.crop-text.crop-text-2(href='#') Angel Johnyson
                 .d-block.mb-2
                   small 372 Followers
@@ -51,21 +58,29 @@ block content
           
           .col-4.px-0
             .row
-              .col-3
+              .col.col-md-3
                 a(href='#')
                   img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-              .col-9.d-block
-                .h4.text-dark
+              .col.col-md-9
+                .height-card-user.h4.text-dark
                   a.crop-text.crop-text-2(href='#') Johny Stratuss Anntjel Majetkwonlooyk
                 .d-block.mb-2
                   small 1.3k Followers
                 .d-block
                   button.btn.btn-sm.btn-outline-success Follow
-                  
+         
+        .row.p-0
+          .col.text-right
+            a.h5.text-success.text-uppercase.p-4(href='#') See More Users >
 
-    // .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
-
+    .row.mx-0.mt-2.mt-md-3
+      .col.col-lg-8.offset-lg-2.p-0
+        h3.my-2.my-md-4.border-bottom.py-1 
+          span.ml-2.px-3.title-card-list More Links
     // links other cards
+    +article(['aZlilaPzxXZeBzwp.', '2rS1lwtMx1lYgIEH'])
+    +article(['lHVdOD-zSEdfvq77', 'Eu_lLnqjWKGm2UK1'])
+    +article(['qcgD8m1RVn-0Grss', '5Ydk4DROjj7bNVOB'])
     +article(['aZlilaPzxXZeBzwp.', '2rS1lwtMx1lYgIEH'])
 
   include templates/footer.pug

@@ -1,0 +1,46 @@
+/*
+ * Fleeg Beta
+ * Custom classes defined only for card elements.
+ *
+ * Note: only use this classes in card elements.
+ *
+ */
+
+
+/* styles for card */
+.height-card {
+  height: 240px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.height-card-block {
+  height: 165px;
+}
+
+.height-card-user {
+  height: 50px;
+}
+
+.image-card {
+  background-position: 50% 50%;
+  background-origin: border-box;
+  background-size: cover;
+  background-color: lightgrey;
+  height: 100%;
+  width: 100%;
+}
+
+.avatar-small {
+  max-height: 40px;
+  max-width:  40px;
+}
+
+.avatar-medium {
+  max-height: 70px;
+  max-width:  70px;
+}
+
+.title-card-list {
+  border-bottom: 3px solid black;
+}
