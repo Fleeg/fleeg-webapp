@@ -15,7 +15,7 @@ mixin article(imgs)
             .col-3.col-md-2
               a(href='#')
                 img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-xl-0
+            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
               .small.text-truncate
                 a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
               .small.d-inline-block.text-truncate Fab 19 - 704 bookmarks
@@ -37,10 +37,52 @@ mixin article(imgs)
             .col-3.col-md-2
               a(href='#')
                 img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-            .col-7.col-md-8.d-block.px-1.px-md-4.px-xl-0
+            .col-7.col-md-8.d-block.px-1.px-md-4.px-lg-2
               .small.text-truncate
                 a(href='#') Angel Johnyson
               .small.d-inline-block.text-truncate Jun 7 - 3k bookmarks
             .col-2
               a.text-body(href='#')
                 i.far.fa-bookmark.font-09
+
+
+mixin people(imgs)
+  .row.mx-0.p-4
+    .col-4.px-0
+      .row.mx-auto
+        .col.col-md-3
+          a(href='#')
+            img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[0] + '.jpeg')
+        .col.col-md-9
+          .height-card-user.h4.text-dark
+            a.crop-text.crop-text-2(href='#') Angel Johnyson
+          .d-block.mb-2
+            small 1.3k Followers
+          .d-block
+            button.btn.btn-sm.btn-outline-success Follow
+
+    .col-4.px-0
+      .row.mx-auto
+        .col.col-md-3
+          a(href='#')
+            img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1] + '.jpeg')
+        .col.col-md-9
+          .height-card-user.h4.text-dark
+            a.crop-text.crop-text-2(href='#') Michelle Smawtz Petz
+          .d-block.mb-2
+            small 372 Followers
+          .d-block
+            button.btn.btn-sm.btn-success Following
+
+    .col-4.px-0
+      .row.mx-auto
+        .col.col-md-3
+          a(href='#')
+            img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[2] + '.jpeg')
+        .col.col-md-9
+          .height-card-user.h4.text-dark
+            a.crop-text.crop-text-2(href='#') Robert Kalinwvisk Wisebells
+          .d-block.mb-2
+            small 3k Followers
+          .d-block
+            button.btn.btn-sm.btn-outline-success Follow

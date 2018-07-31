@@ -58,11 +58,6 @@ small, .small {
   top: -0.1em;
 }
 
-.shadow-sm {
-  -webkit-box-shadow: 0 0.05rem 0.05rem rgba(0,0,0,0.075) !important;
-  box-shadow: 0 0.05rem 0.05rem rgba(0,0,0,0.075) !important;
-}
-
 .rounded {
   border-radius: 0.15rem !important;
 }
