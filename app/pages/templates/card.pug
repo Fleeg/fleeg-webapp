@@ -45,6 +45,51 @@ mixin article(imgs)
               a.text-body(href='#')
                 i.far.fa-bookmark.font-09
 
+mixin media(imgs)
+  .row.mx-0.mt-2.mt-md-3
+    .col-12.col-md-6.col-lg-4.offset-lg-2
+      .row.height-card.border.rounded
+        .col-4.card-block.py-3
+          .d-block.height-card-block.mb-1
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+            .card-text
+              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+              .text-body
+                a.text-body(href='#')
+                  i.far.fa-bookmark.font-09
+                span 372 bookmarks
+          .card-text.row
+            .col-5.col-md-4
+              a(href='#')
+                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*c1uTLwrFqb4M7P4y.jpeg')
+            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
+              .small.text-truncate
+                a(href='#') Michelle Smawtz Petz
+              .small.d-inline-block.text-truncate Mar 07
+        a.col-8.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/1600/1*1Yayigprash76905UkGUMg.jpeg")')
+
+    .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
+      .row.height-card.border.rounded
+        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[1] + '")')
+        .col-8.card-block.py-3
+          a.d-block.no-hover.height-card-block.mb-1(href='#')
+            .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
+            .card-text
+              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+              .text-body.crop-text.crop-text-3.
+                Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
+          .card-text.row
+            .col-3.col-md-2
+              a(href='#')
+                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+            .col-7.col-md-8.d-block.px-1.px-md-4.px-lg-2
+              .small.text-truncate
+                a(href='#') Angel Johnyson
+              .small.d-inline-block.text-truncate Jun 7 - 3k bookmarks
+            .col-2
+              a.text-body(href='#')
+                i.far.fa-bookmark.font-09
+
 
 mixin people(imgs)
   .row.mx-0.p-4
