@@ -2,8 +2,8 @@ mixin article(imgs)
   .row.mx-0.mt-2.mt-md-3
     .col-12.col-md-6.col-lg-4.offset-lg-2
       .row.height-card.border.rounded
-        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
-        .col-8.card-block.py-3
+        a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+        .col-7.card-block.py-3
           a.d-block.no-hover.height-card-block.mb-1(href='#')
             .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
             .card-text
@@ -14,7 +14,7 @@ mixin article(imgs)
           .card-text.row
             .col-3.col-md-2
               a(href='#')
-                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
+                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
             .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
               .small.text-truncate
                 a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
@@ -25,8 +25,8 @@ mixin article(imgs)
 
     .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
       .row.height-card.border.rounded
-        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[1] + '")')
-        .col-8.card-block.py-3
+        a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[1] + '")')
+        .col-7.card-block.py-3
           a.d-block.no-hover.height-card-block.mb-1(href='#')
             .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
             .card-text
@@ -36,7 +36,7 @@ mixin article(imgs)
           .card-text.row
             .col-3.col-md-2
               a(href='#')
-                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
             .col-7.col-md-8.d-block.px-1.px-md-4.px-lg-2
               .small.text-truncate
                 a(href='#') Angel Johnyson
@@ -49,46 +49,49 @@ mixin media(imgs)
   .row.mx-0.mt-2.mt-md-3
     .col-12.col-md-6.col-lg-4.offset-lg-2
       .row.height-card.border.rounded
-        .col-4.card-block.py-3
+        .col-5.card-block.py-3
           .d-block.height-card-block.mb-1
-            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Cras Posuere
             .card-text
               .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-              .text-body
-                a.text-body(href='#')
-                  i.far.fa-bookmark.font-09
-                span 372 bookmarks
+              .row.py-4
+                .col-2
+                  a.text-body.pr-2(href='#')
+                    i.far.fa-bookmark.font-09
+                .col-8.px-2 372 bookmarks
           .card-text.row
             .col-5.col-md-4
               a(href='#')
-                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*c1uTLwrFqb4M7P4y.jpeg')
+                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*c1uTLwrFqb4M7P4y.jpeg')
             .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
               .small.text-truncate
                 a(href='#') Michelle Smawtz Petz
-              .small.d-inline-block.text-truncate Mar 07
-        a.col-8.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/1600/1*1Yayigprash76905UkGUMg.jpeg")')
+              .small.d-inline-block.text-truncate Mar 7
+        a.col-7.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/1600/' + imgs[0] + '.jpeg")')
 
     .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
       .row.height-card.border.rounded
-        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[1] + '")')
-        .col-8.card-block.py-3
-          a.d-block.no-hover.height-card-block.mb-1(href='#')
-            .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
+        .col-5.card-block.py-3
+          .d-block.height-card-block.mb-1
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
             .card-text
               .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-              .text-body.crop-text.crop-text-3.
-                Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
+              .row.py-4
+                .col-2
+                  a.text-body.pr-2(href='#')
+                    i.far.fa-bookmark.font-09
+                .col-8.px-2 3k bookmarks
           .card-text.row
-            .col-3.col-md-2
+            .col-5.col-md-4
               a(href='#')
-                img.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-            .col-7.col-md-8.d-block.px-1.px-md-4.px-lg-2
+                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
               .small.text-truncate
-                a(href='#') Angel Johnyson
-              .small.d-inline-block.text-truncate Jun 7 - 3k bookmarks
-            .col-2
-              a.text-body(href='#')
-                i.far.fa-bookmark.font-09
+                a(href='#') Robert Kalinwvisk Wisebells
+              .small.d-inline-block.text-truncate Oct 21
+        a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
+          style='background-image: url("' + imgs[1] + '")')
+          i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
 
 
 mixin people(imgs)
@@ -97,7 +100,7 @@ mixin people(imgs)
       .row.mx-auto
         .col.col-md-3
           a(href='#')
-            img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[0] + '.jpeg')
+            img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[0] + '.jpeg')
         .col.col-md-9
           .height-card-user.h4.text-dark
             a.crop-text.crop-text-2(href='#') Angel Johnyson
@@ -110,7 +113,7 @@ mixin people(imgs)
       .row.mx-auto
         .col.col-md-3
           a(href='#')
-            img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1] + '.jpeg')
+            img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1] + '.jpeg')
         .col.col-md-9
           .height-card-user.h4.text-dark
             a.crop-text.crop-text-2(href='#') Michelle Smawtz Petz
@@ -123,7 +126,7 @@ mixin people(imgs)
       .row.mx-auto
         .col.col-md-3
           a(href='#')
-            img.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[2] + '.jpeg')
+            img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[2] + '.jpeg')
         .col.col-md-9
           .height-card-user.h4.text-dark
             a.crop-text.crop-text-2(href='#') Robert Kalinwvisk Wisebells
