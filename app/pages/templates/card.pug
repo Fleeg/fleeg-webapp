@@ -11,15 +11,17 @@ mixin article(imgs)
               .text-body.crop-text.crop-text-3.
                 Curabitur aliquet nisl libero, sit amet varius mauris iaculis nec. Aliquam erat volutpat. Mauris non auctor nibh.
                 Nam pellentesque convallis velit vel posuere. Maecenas tristique nulla in nulla malesuada mollis.
-          .card-text.row
-            .col-3.col-md-2
+          .d-flex.flex-row
+            .pr-2
               a(href='#')
                 img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
+            .px-0(style='min-width: 0')
               .small.text-truncate
                 a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
-              .small.d-inline-block.text-truncate Fab 19 - 704 bookmarks
-            .col-2.p
+              .small.crop-text.crop-text-2 Fab 19
+                i.fas.fa-circle.align-middle.px-1(style='font-size: 2px') 
+                | 704 bookmarks
+            .pl-1
               a.text-body(href='#')
                 i.far.fa-bookmark.font-09
 
@@ -95,7 +97,7 @@ mixin media(imgs)
 
 
 mixin people(imgs)
-  .row.mx-0.p-4
+  .row.mx-0.py-2.p-md-4
     .col-4.px-0
       .row.mx-auto
         .col.col-md-3
