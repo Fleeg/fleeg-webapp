@@ -17,24 +17,27 @@ block content
           a.btn.nav-link.pb-0(href='#') Documents
           a.btn.nav-link.pb-0(href='#') People
 
-    // links top cards
-    +article(['lHVdOD-zSEdfvq77', 'Eu_lLnqjWKGm2UK1'])
-    +media(['1*1Yayigprash76905UkGUMg', 'https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg'])
-
     .row.mx-0.mt-2.mt-md-4
-      .col.col-lg-8.offset-lg-2.p-3.bg-lightgrey.border
-        .row.m-0.p-0
-          .col
-            h2.mt-2.mt-md-4
-              span.ml-2.px-3 People
+      // top links
+      .col.col-md-7.col-lg-5.offset-lg-2
+        +topcards()
 
-        // people cards
-        +people(['0*lI5-avJvcBbQDmA2','0*c1uTLwrFqb4M7P4y','1*rR9BfHWbucraC-JqekVjcQ'])
+      // people
+      .col.col-md-5.col-lg-3
+        .row.mx-0.mt-4
+          .col.bg-lightgrey.border
+            .row.m-0.p-0
+              .col
+                h2.mt-2.mt-md-4
+                  span.ml-md-2 People
 
-        .row.px-0
-          .col.text-right
-            a.h5.text-success.text-uppercase.p-4(href='#') See More Users >
+            +people()
 
+            .row.px-0.pb-2
+              .col.text-right
+                a.h5.text-success.text-uppercase.p-4(href='#') See More People >
+
+    // more links
     .row.mx-0.mt-2.mt-md-3
       .col.col-lg-8.offset-lg-2.p-0
         h2.mt-2.mt-md-4.border-bottom.py-1

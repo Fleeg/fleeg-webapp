@@ -14,16 +14,26 @@
   margin-right: -5px;
 }
 
-.height-card-block {
-  height: 165px;
+.height-card-sm {
+  height: 185px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
-.height-card-user {
-  height: 50px;
+.height-card-block {
+  height: 155px;
+}
+
+.height-card-block-sm {
+  height: 130px;
 }
 
 .height-card-title {
-  height: 130px;
+  height: 115px;
+}
+
+.height-card-title-sm {
+  height: 90px;
 }
 
 .image-card {
