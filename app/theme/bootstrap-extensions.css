@@ -67,6 +67,10 @@ a.no-hover:hover {
   -webkit-overflow-scrolling: touch;
 }
 
+.crop-text-block {
+  min-width: 0;
+}
+
 .crop-text {
   overflow: hidden;
   text-overflow: ellipsis;

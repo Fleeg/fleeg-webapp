@@ -61,3 +61,7 @@ small, .small {
 .rounded {
   border-radius: 0.15rem !important;
 }
+
+.dotsmall {
+  font-size: 2px;
+}

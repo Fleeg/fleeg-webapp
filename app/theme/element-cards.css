@@ -9,7 +9,7 @@
 
 /* styles for card */
 .height-card {
-  height: 240px;
+  height: 245px;
   margin-left: -5px;
   margin-right: -5px;
 }
@@ -20,6 +20,10 @@
 
 .height-card-user {
   height: 50px;
+}
+
+.height-card-title {
+  height: 130px;
 }
 
 .image-card {

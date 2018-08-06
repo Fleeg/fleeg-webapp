@@ -1,5 +1,5 @@
 mixin article(imgs)
-  .row.mx-0.mt-2.mt-md-3
+  .row.mx-0.mt-2.mt-md-4
     .col-12.col-md-6.col-lg-4.offset-lg-2
       .row.height-card.border.rounded
         a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
@@ -15,14 +15,14 @@ mixin article(imgs)
             .pr-2
               a(href='#')
                 img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-            .px-0(style='min-width: 0')
+            .px-0.crop-text-block
               .small.text-truncate
                 a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
               .small.crop-text.crop-text-2 Fab 19
-                i.fas.fa-circle.align-middle.px-1(style='font-size: 2px') 
+                i.fas.fa-circle.dotsmall.align-middle.px-1
                 | 704 bookmarks
-            .pl-1
-              a.text-body(href='#')
+            .pl-1.flex-fill
+              a.float-right.text-body(href='#')
                 i.far.fa-bookmark.font-09
 
     .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
@@ -35,62 +35,68 @@ mixin article(imgs)
               .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
               .text-body.crop-text.crop-text-3.
                 Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
-          .card-text.row
-            .col-3.col-md-2
+          .d-flex.flex-row
+            .pr-2
               a(href='#')
                 img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-            .col-7.col-md-8.d-block.px-1.px-md-4.px-lg-2
+            .px-0.crop-text-block
               .small.text-truncate
                 a(href='#') Angel Johnyson
-              .small.d-inline-block.text-truncate Jun 7 - 3k bookmarks
-            .col-2
-              a.text-body(href='#')
+              .small.crop-text.crop-text-2 Jun 7
+                i.fas.fa-circle.dotsmall.align-middle.px-1
+                | 3k bookmarks
+            .pl-1.flex-fill
+              a.float-right.text-body(href='#')
                 i.far.fa-bookmark.font-09
 
 mixin media(imgs)
-  .row.mx-0.mt-2.mt-md-3
+  .row.mx-0.mt-2.mt-md-4
     .col-12.col-md-6.col-lg-4.offset-lg-2
       .row.height-card.border.rounded
         .col-5.card-block.py-3
           .d-block.height-card-block.mb-1
-            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Cras Posuere
-            .card-text
+            .card-text.height-card-title
+              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Cras Posuere
               .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-              .row.py-4
-                .col-2
-                  a.text-body.pr-2(href='#')
-                    i.far.fa-bookmark.font-09
-                .col-8.px-2 372 bookmarks
-          .card-text.row
-            .col-5.col-md-4
+            .d-flex.flex-row
+              .px-0
+                a.text-body.pr-2(href='#')
+                  i.far.fa-bookmark.font-09
+              .small.align-middle 372 bookmarks
+          .d-flex.flex-row
+            .pr-2
               a(href='#')
                 img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*c1uTLwrFqb4M7P4y.jpeg')
-            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
-              .small.text-truncate
+            .px-0.crop-text-block
+              .small.crop-text.crop-text-2
                 a(href='#') Michelle Smawtz Petz
-              .small.d-inline-block.text-truncate Mar 7
+              .small.text-truncate Mar 7
+                span.d-none.d-md-inline-block
+                  |, 2018
         a.col-7.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/1600/' + imgs[0] + '.jpeg")')
 
     .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
       .row.height-card.border.rounded
         .col-5.card-block.py-3
           .d-block.height-card-block.mb-1
-            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
-            .card-text
+            .card-text.height-card-title
+              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
               .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-              .row.py-4
-                .col-2
-                  a.text-body.pr-2(href='#')
-                    i.far.fa-bookmark.font-09
-                .col-8.px-2 3k bookmarks
-          .card-text.row
-            .col-5.col-md-4
+            .d-flex.flex-row
+              .px-0
+                a.text-body.pr-2(href='#')
+                  i.far.fa-bookmark.font-09
+              .small.px-0 3k bookmarks
+          .d-flex.flex-row
+            .pr-2
               a(href='#')
                 img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
-            .col-7.col-md-8.d-block.pl-2.pl-md-4.pl-lg-2
-              .small.text-truncate
+            .px-0.crop-text-block
+              .small.crop-text.crop-text-2
                 a(href='#') Robert Kalinwvisk Wisebells
-              .small.d-inline-block.text-truncate Oct 21
+              .small.text-truncate Oct 21
+                span.d-none.d-md-inline-block
+                  |, 2017
         a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
           style='background-image: url("' + imgs[1] + '")')
           i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
