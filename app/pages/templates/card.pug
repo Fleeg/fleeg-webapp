@@ -1,229 +1,122 @@
 mixin article(imgs)
-  .row.mx-0.mt-2.mt-md-4
-    .col-12.col-md-6.col-lg-4.offset-lg-2
-      .row.height-card.border.rounded
-        a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
-        .col-7.card-block.py-3
-          a.d-block.no-hover.height-card-block.mb-1(href='#')
-            .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
-            .card-text
-              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-              .text-body.crop-text.crop-text-3.
-                Curabitur aliquet nisl libero, sit amet varius mauris iaculis nec. Aliquam erat volutpat. Mauris non auctor nibh.
-                Nam pellentesque convallis velit vel posuere. Maecenas tristique nulla in nulla malesuada mollis.
+  .col-md-6.mt-2.mt-md-4
+    .row.height-card.border.rounded
+      a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+      .col-7.card-block.py-3
+        a.d-block.no-hover.height-card-block.mb-1(href='#')
+          .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+          .card-text
+            .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+            .text-body.crop-text.crop-text-3.
+              Curabitur aliquet nisl libero, sit amet varius mauris iaculis nec. Aliquam erat volutpat. Mauris non auctor nibh.
+              Nam pellentesque convallis velit vel posuere. Maecenas tristique nulla in nulla malesuada mollis.
+        .d-flex.flex-row
+          .pr-2
+            a(href='#')
+              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+          .px-0.crop-text-block
+            .small.text-truncate
+              a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
+            .small.crop-text.crop-text-2 Fab 19
+              i.fas.fa-circle.dotsmall.align-middle.px-1
+              | 704 bookmarks
+          .pl-1.flex-fill
+            a.float-right.text-body(href='#')
+              i.far.fa-bookmark.font-09
+
+mixin toparticle(imgs)
+  .col.p-0
+    .row.height-card-sm.mt-3.mt-md-4
+      .col-8.col-md-7.pl-1
+        a.d-block.no-hover.height-card-block-sm.mb-1(href='#')
+          .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
+          .card-text
+            .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+            .text-body.crop-text.crop-text-2.
+              Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
+        .d-flex.flex-row
+          .pr-2
+            a(href='#')
+              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+          .px-0.crop-text-block
+            .small.text-truncate
+              a(href='#') Angel Johnyson
+            .small.crop-text.crop-text-2 Jun 7
+              i.fas.fa-circle.dotsmall.align-middle.px-1
+              | 3k bookmarks
+          .pl-1.flex-fill.pr-3
+            a.float-right.text-body(href='#')
+              i.far.fa-bookmark.font-09
+      a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+
+mixin media(imgs, video=false)
+  .col-md-6.mt-2.mt-md-4
+    .row.height-card.border.rounded
+      .col-5.card-block.py-3
+        .d-block.height-card-block.mb-1
+          .card-text.height-card-title
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
+            .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
           .d-flex.flex-row
-            .pr-2
-              a(href='#')
-                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-            .px-0.crop-text-block
-              .small.text-truncate
-                a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
-              .small.crop-text.crop-text-2 Fab 19
-                i.fas.fa-circle.dotsmall.align-middle.px-1
-                | 704 bookmarks
-            .pl-1.flex-fill
-              a.float-right.text-body(href='#')
+            .px-0
+              a.text-body.pr-2(href='#')
                 i.far.fa-bookmark.font-09
-
-    .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
-      .row.height-card.border.rounded
-        a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[1] + '")')
-        .col-7.card-block.py-3
-          a.d-block.no-hover.height-card-block.mb-1(href='#')
-            .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
-            .card-text
-              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-              .text-body.crop-text.crop-text-3.
-                Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
-          .d-flex.flex-row
-            .pr-2
-              a(href='#')
-                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-            .px-0.crop-text-block
-              .small.text-truncate
-                a(href='#') Angel Johnyson
-              .small.crop-text.crop-text-2 Jun 7
-                i.fas.fa-circle.dotsmall.align-middle.px-1
-                | 3k bookmarks
-            .pl-1.flex-fill
-              a.float-right.text-body(href='#')
-                i.far.fa-bookmark.font-09
-
-mixin media(imgs)
-  .row.mx-0.mt-2.mt-md-4
-    .col-12.col-md-6.col-lg-4.offset-lg-2
-      .row.height-card.border.rounded
-        .col-5.card-block.py-3
-          .d-block.height-card-block.mb-1
-            .card-text.height-card-title
-              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Cras Posuere
-              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-            .d-flex.flex-row
-              .px-0
-                a.text-body.pr-2(href='#')
-                  i.far.fa-bookmark.font-09
-              .small.align-middle 372 bookmarks
-          .d-flex.flex-row
-            .pr-2
-              a(href='#')
-                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*c1uTLwrFqb4M7P4y.jpeg')
-            .px-0.crop-text-block
-              .small.crop-text.crop-text-2
-                a(href='#') Michelle Smawtz Petz
-              .small.text-truncate Mar 7
-                span.d-none.d-md-inline-block
-                  |, 2018
-        a.col-7.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/1600/' + imgs[0] + '.jpeg")')
-
-    .col-12.col-md-6.col-lg-4.mt-2.mt-md-0
-      .row.height-card.border.rounded
-        .col-5.card-block.py-3
-          .d-block.height-card-block.mb-1
-            .card-text.height-card-title
-              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
-              .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-            .d-flex.flex-row
-              .px-0
-                a.text-body.pr-2(href='#')
-                  i.far.fa-bookmark.font-09
-              .small.px-0 3k bookmarks
-          .d-flex.flex-row
-            .pr-2
-              a(href='#')
-                img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
-            .px-0.crop-text-block
-              .small.crop-text.crop-text-2
-                a(href='#') Robert Kalinwvisk Wisebells
-              .small.text-truncate Oct 21
-                span.d-none.d-md-inline-block
-                  |, 2017
-        a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
-          style='background-image: url("' + imgs[1] + '")')
+            .small.px-0 3k bookmarks
+        .d-flex.flex-row
+          .pr-2
+            a(href='#')
+              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+          .px-0.crop-text-block
+            .small.crop-text.crop-text-2
+              a(href='#') Robert Kalinwvisk Wisebells
+            .small.text-truncate Oct 21
+              span.d-none.d-md-inline-block
+                |, 2017
+      a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
+        if video
           i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
 
-mixin topcards()
-  .row.height-card-sm.mt-3.mt-md-4
-    .col-8.col-md-7.pl-1
-      a.d-block.no-hover.height-card-block-sm.mb-1(href='#')
-        .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
-        .card-text
-          .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-          .text-body.crop-text.crop-text-2.
-            Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
-      .d-flex.flex-row
-        .pr-2
-          a(href='#')
-            img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-        .px-0.crop-text-block
-          .small.text-truncate
-            a(href='#') Angel Johnyson
-          .small.crop-text.crop-text-2 Jun 7
-            i.fas.fa-circle.dotsmall.align-middle.px-1
-            | 3k bookmarks
-        .pl-1.flex-fill.pr-3
-          a.float-right.text-body(href='#')
-            i.far.fa-bookmark.font-09
-    a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*lHVdOD-zSEdfvq77")')
-
-  .row.height-card-sm.mt-3.mt-md-4
-    .col-8.col-md-7.pl-1
-      a.d-block.no-hover.height-card-block-sm.mb-1(href='#')
-        .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
-        .card-text
-          .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-          .text-body.crop-text.crop-text-2.
-            Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
-      .d-flex.flex-row
-        .pr-2
-          a(href='#')
-            img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-        .px-0.crop-text-block
-          .small.text-truncate
-            a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
-          .small.crop-text.crop-text-2 Fab 19
-            i.fas.fa-circle.dotsmall.align-middle.px-1
-            | 704 bookmarks
-        .pl-1.flex-fill.pr-3
-          a.float-right.text-body(href='#')
-            i.far.fa-bookmark.font-09
-    a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1")')
-
-  .row.height-card-sm.mt-3.mt-md-4
-    .col-8.col-md-7.pl-1
-      .d-block.height-card-block-sm.mb-1
-        .card-text.height-card-title-sm
-          a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
-          .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+mixin topmedia()
+  .col.p-0
+    .row.height-card-sm.mt-3.mt-md-4
+      .col-8.col-md-7.pl-1
+        .d-block.height-card-block-sm.mb-1
+          .card-text.height-card-title-sm
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
+            .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+          .d-flex.flex-row
+            .px-0
+              a.text-body.pr-2(href='#')
+                i.far.fa-bookmark.font-09
+            .small.px-0 3k bookmarks
         .d-flex.flex-row
-          .px-0
-            a.text-body.pr-2(href='#')
-              i.far.fa-bookmark.font-09
-          .small.px-0 3k bookmarks
-      .d-flex.flex-row
-        .pr-2
-          a(href='#')
-            img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
-        .px-0.crop-text-block
-          .small.crop-text.crop-text-2
-            a(href='#') Robert Kalinwvisk Wisebells
-          .small.text-truncate Oct 21
-            span.d-none.d-md-inline-block
-              |, 2017
-    a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
-      style='background-image: url("https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg")')
-      i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
+          .pr-2
+            a(href='#')
+              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+          .px-0.crop-text-block
+            .small.crop-text.crop-text-2
+              a(href='#') Robert Kalinwvisk Wisebells
+            .small.text-truncate Oct 21
+              span.d-none.d-md-inline-block
+                |, 2017
+      a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
+        style='background-image: url("https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg")')
+        i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
 
 
-mixin people()
-  .row.mx-0
-    .col.px-0.p-3
-      .d-flex.flex-row
-        .pr-3
-          a(href='#')
-            img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-        .px-0.crop-text-block
-          .h4.text-dark
-            a.crop-text.crop-text-2(href='#') Angel Johnyson
-          .d-block.mb-2
-            small 1.3k Followers
-          .d-block
-            button.btn.btn-sm.btn-outline-success Follow
-
-    .col.px-0.p-3
-       .d-flex.flex-row
-        .pr-3
-          a(href='#')
-            img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/0*c1uTLwrFqb4M7P4y.jpeg')
-        .px-0.crop-text-block
-          .h4.text-dark
-            a.crop-text.crop-text-2(href='#') Michelle Smawtz Petz
-          .d-block.mb-2
-            small 372 Followers
-          .d-block
-            button.btn.btn-sm.btn-success Following
-
-    .col.px-0.p-3
-       .d-flex.flex-row
-        .pr-3
-          a(href='#')
-            img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
-        .px-0.crop-text-block
-          .h4.text-dark
-            a.crop-text.crop-text-2(href='#') Robert Kalinwvisk Wisebells
-          .d-block.mb-2
-            small 3k Followers
-          .d-block
-            button.btn.btn-sm.btn-outline-success Follow
-
-    .col.px-0.p-3
-      .d-flex.flex-row
-        .pr-3
-          a(href='#')
-            img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png')
-        .px-0.crop-text-block
-          .h4.text-dark
-            a.crop-text.crop-text-2(href='#') Johny Stratuss Anntjel Majetkwonlooyk
-          .d-block.mb-2
-            small 704 Followers
-          .d-block
-            button.btn.btn-sm.btn-outline-success Follow
+mixin toppeople(avatar, name, followers)
+  .col.px-0.p-3
+    .d-flex.flex-row
+      .pr-3
+        a(href='#')
+          img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
+      .px-0.crop-text-block
+        .h4.text-dark
+          a.crop-text.crop-text-2(href='#')
+            =name
+        .d-block.mb-2
+          small
+            =followers
+            |  Followers
+        .d-block
+          button.btn.btn-sm.btn-outline-success Follow

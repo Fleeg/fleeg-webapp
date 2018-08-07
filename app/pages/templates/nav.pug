@@ -1,0 +1,26 @@
+mixin navmenu(type)
+  // nav with menu filters
+  .bg-white.px-2.sticky-top.border-bottom
+    .col.col-lg-10.offset-lg-2.px-0
+      .nav.nav-pills.h-scroll.pb-2
+        if type == 'search'
+          a.btn.nav-link.pb-0.text-success.border-bottom-solid(href='#') All
+          a.btn.nav-link.pb-0(href='#') Articles
+          a.btn.nav-link.pb-0(href='#') Images
+          a.btn.nav-link.pb-0(href='#') Videos
+          a.btn.nav-link.pb-0(href='#') Documents
+          a.btn.nav-link.pb-0(href='#') People
+
+        if type == 'home'
+          a.btn.nav-link.pb-0.text-success.border-bottom-solid(href='#') For You
+          a.btn.nav-link.pb-0(href='#') My Bookmarks
+          a.btn.nav-link.pb-0(href='#') Articles
+          a.btn.nav-link.pb-0(href='#') Images
+          a.btn.nav-link.pb-0(href='#') Videos
+          a.btn.nav-link.pb-0(href='#') Documents
+          a.btn.nav-link.pb-0(href='#') People
+
+        if type == 'profile'
+          a.btn.nav-link.pb-0.text-success.border-bottom-solid(href='#') Bookmarks
+          a.btn.nav-link.pb-0(href='#') Following
+          a.btn.nav-link.pb-0(href='#') Followers
