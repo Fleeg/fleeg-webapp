@@ -58,3 +58,17 @@
 .title-card-list {
   border-bottom: 3px solid black;
 }
+
+.bg-playcard {
+  background: rgba(0,0,0,0.7);
+}
+
+.icon-card {
+  margin-top: 65px;
+  font-size: 112px;
+}
+
+.icon-card-sm {
+  margin-top: 40px;
+  font-size: 102px;
+}

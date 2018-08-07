@@ -1,7 +1,19 @@
-mixin article(imgs)
+mixin article(imgs, type='img')
   .col-md-6.mt-2.mt-md-4
     .row.height-card.border.rounded
-      a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+
+      if type == 'img'
+        a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+      else if type == 'pdf'
+        a.col-5.d-flex.justify-content-center.bg-danger(href='#')
+          i.fas.fa-file-pdf.text-white.icon-card
+      else if type == 'doc'
+        a.col-5.d-flex.justify-content-center.bg-info.mx-auto(href='#')
+          i.fas.fa-file-word.text-white.icon-card
+      else
+        a.col-5.d-flex.justify-content-center.bg-dark.mx-auto(href='#')
+          i.fas.fa-file-alt.text-white.icon-card
+
       .col-7.card-block.py-3
         a.d-block.no-hover.height-card-block.mb-1(href='#')
           .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
@@ -24,8 +36,8 @@ mixin article(imgs)
             a.float-right.text-body(href='#')
               i.far.fa-bookmark.font-09
 
-mixin toparticle(imgs)
-  .col.p-0
+mixin toparticle(imgs, type='img')
+  .col-12.p-0
     .row.height-card-sm.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
         a.d-block.no-hover.height-card-block-sm.mb-1(href='#')
@@ -47,7 +59,19 @@ mixin toparticle(imgs)
           .pl-1.flex-fill.pr-3
             a.float-right.text-body(href='#')
               i.far.fa-bookmark.font-09
-      a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+
+      if type == 'img'
+        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+      else if type == 'pdf'
+        a.col-4.d-flex.justify-content-center.bg-danger(href='#')
+          i.fas.fa-file-pdf.text-white.icon-card-sm
+      else if type == 'doc'
+        a.col-4.d-flex.justify-content-center.bg-info.mx-auto(href='#')
+          i.fas.fa-file-word.text-white.icon-card-sm
+      else
+        a.col-4.d-flex.justify-content-center.bg-dark.mx-auto(href='#')
+          i.fas.fa-file-alt.text-white.icon-card-sm
+
 
 mixin media(imgs, video=false)
   .col-md-6.mt-2.mt-md-4
@@ -74,10 +98,10 @@ mixin media(imgs, video=false)
                 |, 2017
       a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
         if video
-          i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
+          i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
 
-mixin topmedia()
-  .col.p-0
+mixin topmedia(video=false)
+  .col-12.p-0
     .row.height-card-sm.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
         .d-block.height-card-block-sm.mb-1
@@ -101,11 +125,12 @@ mixin topmedia()
                 |, 2017
       a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
         style='background-image: url("https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg")')
-        i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
+        if video
+          i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
 
 
 mixin toppeople(avatar, name, followers, following=false)
-  .col.px-0.p-3
+  .col-12.px-0.p-3
     .d-flex.flex-row
       .pr-3
         a(href='#')

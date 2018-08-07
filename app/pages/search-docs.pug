@@ -1,0 +1,23 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+
+block content
+
+  +header(true, true)
+
+  .container-fluid.px-0.pt-1
+
+    +navmenu('search', 4)
+
+    // more links
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        .row.mx-0
+          +article(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf')
+          +article(['', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'doc')
+          +article(['', '0*c1uTLwrFqb4M7P4y.jpeg'], 'none')
+
+  include templates/footer.pug
