@@ -104,7 +104,7 @@ mixin topmedia()
         i.fas.fa-play.h3.py-2.px-4.bg-dark.text-light.rounded
 
 
-mixin toppeople(avatar, name, followers)
+mixin toppeople(avatar, name, followers, following=false)
   .col.px-0.p-3
     .d-flex.flex-row
       .pr-3
@@ -119,4 +119,7 @@ mixin toppeople(avatar, name, followers)
             =followers
             |  Followers
         .d-block
-          button.btn.btn-sm.btn-outline-success Follow
+          if following
+            button.btn.btn-sm.btn-success Following
+          else  
+            button.btn.btn-sm.btn-outline-success Follow
