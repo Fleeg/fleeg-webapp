@@ -6,7 +6,7 @@ mixin navmenu(type, active=0)
     .col.col-lg-10.offset-lg-2.px-0
       .nav.nav-pills.h-scroll.pb-2
         if type == 'search'
-          a.btn.nav-link.pb-0(href='search.html' class=active == 0 ? activeclass : '') All
+          a.btn.nav-link.pb-0(href='search.html'          class=active == 0 ? activeclass : '') All
           a.btn.nav-link.pb-0(href='search-articles.html' class=active == 1 ? activeclass : '') Articles
           a.btn.nav-link.pb-0(href='search-images.html'   class=active == 2 ? activeclass : '') Images
           a.btn.nav-link.pb-0(href='search-videos.html'   class=active == 3 ? activeclass : '') Videos
@@ -23,6 +23,7 @@ mixin navmenu(type, active=0)
           a.btn.nav-link.pb-0(href='#' class=active == 6 ? activeclass : '') People
 
         if type == 'profile'
-          a.btn.nav-link.pb-0(href='#' class=active == 0 ? activeclass : '') Bookmarks
-          a.btn.nav-link.pb-0(href='#' class=active == 1 ? activeclass : '') Following
-          a.btn.nav-link.pb-0(href='#' class=active == 2 ? activeclass : '') Followers
+          a.btn.nav-link.pb-0(href='#' class=active == 0 ? activeclass : '') All
+          a.btn.nav-link.pb-0(href='#' class=active == 1 ? activeclass : '') Bookmarks
+          a.btn.nav-link.pb-0(href='#' class=active == 2 ? activeclass : '') Following
+          a.btn.nav-link.pb-0(href='#' class=active == 3 ? activeclass : '') Followers

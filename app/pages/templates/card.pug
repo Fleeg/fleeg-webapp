@@ -24,11 +24,11 @@ mixin article(imgs, type='img')
               Nam pellentesque convallis velit vel posuere. Maecenas tristique nulla in nulla malesuada mollis.
         .d-flex.flex-row
           .pr-2
-            a(href='#')
+            a(href='profile.html')
               img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.text-truncate
-              a(href='#') Johny Stratuss Anntjel Majetkwonlooyk
+              a(href='profile.html') Johny Stratuss Anntjel Majetkwonlooyk
             .small.crop-text.crop-text-2 Fab 19
               i.fas.fa-circle.dotsmall.align-middle.px-1
               | 704 bookmarks
@@ -48,11 +48,11 @@ mixin toparticle(imgs, type='img')
               Praesent gravida suscipit mauris, at vestibulum est cursus vehicula. Duis ac sollicitudin felis.
         .d-flex.flex-row
           .pr-2
-            a(href='#')
+            a(href='profile.html')
               img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.text-truncate
-              a(href='#') Angel Johnyson
+              a(href='profile.html') Angel Johnyson
             .small.crop-text.crop-text-2 Jun 7
               i.fas.fa-circle.dotsmall.align-middle.px-1
               | 3k bookmarks
@@ -88,11 +88,11 @@ mixin media(imgs, video=false)
             .small.px-0 3k bookmarks
         .d-flex.flex-row
           .pr-2
-            a(href='#')
+            a(href='profile.html')
               img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.crop-text.crop-text-2
-              a(href='#') Robert Kalinwvisk Wisebells
+              a(href='profile.html') Robert Kalinwvisk Wisebells
             .small.text-truncate Oct 21
               span.d-none.d-md-inline-block
                 |, 2017
@@ -115,11 +115,11 @@ mixin topmedia(video=false)
             .small.px-0 3k bookmarks
         .d-flex.flex-row
           .pr-2
-            a(href='#')
+            a(href='profile.html')
               img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
           .px-0.crop-text-block
             .small.crop-text.crop-text-2
-              a(href='#') Robert Kalinwvisk Wisebells
+              a(href='profile.html') Robert Kalinwvisk Wisebells
             .small.text-truncate Oct 21
               span.d-none.d-md-inline-block
                 |, 2017
@@ -128,16 +128,15 @@ mixin topmedia(video=false)
         if video
           i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
 
-
-mixin toppeople(avatar, name, followers, following=false)
-  .col-12.px-0.p-3
+mixin people(avatar, name, followers, following=false)
+  .col-12.col-md-6.col-lg-4.px-0.p-3
     .d-flex.flex-row
       .pr-3
-        a(href='#')
+        a(href='profile.html')
           img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
       .px-0.crop-text-block
         .h4.text-dark
-          a.crop-text.crop-text-2(href='#')
+          a.crop-text.crop-text-2(href='profile.html')
             =name
         .d-block.mb-2
           small
@@ -146,5 +145,25 @@ mixin toppeople(avatar, name, followers, following=false)
         .d-block
           if following
             button.btn.btn-sm.btn-success Following
-          else  
+          else
+            button.btn.btn-sm.btn-outline-success Follow
+
+mixin toppeople(avatar, name, followers, following=false)
+  .col-12.px-0.p-3
+    .d-flex.flex-row
+      .pr-3
+        a(href='profile.html')
+          img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
+      .px-0.crop-text-block
+        .h4.text-dark
+          a.crop-text.crop-text-2(href='profile.html')
+            =name
+        .d-block.mb-2
+          small
+            =followers
+            |  Followers
+        .d-block
+          if following
+            button.btn.btn-sm.btn-success Following
+          else
             button.btn.btn-sm.btn-outline-success Follow
