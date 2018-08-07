@@ -55,6 +55,11 @@
   max-width:  70px;
 }
 
+.avatar-larger {
+  max-height: 120px;
+  max-width:  120px;
+}
+
 .title-card-list {
   border-bottom: 3px solid black;
 }
