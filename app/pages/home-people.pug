@@ -1,0 +1,24 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+
+block content
+
+  +header(true, true)
+
+  .container-fluid.px-0.pt-1
+
+    +navmenu('home', 6)
+
+    // more links
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        .row.mx-0
+          +people('0*lI5-avJvcBbQDmA2.jpeg','Angel Johnyson','1.3k')
+          +people('0*c1uTLwrFqb4M7P4y.jpeg','Michelle Smawtz Petz','372', true)
+          +people('1*rR9BfHWbucraC-JqekVjcQ.jpeg','Robert Kalinwvisk Wisebells','3k')
+          +people('1*WEDSxCrKyHQFewfsE9yKAQ.png','Johny Stratuss Anntjel Majetkwonlooyk','704')
+
+  include templates/footer.pug

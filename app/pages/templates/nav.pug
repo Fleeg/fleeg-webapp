@@ -14,13 +14,13 @@ mixin navmenu(type, active=0)
           a.btn.nav-link.pb-0(href='search-people.html'   class=active == 5 ? activeclass : '') People
 
         if type == 'home'
-          a.btn.nav-link.pb-0(href='#' class=active == 0 ? activeclass : '') For You
-          a.btn.nav-link.pb-0(href='#' class=active == 1 ? activeclass : '') My Bookmarks
-          a.btn.nav-link.pb-0(href='#' class=active == 2 ? activeclass : '') Articles
-          a.btn.nav-link.pb-0(href='#' class=active == 3 ? activeclass : '') Images
-          a.btn.nav-link.pb-0(href='#' class=active == 4 ? activeclass : '') Videos
-          a.btn.nav-link.pb-0(href='#' class=active == 5 ? activeclass : '') Documents
-          a.btn.nav-link.pb-0(href='#' class=active == 6 ? activeclass : '') People
+          a.btn.nav-link.pb-0(href='home.html'            class=active == 0 ? activeclass : '') For You
+          a.btn.nav-link.pb-0(href='home-bookmarks.html'  class=active == 1 ? activeclass : '') My Bookmarks
+          a.btn.nav-link.pb-0(href='home-articles.html'   class=active == 2 ? activeclass : '') Articles
+          a.btn.nav-link.pb-0(href='home-images.html'     class=active == 3 ? activeclass : '') Images
+          a.btn.nav-link.pb-0(href='home-videos.html'     class=active == 4 ? activeclass : '') Videos
+          a.btn.nav-link.pb-0(href='home-docs.html'       class=active == 5 ? activeclass : '') Documents
+          a.btn.nav-link.pb-0(href='home-people.html'     class=active == 6 ? activeclass : '') People
 
         if type == 'profile'
           a.btn.nav-link.pb-0(href='profile.html'           class=active == 0 ? activeclass : '') Profile

@@ -1,0 +1,22 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+
+block content
+
+  +header(true, true)
+
+  .container-fluid.px-0.pt-1
+
+    +navmenu('home', 4)
+
+    // more links
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        .row.mx-0
+          +media(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], true)
+          +media(['https://i.vimeocdn.com/video/641846397_1280x720.jpg', '0*c1uTLwrFqb4M7P4y.jpeg'], true)
+
+  include templates/footer.pug
