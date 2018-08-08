@@ -5,13 +5,13 @@ mixin article(imgs, type='img')
       if type == 'img'
         a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
       else if type == 'pdf'
-        a.col-5.d-flex.justify-content-center.bg-danger(href='#')
+        a.col-5.no-hover.d-flex.justify-content-center.bg-danger(href='#')
           i.fas.fa-file-pdf.text-white.icon-card
       else if type == 'doc'
-        a.col-5.d-flex.justify-content-center.bg-info.mx-auto(href='#')
+        a.col-5.no-hover.d-flex.justify-content-center.bg-info(href='#')
           i.fas.fa-file-word.text-white.icon-card
       else
-        a.col-5.d-flex.justify-content-center.bg-dark.mx-auto(href='#')
+        a.col-5.no-hover.d-flex.justify-content-center.bg-dark(href='#')
           i.fas.fa-file-alt.text-white.icon-card
 
       .col-7.card-block.py-3
@@ -63,13 +63,13 @@ mixin toparticle(imgs, type='img')
       if type == 'img'
         a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
       else if type == 'pdf'
-        a.col-4.d-flex.justify-content-center.bg-danger(href='#')
+        a.col-4.no-hover.d-flex.justify-content-center.bg-danger(href='#')
           i.fas.fa-file-pdf.text-white.icon-card-sm
       else if type == 'doc'
-        a.col-4.d-flex.justify-content-center.bg-info(href='#')
+        a.col-4.no-hover.d-flex.justify-content-center.bg-info(href='#')
           i.fas.fa-file-word.text-white.icon-card-sm
       else
-        a.col-4.d-flex.justify-content-center.bg-dark(href='#')
+        a.col-4.no-hover.d-flex.justify-content-center.bg-dark(href='#')
           i.fas.fa-file-alt.text-white.icon-card-sm
 
 
@@ -135,13 +135,17 @@ mixin people(avatar, name, followers, following=false)
         a(href='profile.html')
           img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
       .px-0.crop-text-block
-        .h4.text-dark
+        .h4.text-dark.mb-1
           a.crop-text.crop-text-2(href='profile.html')
             =name
-        .d-block.mb-2
+        .d-block
           small
             =followers
             |  Followers
+        .d-block.mb-3
+          small
+            a(href='profile.html') @ajmspjsam
+            span  joined in Nov, 2017
         .d-block
           if following
             button.btn.btn-sm.btn-success Following

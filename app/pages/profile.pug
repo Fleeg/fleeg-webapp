@@ -11,21 +11,23 @@ block content
 
     // profile infos
     .row.mx-0.my-4
-      .col-12.col-md-8.offset-md-2.col-lg-6.offset-lg-3
+      .col-12.col-md-8.offset-lg-2
         .d-flex.flex-row
           .pr-3
-            a(href='profile.html')
-              img.border.rounded-circle.avatar-larger(src='https://cdn-images-1.medium.com/fit/c/120/120/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+            img.border.rounded-circle.avatar-larger(src='https://cdn-images-1.medium.com/fit/c/150/150/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
           .px-0.crop-text-block
-            .h2.text-dark
-              a.crop-text.crop-text-2(href='profile.html') Robert Kalinwvisk Wisebells
-            .d-block.mb-2.mb-lg-4 Joined Fleeg at April 2018
+            .h2.text-dark.mb-0
+              span.crop-text.crop-text-2 Robert Kalinwvisk Wisebells
+            .d-block.mb-2 @robertkw joined Fleeg in April, 2018
+            .d-block.mb-2
+              .d-inline-block
+                a.pr-2(href='profile-bookmarks.html') 594 Bookmarks
+              .d-inline-block
+                a.pr-2(href='profile-following.html') 5 Following
+              .d-inline-block
+                a(href='profile-followers.html') 3.3k Followers
             .d-block
-              a.pr-2(href='profile-bookmarks.html') 594 Bookmarks
-              a.pr-2(href='profile-following.html') 5 Following
-              a(href='profile-followers.html') 3.3k Followers
-          .pl-3
-            button.btn.btn-sm.btn-outline-success Follow
+              button.btn.btn-sm.btn-outline-success Follow
 
     +navmenu('profile', 0)
 

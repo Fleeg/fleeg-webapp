@@ -1,0 +1,45 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+
+block content
+
+  +header(true, true)
+
+  .container-fluid.px-0.pt-1
+
+    // profile infos
+    .row.mx-0.my-4
+      .col-12.col-md-8.offset-lg-2
+        .d-flex.flex-row
+          .pr-3
+            img.border.rounded-circle.avatar-larger(src='https://cdn-images-1.medium.com/fit/c/150/150/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+          .px-0.crop-text-block
+            .h2.text-dark.mb-0
+              span.crop-text.crop-text-2 Robert Kalinwvisk Wisebells
+            .d-block.mb-2 @robertkw joined Fleeg in April, 2018
+            .d-block.mb-2
+              .d-inline-block
+                a.pr-2(href='profile-bookmarks.html') 594 Bookmarks
+              .d-inline-block
+                a.pr-2(href='profile-following.html') 5 Following
+              .d-inline-block
+                a(href='profile-followers.html') 3.3k Followers
+            .d-block
+              button.btn.btn-sm.btn-outline-success Follow
+
+    +navmenu('profile', 2)
+
+    // more links
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        .row.mx-0
+          +people('0*lI5-avJvcBbQDmA2.jpeg','Angel Johnyson','1.3k')
+          +people('0*c1uTLwrFqb4M7P4y.jpeg','Michelle Smawtz Petz','372')
+          +people('1*BsvrL330ex3VkgPsTxDsCw.jpeg','Greg Willson','85', true)
+          +people('1*WEDSxCrKyHQFewfsE9yKAQ.png','Johny Stratuss Anntjel Majetkwonlooyk','704')
+
+
+  include templates/footer.pug
