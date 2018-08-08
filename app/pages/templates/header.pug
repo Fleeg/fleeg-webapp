@@ -17,7 +17,7 @@ mixin header(external=false, search=false)
 
     if search
       .col-6.col-xl-5.d-none.d-lg-inline.pl-xl-0
-        +searchbar(false)
+        +searchbar(!external)
     else
       .offset-lg-5
 
@@ -29,6 +29,15 @@ mixin header(external=false, search=false)
             a.nav-link(href='about.html') About
           .nav-item.mr-2.mr-lg-5
             a.nav-link(href='signin.html') Sign in
+    else
+      // external right menu
+      .navbar-collapse.justify-content-end
+        .navbar-nav
+          .nav-item.d-none.d-md-block
+            a.nav-link(href='about.html') About
+          .nav-item.mr-2.mr-lg-5
+            button.btn.bg-none.nav-link(data-container='body' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+            data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.") User
 
     if search
       .col-12.d-block.d-lg-none

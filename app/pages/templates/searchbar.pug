@@ -8,11 +8,11 @@ mixin searchbar(secret=true, header=true)
 
         if secret
           .input-group-append
-            button.btn.p-2.bg-none.text-dark
+            button.btn.p-2.bg-none.text-dark(type='button' title='Anonymous search')
               i.fas.fa-user-secret.font-09
 
         .input-group-append
-          button.btn.p-2.px-md-3.bg-white.text-success(type='submit')
+          button.btn.p-2.px-md-3.bg-white.text-success(type='submit' title='Search')
             i.fas.fa-search.font-09
 
     else
