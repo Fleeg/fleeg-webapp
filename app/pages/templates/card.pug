@@ -1,4 +1,4 @@
-mixin article(imgs, type='img')
+mixin article(imgs, type='img', saved=false)
   .col-md-6.mt-2.mt-md-4
     .row.height-card.border.rounded
 
@@ -34,9 +34,12 @@ mixin article(imgs, type='img')
               | 704 bookmarks
           .pl-1.flex-fill
             a.float-right.text-body(href='#')
-              i.far.fa-bookmark.font-09
+              if saved
+                i.fas.fa-bookmark.font-1.text-success
+              else
+                i.far.fa-bookmark.font-1
 
-mixin toparticle(imgs, type='img')
+mixin toparticle(imgs, type='img', saved=false)
   .col-12.p-0
     .row.height-card-sm.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
@@ -58,7 +61,10 @@ mixin toparticle(imgs, type='img')
               | 3k bookmarks
           .pl-1.flex-fill.pr-3
             a.float-right.text-body(href='#')
-              i.far.fa-bookmark.font-09
+              if saved
+                i.fas.fa-bookmark.font-1.text-success
+              else
+                i.far.fa-bookmark.font-1
 
       if type == 'img'
         a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
@@ -73,7 +79,7 @@ mixin toparticle(imgs, type='img')
           i.fas.fa-file-alt.text-white.icon-card-sm
 
 
-mixin media(imgs, video=false)
+mixin media(imgs, video=false, saved=false)
   .col-md-6.mt-2.mt-md-4
     .row.height-card.border.rounded
       .col-5.card-block.py-3
@@ -84,8 +90,11 @@ mixin media(imgs, video=false)
           .d-flex.flex-row
             .px-0
               a.text-body.pr-2(href='#')
-                i.far.fa-bookmark.font-09
-            .small.px-0 3k bookmarks
+                if saved
+                  i.fas.fa-bookmark.font-1.text-success
+                else
+                  i.far.fa-bookmark.font-1
+            .small.text-body.px-0 3k bookmarks
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
@@ -100,7 +109,7 @@ mixin media(imgs, video=false)
         if video
           i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
 
-mixin topmedia(video=false)
+mixin topmedia(video=false, saved=false)
   .col-12.p-0
     .row.height-card-sm.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
@@ -111,8 +120,11 @@ mixin topmedia(video=false)
           .d-flex.flex-row
             .px-0
               a.text-body.pr-2(href='#')
-                i.far.fa-bookmark.font-09
-            .small.px-0 3k bookmarks
+                if saved
+                  i.fas.fa-bookmark.font-1.text-success
+                else
+                  i.far.fa-bookmark.font-1
+            .small.text-body.px-0 3k bookmarks
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')

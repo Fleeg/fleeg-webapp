@@ -58,6 +58,10 @@ small, .small {
   top: -0.1em;
 }
 
+.text-body {
+  color: rgba(0,0,0,0.77)!important;
+}
+
 .rounded {
   border-radius: 0.15rem !important;
 }
