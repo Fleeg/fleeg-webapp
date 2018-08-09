@@ -45,19 +45,16 @@
   width: 100%;
 }
 
-.avatar-small {
-  max-height: 40px;
-  max-width:  40px;
+.avatar-card-small {
+  height: 40px;
+  width: 40px;
+  background-color: lightgrey;
 }
 
-.avatar-medium {
-  max-height: 70px;
-  max-width:  70px;
-}
-
-.avatar-larger {
-  max-height: 130px;
-  max-width:  130px;
+.avatar-card-medium {
+  height: 70px;
+  width: 70px;
+  background-color: lightgrey;
 }
 
 .title-card-list {

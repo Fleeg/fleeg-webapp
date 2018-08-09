@@ -25,7 +25,7 @@ mixin article(imgs, type='img', saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.text-truncate
               a(href='profile.html') Johny Stratuss Anntjel Majetkwonlooyk
@@ -52,7 +52,7 @@ mixin toparticle(imgs, type='img', saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.text-truncate
               a(href='profile.html') Angel Johnyson
@@ -98,7 +98,7 @@ mixin media(imgs, video=false, saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.crop-text.crop-text-2
               a(href='profile.html') Robert Kalinwvisk Wisebells
@@ -128,7 +128,7 @@ mixin topmedia(video=false, saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
           .px-0.crop-text-block
             .small.crop-text.crop-text-2
               a(href='profile.html') Robert Kalinwvisk Wisebells
@@ -145,7 +145,7 @@ mixin people(avatar, name, followers, following=false)
     .d-flex.flex-row
       .pr-3
         a(href='profile.html')
-          img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
+          img.border.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
       .px-0.crop-text-block
         .h4.text-dark.mb-1
           a.crop-text.crop-text-2(href='profile.html')
@@ -169,7 +169,7 @@ mixin toppeople(avatar, name, followers, following=false)
     .d-flex.flex-row
       .pr-3
         a(href='profile.html')
-          img.border.rounded-circle.avatar-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
+          img.border.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
       .px-0.crop-text-block
         .h4.text-dark
           a.crop-text.crop-text-2(href='profile.html')

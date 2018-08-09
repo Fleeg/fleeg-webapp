@@ -1,0 +1,19 @@
+/*
+ * Fleeg Beta
+ * Custom classes defined only for header section.
+ *
+ * Note: only use this classes in header section.
+ *
+ */
+
+.avatar-loggedin {
+  height: 40px;
+  width: 40px;
+  background-color: lightgrey;
+}
+
+.avatar-profile {
+  height: 135px;
+  width: 135px;
+  background-color: lightgrey;
+}
