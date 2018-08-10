@@ -15,8 +15,13 @@ mixin article(imgs, type='img', saved=false)
           i.fas.fa-file-alt.text-white.icon-card
 
       .col-7.card-block.py-3
-        a.d-block.no-hover.height-card-block.mb-1(href='#')
-          .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+        .d-block.height-card-block.mb-1
+          .d-flex.flex-row
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+            .flex-fill
+              a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+                        data-animation='false' data-content='Card items')
+                i.fas.fa-angle-down.font-1.text-body
           .card-text
             .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
             .text-body.crop-text.crop-text-3.
@@ -43,8 +48,13 @@ mixin toparticle(imgs, type='img', saved=false)
   .col-12.p-0
     .row.height-card-sm.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
-        a.d-block.no-hover.height-card-block-sm.mb-1(href='#')
-          .card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2 Etiam Sapien Magna, Aliquet ut Eros Sed
+        .d-block.height-card-block-sm.mb-1
+          .d-flex.flex-row
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Etiam Sapien Magna, Aliquet ut Eros Sed
+            .pr-2.pr-lg-3.pl-1.flex-fill
+              a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+                        data-animation='false' data-content='Card items')
+                i.fas.fa-angle-down.font-1.text-body
           .card-text
             .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
             .text-body.crop-text.crop-text-2.
@@ -59,7 +69,7 @@ mixin toparticle(imgs, type='img', saved=false)
             .small.text-body.crop-text.crop-text-2 Jun 7
               i.fas.fa-circle.dotsmall.align-middle.px-1
               | 3k bookmarks
-          .pl-1.flex-fill.pr-3
+          .pr-2.pr-lg-3.pl-1.flex-fill
             a.float-right.text-body(href='#')
               if saved
                 i.fas.fa-bookmark.font-1.text-success
@@ -84,8 +94,13 @@ mixin media(imgs, video=false, saved=false)
     .row.height-card.border.rounded
       .col-5.card-block.py-3
         .d-block.height-card-block.mb-1
-          .card-text.height-card-title
-            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
+          .height-card-title
+            .d-flex.flex-row
+              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
+              .pr-1.flex-fill
+                a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+                                      data-animation='false' data-content='Card items')
+                  i.fas.fa-angle-down.font-1.text-body
             .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
           .d-flex.flex-row
             .px-0
@@ -114,8 +129,13 @@ mixin topmedia(video=false, saved=false)
     .row.height-card-sm.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
         .d-block.height-card-block-sm.mb-1
-          .card-text.height-card-title-sm
-            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
+          .height-card-title-sm
+            .d-flex.flex-row
+              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
+              .pr-2.pr-lg-3.flex-fill
+                a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+                                      data-animation='false' data-content='Card items')
+                  i.fas.fa-angle-down.font-1.text-body
             .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
           .d-flex.flex-row
             .px-0

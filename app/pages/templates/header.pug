@@ -16,7 +16,7 @@ mixin header(external=false, search=false)
                   small.text-muted Beta
 
     if search
-      .col-6.col-xl-5.d-none.d-lg-inline.pl-xl-0
+      .col-5.d-none.d-lg-inline.pl-xl-0
         +searchbar(!external)
     else
       .offset-lg-5
@@ -30,16 +30,19 @@ mixin header(external=false, search=false)
           .nav-item.mr-2.mr-lg-5
             a.nav-link(href='signin.html') Sign in
     else
-      // external right menu
+      // internal right menu
       .navbar-collapse.justify-content-end
         .navbar-nav
-          .nav-item.d-flex.align-items-center.mr-3.mr-lg-4
-            a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom' data-animation='false' 
-            data-content='Notify items')
+          .nav-item.d-none.d-lg-flex.align-items-center.mr-3.mr-lg-4
+            a.btn.p-0
+              i.fa.fa-plus.align-middle.text-body.font-13
+          .nav-item.d-none.d-lg-flex.align-items-center.mr-3.mr-lg-4
+            a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+                    data-animation='false' data-content='Notification items')
               i.far.fa-bell.align-middle.text-body.font-13
-          .nav-item.mr-3.mr-lg-5
-            a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom' data-animation='false' 
-              data-content='Menu items')
+          .nav-item.mr-3.mr-lg-4
+            a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+                      data-animation='false' data-content='Menu items')
               img.rounded-circle.avatar-loggedin(src='https://avatars3.githubusercontent.com/u/742808')
 
     if search
