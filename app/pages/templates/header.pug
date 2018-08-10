@@ -33,11 +33,15 @@ mixin header(external=false, search=false)
       // external right menu
       .navbar-collapse.justify-content-end
         .navbar-nav
-          .nav-item.mr-2.mr-lg-5
-            button.btn.bg-none.nav-link(data-toggle='popover' data-trigger='focus' data-placement='bottom'
-            data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.")
-              img.border.rounded-circle.avatar-loggedin(src='https://avatars3.githubusercontent.com/u/742808')
+          .nav-item.d-flex.align-items-center.mr-3.mr-lg-4
+            a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom' data-animation='false' 
+            data-content='Notify items')
+              i.far.fa-bell.align-middle.text-body.font-13
+          .nav-item.mr-3.mr-lg-5
+            a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom' data-animation='false' 
+              data-content='Menu items')
+              img.rounded-circle.avatar-loggedin(src='https://avatars3.githubusercontent.com/u/742808')
 
     if search
       .col-12.d-block.d-lg-none
-        +searchbar(false)
+        +searchbar(!external)

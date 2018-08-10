@@ -51,6 +51,10 @@ a.no-hover:hover {
   font-size: 1rem;
 }
 
+.font-13 {
+  font-size: 1.3rem;
+}
+
 .bg-lightgrey {
   background-color: #fafafa;
 }

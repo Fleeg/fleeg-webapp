@@ -25,11 +25,11 @@ mixin article(imgs, type='img', saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+              img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.text-truncate
               a(href='profile.html') Johny Stratuss Anntjel Majetkwonlooyk
-            .small.crop-text.crop-text-2 Fab 19
+            .small.text-body.crop-text.crop-text-2 Fab 19
               i.fas.fa-circle.dotsmall.align-middle.px-1
               | 704 bookmarks
           .pl-1.flex-fill
@@ -52,11 +52,11 @@ mixin toparticle(imgs, type='img', saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+              img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.text-truncate
               a(href='profile.html') Angel Johnyson
-            .small.crop-text.crop-text-2 Jun 7
+            .small.text-body.crop-text.crop-text-2 Jun 7
               i.fas.fa-circle.dotsmall.align-middle.px-1
               | 3k bookmarks
           .pl-1.flex-fill.pr-3
@@ -98,11 +98,11 @@ mixin media(imgs, video=false, saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+              img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.crop-text.crop-text-2
               a(href='profile.html') Robert Kalinwvisk Wisebells
-            .small.text-truncate Oct 21
+            .small.text-body.text-truncate Oct 21
               span.d-none.d-md-inline-block
                 |, 2017
       a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
@@ -128,11 +128,11 @@ mixin topmedia(video=false, saved=false)
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.border.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+              img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
           .px-0.crop-text-block
             .small.crop-text.crop-text-2
               a(href='profile.html') Robert Kalinwvisk Wisebells
-            .small.text-truncate Oct 21
+            .small.text-body.text-truncate Oct 21
               span.d-none.d-md-inline-block
                 |, 2017
       a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
@@ -145,19 +145,19 @@ mixin people(avatar, name, followers, following=false)
     .d-flex.flex-row
       .pr-3
         a(href='profile.html')
-          img.border.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
+          img.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
       .px-0.crop-text-block
         .h4.text-dark.mb-1
           a.crop-text.crop-text-2(href='profile.html')
             =name
         .d-block
-          small
+          small.text-body
             =followers
             |  Followers
         .d-block.mb-3
           small
             a(href='profile.html') @ajmspjsam
-            span  joined in Nov, 2017
+            span.text-body  joined in Nov, 2017
         .d-block
           if following
             button.btn.btn-sm.btn-success Following
@@ -169,13 +169,13 @@ mixin toppeople(avatar, name, followers, following=false)
     .d-flex.flex-row
       .pr-3
         a(href='profile.html')
-          img.border.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
+          img.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/80/80/' + avatar)
       .px-0.crop-text-block
         .h4.text-dark
           a.crop-text.crop-text-2(href='profile.html')
             =name
         .d-block.mb-2
-          small
+          small.text-body
             =followers
             |  Followers
         .d-block
