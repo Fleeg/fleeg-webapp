@@ -1,0 +1,85 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+
+block content
+
+  +header(false, true)
+
+  .container-fluid.px-0.pt-1
+
+    +navmenu('home', 1)
+
+    // buckets
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0.bg-lightgrey.border
+
+        .d-block.mt-3.ml-3
+          .d-inline-block
+            span.h3.mr-2 Buckets
+            //a.mr-1(href='#') Unbucket
+            //span.mr-1 or
+            a(href='#') All Buckets
+        // input.ml-3(type='text' placeholder='Find or create a bucket')
+
+        .d-block.ml-3
+          .d-inline-block.mr-4
+            h5
+              a(href='#').d-block.p-2
+                i.fas.fa-bookmark.text-danger
+                |  Arts
+
+          .d-inline-block.mr-4
+            h5
+              a(href='#').d-block.p-2
+                i.fas.fa-bookmark.text-success
+                |  Culture
+
+          .d-inline-block.mr-4
+            h5
+              a(href='#').d-block.p-2
+                i.fas.fa-bookmark.text-info
+                |  Music Videos
+
+          .d-inline-block.mr-4
+            h5
+              a(href='#').d-block.p-2
+                i.fas.fa-bookmark.text-warning
+                |  Technology
+
+    // selected bucket
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        h2.mt-2.mt-md-4.border-bottom.py-1
+          span.ml-2.px-3.title-card-list.border-success
+            i.fas.fa-bookmark.text-success
+            span.h3  Culture
+
+        .row.mx-0
+          +small3col(['https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', true)
+          +small3col(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf', true)
+          +small3col(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
+                     '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'video', true)
+
+    // other links
+      .row.mx-0.mt-2.mt-md-3
+        .col-lg-8.offset-lg-2.p-0
+
+          h3.mt-2.mt-md-4.border-bottom.py-1
+            span.ml-2.px-3.title-card-list Others
+
+          .row.mx-0
+            +small3col(['https://cdn-images-1.medium.com/max/400/0*lHVdOD-zSEdfvq77', '0*lI5-avJvcBbQDmA2.jpeg'], 'img', true)
+            +small3col(['https://i.vimeocdn.com/video/641846397_1280x720.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'video', true)
+            +small3col(['https://cdn-images-1.medium.com/max/400/0*aZlilaPzxXZeBzwp.', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', true)
+            +small3col(['', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'doc', true)
+            +small3col(['https://cdn-images-1.medium.com/max/400/0*2rS1lwtMx1lYgIEH', '0*lI5-avJvcBbQDmA2.jpeg'], 'img', true)
+            +small3col(['https://cdn-images-1.medium.com/max/400/0*qcgD8m1RVn-0Grss', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', true)
+            +small3col(['https://cdn-images-1.medium.com/max/1600/1*ReOoy5DvE7BHJZ46UM5Zsw.jpeg', '0*c1uTLwrFqb4M7P4y.jpeg'], 'img', true)
+            +small3col(['https://cdn-images-1.medium.com/max/400/0*5Ydk4DROjj7bNVOB', '0*lI5-avJvcBbQDmA2.jpeg'], 'img', true)
+            +small3col(['', '0*c1uTLwrFqb4M7P4y.jpeg'], 'none', true)
+            +small3col(['https://grabr.io/assets/71278b7.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'img', true)
+
+  include templates/footer.pug

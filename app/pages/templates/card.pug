@@ -24,7 +24,7 @@ mixin article(imgs, type='img', saved=false)
                 i.fas.fa-angle-down.font-1.text-body
           .card-text
             .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
-            .text-body.crop-text.crop-text-3.
+            .text-body.crop-text.crop-text-2.
               Curabitur aliquet nisl libero, sit amet varius mauris iaculis nec. Aliquam erat volutpat. Mauris non auctor nibh.
               Nam pellentesque convallis velit vel posuere. Maecenas tristique nulla in nulla malesuada mollis.
         .d-flex.flex-row
@@ -46,9 +46,9 @@ mixin article(imgs, type='img', saved=false)
 
 mixin toparticle(imgs, type='img', saved=false)
   .col-12.p-0
-    .row.height-card-sm.mt-3.mt-md-4
+    .row.height-card-md.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
-        .d-block.height-card-block-sm.mb-1
+        .d-block.height-card-block-md.mb-1
           .d-flex.flex-row
             a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Etiam Sapien Magna, Aliquet ut Eros Sed
             .pr-2.pr-lg-3.pl-1.flex-fill
@@ -72,7 +72,7 @@ mixin toparticle(imgs, type='img', saved=false)
           .pr-2.pr-lg-3.pl-1.flex-fill
             a.float-right.text-body(href='#')
               if saved
-                i.fas.fa-bookmark.font-1.text-success
+                i.fas.fa-bookmark.font-1.text-warning
               else
                 i.far.fa-bookmark.font-1
 
@@ -80,14 +80,13 @@ mixin toparticle(imgs, type='img', saved=false)
         a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
       else if type == 'pdf'
         a.col-4.no-hover.d-flex.justify-content-center.bg-danger(href='#')
-          i.fas.fa-file-pdf.text-white.icon-card-sm
+          i.fas.fa-file-pdf.text-white.icon-card-md
       else if type == 'doc'
         a.col-4.no-hover.d-flex.justify-content-center.bg-info(href='#')
-          i.fas.fa-file-word.text-white.icon-card-sm
+          i.fas.fa-file-word.text-white.icon-card-md
       else
         a.col-4.no-hover.d-flex.justify-content-center.bg-dark(href='#')
-          i.fas.fa-file-alt.text-white.icon-card-sm
-
+          i.fas.fa-file-alt.text-white.icon-card-md
 
 mixin media(imgs, video=false, saved=false)
   .col-md-6.mt-2.mt-md-4
@@ -124,12 +123,12 @@ mixin media(imgs, video=false, saved=false)
         if video
           i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
 
-mixin topmedia(video=false, saved=false)
+mixin topmedia(imgs, video=false, saved=false)
   .col-12.p-0
-    .row.height-card-sm.mt-3.mt-md-4
+    .row.height-card-md.mt-3.mt-md-4
       .col-8.col-md-7.pl-1
-        .d-block.height-card-block-sm.mb-1
-          .height-card-title-sm
+        .d-block.height-card-block-md.mb-1
+          .height-card-title-md
             .d-flex.flex-row
               a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
               .pr-2.pr-lg-3.flex-fill
@@ -141,24 +140,68 @@ mixin topmedia(video=false, saved=false)
             .px-0
               a.text-body.pr-2(href='#')
                 if saved
-                  i.fas.fa-bookmark.font-1.text-success
+                  i.fas.fa-bookmark.font-1.text-warning
                 else
                   i.far.fa-bookmark.font-1
             .small.text-body.px-0 3k bookmarks
         .d-flex.flex-row
           .pr-2
             a(href='profile.html')
-              img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+              img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
             .small.crop-text.crop-text-2
               a(href='profile.html') Robert Kalinwvisk Wisebells
             .small.text-body.text-truncate Oct 21
               span.d-none.d-md-inline-block
                 |, 2017
-      a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#'
-        style='background-image: url("https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg")')
+      a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
         if video
           i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
+
+mixin small3col(imgs, type='img', saved=false)
+  .col-md-4.mt-2.mt-md-4
+    .row.height-card-sm.border.rounded
+
+      if type == 'img'
+        a.col-3.image-card(href='#' style='background-image: url("' + imgs[0] + '")')
+      else if type == 'video'
+        a.col-3.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
+          i.fas.fa-play.py-2.px-3.bg-playcard.text-light.rounded
+      else if type == 'pdf'
+        a.col-3.no-hover.d-flex.justify-content-center.bg-danger(href='#')
+          i.fas.fa-file-pdf.text-white.icon-card-sm
+      else if type == 'doc'
+        a.col-3.no-hover.d-flex.justify-content-center.bg-info(href='#')
+          i.fas.fa-file-word.text-white.icon-card-sm
+      else
+        a.col-3.no-hover.d-flex.justify-content-center.bg-dark(href='#')
+          i.fas.fa-file-alt.text-white.icon-card-sm
+
+      .col-9.card-block.py-3
+        .d-block.height-card-block-sm.mb-1
+          .d-flex.flex-row
+            a.no-hover.card-title.h4.text-dark.text-truncate.mb-1(href='#') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+            .flex-fill
+              a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
+                        data-animation='false' data-content='Card items')
+                i.fas.fa-angle-down.font-1.text-body
+          .small.text-success.text-truncate.mb-1.mb-md-2 https://mylink.test.com/article/a-title-of-some-link
+        .d-flex.flex-row
+          .pr-2
+            a(href='profile.html')
+              img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
+          .px-0.crop-text-block
+            .small.text-truncate
+              a(href='profile.html') Johny Stratuss Anntjel Majetkwonlooyk
+            .small.text-body.crop-text.crop-text-2 Fab 19
+              i.fas.fa-circle.dotsmall.align-middle.px-1
+              | 704 bookmarks
+          .pl-1.flex-fill
+            a.float-right.text-body(href='#')
+              if saved
+                i.fas.fa-bookmark.font-1.text-success
+              else
+                i.far.fa-bookmark.font-1
 
 mixin people(avatar, name, followers, following=false)
   .col-12.col-md-6.col-lg-4.px-0.p-3

@@ -14,8 +14,14 @@
   margin-right: -5px;
 }
 
-.height-card-sm {
+.height-card-md {
   height: 185px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.height-card-sm {
+  height: 125px;
   margin-left: -5px;
   margin-right: -5px;
 }
@@ -24,15 +30,19 @@
   height: 155px;
 }
 
-.height-card-block-sm {
+.height-card-block-md {
   height: 130px;
+}
+
+.height-card-block-sm {
+  height: 50px;
 }
 
 .height-card-title {
   height: 115px;
 }
 
-.height-card-title-sm {
+.height-card-title-md {
   height: 90px;
 }
 
@@ -70,7 +80,12 @@
   font-size: 112px;
 }
 
-.icon-card-sm {
+.icon-card-md {
   margin-top: 40px;
   font-size: 102px;
+}
+
+.icon-card-sm {
+  margin-top: 30px;
+  font-size: 62px;
 }

@@ -26,7 +26,7 @@ block content
                 a.pr-2(href='profile-following.html') 5 Following
               .d-inline-block
                 a(href='profile-followers.html') 3.3k Followers
-              .d-inline-block.pl-2.pl-lg-3
+              span.pl-2.pl-lg-3
                 a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                           data-animation='false' data-content='People items')
                   i.fas.fa-angle-down.font-1
@@ -39,7 +39,8 @@ block content
       // top links
       .col-md-7.col-lg-5.offset-lg-2
         .row.mx-0
-          +topmedia(true)
+          +topmedia(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
+                     '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], true)
           +toparticle(['Eu_lLnqjWKGm2UK1', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'])
           +toparticle(['', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'doc')
 
@@ -64,7 +65,7 @@ block content
     .row.mx-0.mt-2.mt-md-3
       .col-lg-8.offset-lg-2.p-0
 
-        h2.mt-2.mt-md-4.border-bottom.py-1
+        h3.mt-2.mt-md-4.border-bottom.py-1
           span.ml-2.px-3.title-card-list More Links
 
         .row.mx-0
