@@ -6,7 +6,7 @@ mixin header(external=false, search=false)
 
   // navbar top
   nav.navbar.navbar-expand.d-flex-wrap(class=navbarclass)
-    .col-6.col-md-2
+    .col-6.col-md-2.pl-0.ml-md-3
       a.navbar-brand(href='index.html')
         h1(class=h1class) Fleeg
           small
@@ -16,7 +16,7 @@ mixin header(external=false, search=false)
                   small.text-muted Beta
 
     if search
-      .col-5.d-none.d-lg-inline.pl-xl-0
+      .col-5.d-none.d-lg-inline.p-0
         +searchbar(!external)
     else
       .offset-lg-5
@@ -40,11 +40,11 @@ mixin header(external=false, search=false)
             a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                     data-animation='false' data-content='Notification items')
               i.far.fa-bell.align-middle.text-body.font-13
-          .nav-item.mr-3.mr-lg-4
+          .nav-item.mr-1.mr-md-3
             a.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                       data-animation='false' data-content='Menu items')
               img.rounded-circle.avatar-loggedin(src='https://avatars3.githubusercontent.com/u/742808')
 
     if search
-      .col-12.d-block.d-lg-none
+      .col-12.d-block.d-lg-none.p-0
         +searchbar(!external)

@@ -12,41 +12,33 @@ block content
     +navmenu('home', 1)
 
     // buckets
-    .row.mx-0.mt-2.mt-md-3
+    .row.mx-0.mt-0.mt-md-3
       .col-lg-8.offset-lg-2.p-0.bg-lightgrey.border
 
-        .d-block.mt-3.ml-3
-          .d-inline-block
-            span.h3.mr-2 Buckets
-            //a.mr-1(href='#') Unbucket
-            //span.mr-1 or
-            a(href='#') All Buckets
-        // input.ml-3(type='text' placeholder='Find or create a bucket')
+        .d-block.my-3.ml-3
+          .d-md-none
+            a.no-hover.h3.mr-2(data-toggle='collapse' href='#bucket-items') Buckets
+              small
+                i.fas.fa-caret-down.small.text-secondary.ml-2
+          .d-none.d-md-block
+            .h3.mr-2 Buckets
+        #bucket-items.d-md-block.collapse.ml-3
+          a.mr-2(href='#') All
+          a(href='#') Unbucket
 
-        .d-block.ml-3
-          .d-inline-block.mr-4
-            h5
-              a(href='#').d-block.p-2
-                i.fas.fa-bookmark.text-danger
-                |  Arts
-
-          .d-inline-block.mr-4
-            h5
-              a(href='#').d-block.p-2
-                i.fas.fa-bookmark.text-success
-                |  Culture
-
-          .d-inline-block.mr-4
-            h5
-              a(href='#').d-block.p-2
-                i.fas.fa-bookmark.text-info
-                |  Music Videos
-
-          .d-inline-block.mr-4
-            h5
-              a(href='#').d-block.p-2
-                i.fas.fa-bookmark.text-warning
-                |  Technology
+          .d-block.mt-3
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-danger
+              a.ml-1(href='#') Arts
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-success
+              a.ml-1(href='#') Culture
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-info
+              a.ml-1(href='#') Music Videos
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-warning
+              a.ml-1(href='#') Technology
 
     // selected bucket
     .row.mx-0.mt-2.mt-md-3

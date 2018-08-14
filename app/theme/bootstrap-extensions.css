@@ -90,3 +90,7 @@ a.no-hover:hover {
   line-clamp: 3;
   -webkit-line-clamp: 3;
 }
+
+.bucket-width {
+  width: 160px;
+}
