@@ -37,6 +37,14 @@ input[type]:focus, textarea:focus,
   border-radius: 0.15rem;
 }
 
+.input-light, input-light:focus {
+  border: none !important;
+  border-bottom: 1px solid lightgrey !important;
+  background: none !important;
+  padding: 0 5px !important;
+  outline: 0;
+}
+
 .btn {
   border-radius: 0.15rem;
 }
