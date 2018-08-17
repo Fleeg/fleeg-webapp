@@ -47,6 +47,10 @@ a.no-hover:hover {
   text-decoration: none;
 }
 
+.font-07 {
+  font-size: 0.7rem;
+}
+
 .font-1 {
   font-size: 1rem;
 }
@@ -89,10 +93,6 @@ a.no-hover:hover {
 .crop-text-3 {
   line-clamp: 3;
   -webkit-line-clamp: 3;
-}
-
-.bucket-width {
-  width: 160px;
 }
 
 .img-fit {

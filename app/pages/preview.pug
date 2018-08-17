@@ -9,67 +9,98 @@ block content
 
   .container-fluid.px-0.pt-1
 
+    .row.mx-0
+      .col-12.col-lg-8.offset-lg-2
+        .d-flex.flex-row.px-2.mt-3
+          .pr-3
+            a(href='profile.html')
+              img.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/150/150/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
+          .px-0.crop-text-block
+            .h5.text-dark.mb-0
+              a.crop-text.crop-text-2(href='profile.html') Robert Kalinwvisk Wisebells
+            .d-block.mb-2.text-body
+              span.text-body.crop-text.crop-text-2
+                |Jun 19, 2018
+                i.fas.fa-circle.dotsmall.align-middle.px-1
+                |3k bookmarks
+                i.fas.fa-circle.dotsmall.align-middle.px-1
+                |Article published at April 05, 2016
+            .d-block
+              button.btn.btn-sm.btn-outline-success.py-1 Follow
+
     .row.mx-0.mt-2.mt-md-4
       // top links
       .col-md-8.col-lg-6.offset-lg-2
         .row.mx-0
-          .col-10
-            .h1.display-5 Mauris Venenatis Justo non Sapien Mollis
-          
-            // link content
-            p.blockquote.text-justify.text-dark.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh consequat, sollicitudin metus in, posuere sem. Nam bibendum turpis eget lobortis euismod.
+          .col-12.col-md-11.p-0
+            .py-3
+              .h1.font-title Mauris Venenatis Justo non Sapien Mollis
 
-            .d-block.my-4
-              img.img-fit(src='https://grabr.io/assets/71278b7.jpg')
+              // link content
+              .d-flex.blockquote.mt-2.mb-3
+                a.text-success.text-truncate(href='#') https://mylink.test.com/article/a-title-of-some-link?appen=25346&akka=okay-no-1
 
-            p.blockquote.text-justify.text-dark.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh consequat, sollicitudin metus in, posuere sem. Nam bibendum turpis eget lobortis euismod. Maecenas lorem elit, efficitur et convallis id, pellentesque vehicula quam. Etiam euismod felis sed mauris vehicula, bibendum imperdiet libero luctus. Quisque sit amet nibh viverra, aliquam purus et, dignissim magna. Nullam in malesuada mi. Maecenas sed lectus leo.
+              p.h3.text-body.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh consequat, sollicitudin metus in, posuere sem. Nam bibendum turpis eget lobortis euismod.
 
-            p.blockquote.text-justify.text-dark.
-              Maecenas lorem elit, efficitur et convallis id, pellentesque vehicula quam. Etiam euismod felis sed mauris vehicula, bibendum imperdiet libero luctus. Quisque sit amet nibh viverra, aliquam purus et, dignissim magna.
+              .d-block.my-4.px-4.py-2
+                img.img-fit(src='https://grabr.io/assets/71278b7.jpg')
+
+              p.blockquote.text-dark.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh consequat, sollicitudin metus in, posuere sem. Nam bibendum turpis eget lobortis euismod. Maecenas lorem elit, efficitur et convallis id, pellentesque vehicula quam. Etiam euismod felis sed mauris vehicula, bibendum imperdiet libero luctus. Quisque sit amet nibh viverra, aliquam purus et, dignissim magna. Nullam in malesuada mi. Maecenas sed lectus leo.
+
+              p.blockquote.text-dark.
+                Maecenas lorem elit, efficitur et convallis id, pellentesque vehicula quam. Etiam euismod felis sed mauris vehicula, bibendum imperdiet libero luctus. Quisque sit amet nibh viverra, aliquam purus et, dignissim magna.
           
         .row.mx-0
-          .col-12
+          .col-12.p-0
             h4.mt-2.mt-md-4.border-bottom.py-1
               span.ml-2.px-3.title-card-list Related with
 
-            //list of links
+            // list of links
             .row.mx-0
-              +small3col(['https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', true, 'success', 6)
+              +small3col(['https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', false, 'success', 6)
               +small3col(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
-                         '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'video', true, 'success', 6)
+                         '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'video', false, 'success', 6)
 
       // right menu
-      .col-md-4.col-lg-2.mt-4.p-0
-        h5.border-top.pt-3.mb-3
-          small Tags
+      .col-md-4.col-lg-2.mt-4
+        .d-block.py-4
+          h5.border-top.pt-3.mb-3
+            small Tags
 
-        // list of tags
-        .d-block
-          .d-inline-block.h5.text-uppercase.mr-2
-            a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize(href='#') AI
-          .d-inline-block.h5.text-uppercase.mr-2
-            a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize(href='#') Big Search
-          .d-inline-block.h5.text-uppercase.mr-2
-            a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize(href='#') Networking
-          .d-inline-block.h5.text-uppercase.mr-2
-            a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize(href='#') Social
-          .d-inline-block.h5.text-uppercase.mr-2
-            a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize(href='#') Open Source Software
+          // list of tags
+          .d-block
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') AI
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') Big Search
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') Networking
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') Social
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') Open Source Software
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') Python
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') Django Framework
+            .d-inline-block.h5.text-uppercase.mr-2
+              a.btn.btn-sm.btn-outline-dark.bg-lightgrey.border.text-capitalize.font-07(href='#') Development
 
-        // list of people
-        h5.mt-4.border-top.pt-3.mb-3
-          small Who also bookmark it
+        .d-block.pt-2
+          // list of people
+          h5.mt-4.border-top.pt-3.mb-3
+            small Who also bookmark
 
-        .row.mx-0
-          +toppeople('0*lI5-avJvcBbQDmA2.jpeg','Angel Johnyson','1.3k')
-          +toppeople('0*c1uTLwrFqb4M7P4y.jpeg','Michelle Smawtz Petz','372')
-          +toppeople('1*BsvrL330ex3VkgPsTxDsCw.jpeg','Greg Willson','85', true)
-          +toppeople('1*WEDSxCrKyHQFewfsE9yKAQ.png','Johny Stratuss Anntjel Majetkwonlooyk','704')
+          .row.mx-0
+            +toppeople('0*lI5-avJvcBbQDmA2.jpeg','Angel Johnyson','1.3k')
+            +toppeople('0*c1uTLwrFqb4M7P4y.jpeg','Michelle Smawtz Petz','372')
+            +toppeople('1*BsvrL330ex3VkgPsTxDsCw.jpeg','Greg Willson','85', true)
+            +toppeople('1*WEDSxCrKyHQFewfsE9yKAQ.png','Johny Stratuss Anntjel Majetkwonlooyk','704')
 
-        .row.px-0.pb-2
-          .col.text-right.px-4.py-2
-            a.h5.text-success.text-uppercase(href='home-people.html') See More People >
+          .row.px-0.pb-2
+            .col.px-4.py-2
+              a.h5(href='#') More...
 
   include templates/footer.pug

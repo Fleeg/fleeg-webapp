@@ -27,12 +27,12 @@ mixin article(imgs, type='img', saved=false)
             .text-body.crop-text.crop-text-2.
               Curabitur aliquet nisl libero, sit amet varius mauris iaculis nec. Aliquam erat volutpat. Mauris non auctor nibh.
               Nam pellentesque convallis velit vel posuere. Maecenas tristique nulla in nulla malesuada mollis.
-        .d-flex.flex-row
+        .d-flex.flex-row.mt-0.mt-md-3
           .pr-2
             a(href='profile.html')
               img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
           .px-0.crop-text-block
-            .small.crop-text-2
+            .small.crop-text.crop-text-2
               a(href='profile.html') Johny Stratuss Anntjel Majetkwonlooyk
             .small.text-body.crop-text.crop-text-2 Fab 19
               i.fas.fa-circle.dotsmall.align-middle.px-1
@@ -109,7 +109,7 @@ mixin media(imgs, video=false, saved=false)
                 else
                   i.far.fa-bookmark.font-1
             .small.text-body.px-0 3k bookmarks
-        .d-flex.flex-row
+        .d-flex.flex-row.mt-0.mt-md-3
           .pr-2
             a(href='profile.html')
               img.rounded-circle.avatar-card-small(src='https://cdn-images-1.medium.com/fit/c/80/80/' + imgs[1])
@@ -227,7 +227,7 @@ mixin people(avatar, name, followers, following=false)
             button.btn.btn-sm.btn-outline-success Follow
 
 mixin toppeople(avatar, name, followers, following=false)
-  .col-12.px-0.p-3
+  .col-12.px-0.py-3
     .d-flex.flex-row
       .pr-3
         a(href='profile.html')
