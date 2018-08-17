@@ -3,21 +3,21 @@ mixin article(imgs, type='img', saved=false)
     .row.height-card.border.rounded
 
       if type == 'img'
-        a.col-5.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+        a.col-5.image-card(href='preview.html' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
       else if type == 'pdf'
-        a.col-5.no-hover.d-flex.justify-content-center.bg-danger(href='#')
+        a.col-5.no-hover.d-flex.justify-content-center.bg-danger(href='preview.html')
           i.fas.fa-file-pdf.text-white.icon-card
       else if type == 'doc'
-        a.col-5.no-hover.d-flex.justify-content-center.bg-info(href='#')
+        a.col-5.no-hover.d-flex.justify-content-center.bg-info(href='preview.html')
           i.fas.fa-file-word.text-white.icon-card
       else
-        a.col-5.no-hover.d-flex.justify-content-center.bg-dark(href='#')
+        a.col-5.no-hover.d-flex.justify-content-center.bg-dark(href='preview.html')
           i.fas.fa-file-alt.text-white.icon-card
 
       .col-7.card-block.py-3
         .d-block.height-card-block.mb-1
           .d-flex.flex-row
-            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='preview.html') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
             .flex-fill
               a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                         data-animation='false' data-content='Card items')
@@ -50,7 +50,7 @@ mixin toparticle(imgs, type='img', saved=false)
       .col-8.col-md-7.pl-1
         .d-block.height-card-block-md.mb-1
           .d-flex.flex-row
-            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Etiam Sapien Magna, Aliquet ut Eros Sed
+            a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='preview.html') Etiam Sapien Magna, Aliquet ut Eros Sed
             .pr-2.pr-lg-3.pl-1.flex-fill
               a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                         data-animation='false' data-content='Card items')
@@ -77,15 +77,15 @@ mixin toparticle(imgs, type='img', saved=false)
                 i.far.fa-bookmark.font-1
 
       if type == 'img'
-        a.col-4.image-card(href='#' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
+        a.col-4.image-card(href='preview.html' style='background-image: url("https://cdn-images-1.medium.com/max/400/0*' + imgs[0] + '")')
       else if type == 'pdf'
-        a.col-4.no-hover.d-flex.justify-content-center.bg-danger(href='#')
+        a.col-4.no-hover.d-flex.justify-content-center.bg-danger(href='preview.html')
           i.fas.fa-file-pdf.text-white.icon-card-md
       else if type == 'doc'
-        a.col-4.no-hover.d-flex.justify-content-center.bg-info(href='#')
+        a.col-4.no-hover.d-flex.justify-content-center.bg-info(href='preview.html')
           i.fas.fa-file-word.text-white.icon-card-md
       else
-        a.col-4.no-hover.d-flex.justify-content-center.bg-dark(href='#')
+        a.col-4.no-hover.d-flex.justify-content-center.bg-dark(href='preview.html')
           i.fas.fa-file-alt.text-white.icon-card-md
 
 mixin media(imgs, video=false, saved=false)
@@ -95,8 +95,8 @@ mixin media(imgs, video=false, saved=false)
         .d-block.height-card-block.mb-1
           .height-card-title
             .d-flex.flex-row
-              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
-              .pr-1.flex-fill
+              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-3.mb-1.mb-md-2(href='preview.html') Mauris Venenatis Justo non Sapien Mollis
+              .d-flex
                 a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                                       data-animation='false' data-content='Card items')
                   i.fas.fa-angle-down.font-1.text-body
@@ -119,7 +119,7 @@ mixin media(imgs, video=false, saved=false)
             .small.text-body.text-truncate Oct 21
               span.d-none.d-md-inline-block
                 |, 2017
-      a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
+      a.col-7.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='preview.html' style='background-image: url("' + imgs[0] + '")')
         if video
           i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
 
@@ -130,7 +130,7 @@ mixin topmedia(imgs, video=false, saved=false)
         .d-block.height-card-block-md.mb-1
           .height-card-title-md
             .d-flex.flex-row
-              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='#') Mauris Venenatis Justo non Sapien Mollis
+              a.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(href='preview.html') Mauris Venenatis Justo non Sapien Mollis
               .pr-2.pr-lg-3.flex-fill
                 a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                                       data-animation='false' data-content='Card items')
@@ -154,33 +154,32 @@ mixin topmedia(imgs, video=false, saved=false)
             .small.text-body.text-truncate Oct 21
               span.d-none.d-md-inline-block
                 |, 2017
-      a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
+      a.col-4.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='preview.html' style='background-image: url("' + imgs[0] + '")')
         if video
           i.fas.fa-play.h3.py-2.px-4.bg-playcard.text-light.rounded
 
-mixin small3col(imgs, type='img', saved=false, bmcolor='secondary')
-  .col-md-4.mt-2.mt-md-4
+mixin small3col(imgs, type='img', saved=false, bmcolor='secondary', colsize=4)
+  .mt-2.mt-md-4(class='col-md-' + colsize)
     .row.height-card-sm.border.rounded
-
       if type == 'img'
-        a.col-3.image-card(href='#' style='background-image: url("' + imgs[0] + '")')
+        a.col-3.image-card(href='preview.html' style='background-image: url("' + imgs[0] + '")')
       else if type == 'video'
-        a.col-3.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='#' style='background-image: url("' + imgs[0] + '")')
+        a.col-3.no-hover.image-card.d-flex.justify-content-center.align-items-center(href='preview.html' style='background-image: url("' + imgs[0] + '")')
           i.fas.fa-play.py-2.px-3.bg-playcard.text-light.rounded
       else if type == 'pdf'
-        a.col-3.no-hover.d-flex.justify-content-center.bg-danger(href='#')
+        a.col-3.no-hover.d-flex.justify-content-center.bg-danger(href='preview.html')
           i.fas.fa-file-pdf.text-white.icon-card-sm
       else if type == 'doc'
-        a.col-3.no-hover.d-flex.justify-content-center.bg-info(href='#')
+        a.col-3.no-hover.d-flex.justify-content-center.bg-info(href='preview.html')
           i.fas.fa-file-word.text-white.icon-card-sm
       else
-        a.col-3.no-hover.d-flex.justify-content-center.bg-dark(href='#')
+        a.col-3.no-hover.d-flex.justify-content-center.bg-dark(href='preview.html')
           i.fas.fa-file-alt.text-white.icon-card-sm
 
       .col-9.card-block.py-3
         .d-block.height-card-block-sm.mb-1
           .d-flex.flex-row
-            a.no-hover.card-title.h4.text-dark.text-truncate.mb-1(href='#') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
+            a.no-hover.card-title.h4.text-dark.text-truncate.mb-1(href='preview.html') Suspendisse Vel Enim Vitae, Tellus Faucibus Iaculis
             .flex-fill
               a.float-right.btn.p-0(tabindex='0' role='button' data-toggle='popover' data-trigger='focus' data-placement='bottom'
                         data-animation='false' data-content='Card items')
@@ -196,7 +195,7 @@ mixin small3col(imgs, type='img', saved=false, bmcolor='secondary')
             .small.text-body.crop-text.crop-text-2 Fab 19
               i.fas.fa-circle.dotsmall.align-middle.px-1
               | 704 bookmarks
-          .pl-1.flex-fill
+          .d-flex
             a.float-right.text-body(href='#')
               if saved
                 i.fas.fa-bookmark.font-1(class='text-' + bmcolor)
