@@ -7,7 +7,7 @@ block content
 
   +header(false, true)
 
-  .container-fluid.px-0.pt-1
+  .container-fluid.px-0.pt-3
 
     .row.mx-0
       .col-12.col-lg-8.offset-lg-2
@@ -16,19 +16,16 @@ block content
             a(href='profile.html')
               img.rounded-circle.avatar-card-medium(src='https://cdn-images-1.medium.com/fit/c/150/150/1*rR9BfHWbucraC-JqekVjcQ.jpeg')
           .px-0.crop-text-block
-            .h5.text-dark.mb-0
-              a.crop-text.crop-text-2(href='profile.html') Robert Kalinwvisk Wisebells
+            a.crop-text.crop-text-2(href='profile.html') Robert Kalinwvisk Wisebells
             .d-block.mb-2.text-body
               span.text-body.crop-text.crop-text-2
                 |Jun 19, 2018
-                i.fas.fa-circle.dotsmall.align-middle.px-1
-                |3k bookmarks
                 i.fas.fa-circle.dotsmall.align-middle.px-1
                 |Article published at April 05, 2016
             .d-block
               button.btn.btn-sm.btn-outline-success.py-1 Follow
 
-    .row.mx-0.mt-2.mt-md-4
+    .row.mx-0.mt-2
       // top links
       .col-md-8.col-lg-6.offset-lg-2
         .row.mx-0
@@ -51,7 +48,21 @@ block content
 
               p.blockquote.text-dark.
                 Maecenas lorem elit, efficitur et convallis id, pellentesque vehicula quam. Etiam euismod felis sed mauris vehicula, bibendum imperdiet libero luctus. Quisque sit amet nibh viverra, aliquam purus et, dignissim magna.
-          
+
+        .row.mx-0.pb-3
+          .col-12
+            .d-flex.flex-row.pr-2.pr-md-4
+              .d-inline-block.mr-3
+                a.link-icon.rounded-circle.border.d-flex.justify-content-center.align-items-center(href='#')
+                   i.fas.fa-link.font-15.text-success
+              .d-flex.flex-fill.align-items-center.justify-content-end
+                .d-flex.align-items-center
+                  a.mr-2.px-1(href='#')
+                    i.fas.fa-angle-down.font-1.text-body
+                  span.mr-2.text-body 3.78k Bookmaks
+                  a.mr-2(href='#')
+                    i.far.fa-bookmark.font-15.text-body
+
         .row.mx-0
           .col-12.p-0
             h4.mt-2.mt-md-4.border-bottom.py-1
