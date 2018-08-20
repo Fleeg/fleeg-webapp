@@ -1,0 +1,94 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+
+block content
+
+  +header(false, true)
+
+  .container-fluid.px-0.pt-3
+
+    .row.mx-0
+      .col-lg-6.offset-lg-2
+        h2.display-4.text-capitalize.font-weight-bold Settings
+          // account section
+          h3.mt-4.border-bottom.py-1.mt-3.mb-2
+            span.ml-2.px-3.title-card-list Account
+
+          .row.px-4.pt-3
+            .col-12.col-md-7
+              p.mb-0.text-dark.font-13.font-weight-bold Your username
+              p.text-body.font-1 @username
+            .col-12.col-md-5
+              button.btn.btn-outline-dark.float-md-right.font-1.text-capitalize Edit username
+
+          .row.px-4.pt-3
+            .col-12.col-md-7
+              //p.mb-0.text-dark.font-13.font-weight-bold Your email
+              //p.text-body.font-1 user@fleeg.org
+              form.form-block(action='#')
+                input.form-control.font-1(type='Text' placeholder='Add your email here' value='user@fleeg.org')
+            .col-12.col-md-5.pt-3.pt-md-0
+              //button.btn.btn-outline-dark.float-md-right.font-1.text-capitalize Edit email
+              .d-block.float-md-right(style='width: 225px')
+                button.btn.btn-outline-success.font-1.text-capitalize.mr-2 Save
+                button.btn.btn-outline-secondary.font-1.text-capitalize Cancel
+
+          // notification section
+          h3.mt-4.border-bottom.py-1.mt-3.mb-2
+            span.ml-2.px-3.title-card-list Notifications
+
+          .row.px-4.pt-3
+            .col-12.col-md-7
+              p.mb-0.text-dark.font-13.font-weight-bold Notifications on your bookmarks
+              p.text-body.font-1 We will email you when people reacts on your bookmarks.
+            .col-12.col-md-5
+              button.btn.btn-outline-success.float-md-right.font-1.text-capitalize(data-toggle='button') Off
+
+          .row.px-4.pt-3
+            .col-12.col-md-7
+              p.mb-0.text-dark.font-13.font-weight-bold Notifications on your network
+              p.text-body.font-1 We will email you when people interects with you on Fleeg.
+            .col-12.col-md-5
+              button.btn.btn-outline-success.float-md-right.font-1.text-capitalize.active(data-toggle='button') On
+
+          // secutity section
+          h3.mt-4.border-bottom.py-1.mt-3.mb-2
+            span.ml-2.px-3.title-card-list Security
+
+          .row.px-4.pt-3
+            .col-12
+              p.mb-0.text-dark.font-13.font-weight-bold Change passwrod
+              p.text-body.font-1 Change your password will logout all your logged sessions.
+
+          form.form-block(action='#')
+            .row.px-4.pt-3
+              .col-12.col-md-7
+                .input-group.mb-2
+                  input.form-control.border-0.font-1(type='password' placeholder='Current password')
+                  .input-group-append
+                    button.btn.btn-sm.bg-none.text-dark(type='button')
+                      i.fas.fa-eye-slash.font-1
+            .row.px-4
+              .col-12.col-md-7
+                .input-group.mb-2
+                  input.form-control.border-0.font-1(type='password' placeholder='New password')
+                  .input-group-append
+                    button.btn.btn-sm.bg-none.text-dark(type='button')
+                      i.fas.fa-eye-slash.font-1
+              .col-12.col-md-5.pt-3.pt-md-0
+                button.btn.btn-outline-dark.float-md-right.font-1.text-capitalize Update Password
+
+          // destroy section
+          h3.mt-4.border-bottom.py-1.mt-3.mb-2
+            span.ml-2.px-3.title-card-list Destroy
+          
+          .row.px-4.pt-3
+            .col-12.col-md-7
+              p.mb-0.text-dark.font-13.font-weight-bold Delete your account
+              p.text-body.font-1 If you delete your account ALL your account data on Fleeg will be removed permanently.
+            .col-12.col-md-5
+              button.btn.btn-outline-danger.float-md-right.font-1.text-capitalize Delete account
+
+    include templates/footer.pug

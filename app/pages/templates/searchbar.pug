@@ -4,7 +4,7 @@ mixin searchbar(secret=true, header=true)
 
     if header
       .input-group.input-group
-        input.form-control.p-2.px-md-3.border-0(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
+        input.form-control.p-2.px-md-3.border-0.font-1(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
 
         if secret
           .input-group-append
@@ -17,7 +17,7 @@ mixin searchbar(secret=true, header=true)
 
     else
       .input-group.input-group-lg.border-0
-        input.form-control.p-3(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
+        input.form-control.p-3.font-1(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
         .input-group-append
           button.btn.btn-success.p-3(type='submit')
             i.fas.fa-search.px-1.d-md-none
