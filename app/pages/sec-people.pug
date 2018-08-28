@@ -2,14 +2,15 @@ extends templates/base.pug
 include templates/header.pug
 include templates/card.pug
 include templates/nav.pug
+include templates/footer.pug
 
 block content
 
-  +header(true, true)
+  +header(false, true)
 
   .container-fluid.px-0.pt-1
 
-    +navmenu('search', 5)
+    +navmenu('home', 5)
 
     // more links
     .row.mx-0.mt-2.mt-md-3
@@ -21,4 +22,4 @@ block content
           +people('1*rR9BfHWbucraC-JqekVjcQ.jpeg','Robert Kalinwvisk Wisebells','3k')
           +people('1*WEDSxCrKyHQFewfsE9yKAQ.png','Johny Stratuss Anntjel Majetkwonlooyk','704')
 
-  include templates/footer.pug
+  +footerbar(true)

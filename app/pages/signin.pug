@@ -1,5 +1,6 @@
 extends templates/base.pug
 include templates/header.pug
+include templates/footer.pug
 
 block content
   .bg-primary
@@ -26,9 +27,9 @@ block content
             .col-12.col-md-7
               a.btn.align-text-bottom(href='sign-reset.html') Forgot password?
             .col-12.col-md-5
-              a.btn.btn-block.btn-success(href='home.html') Sign In
+              a.btn.btn-block.btn-success(href='sec-home.html') Sign In
           .row.text-center.my-4.my-md-5
             .col
               a(href='signup.html') Don't have an account? Sign up here!
 
-    include templates/footer.pug
+    +footerbar()

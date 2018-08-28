@@ -1,5 +1,7 @@
 extends templates/base.pug
 include templates/header.pug
+include templates/footer.pug
+
 
 block content
   .bg-primary
@@ -58,4 +60,4 @@ block content
                     p.blockquote.text-justify.
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu nibh consequat, sollicitudin metus in, posuere sem. Etiam euismod felis sed mauris vehicula,
 
-    include templates/footer.pug
+    +footerbar()

@@ -2,45 +2,16 @@ extends templates/base.pug
 include templates/header.pug
 include templates/card.pug
 include templates/nav.pug
+include templates/footer.pug
 
 block content
 
   +header(false, true)
 
-  .container-fluid.px-0.pt-1
+  .container-fluid.px-0
 
-    +navmenu('home', 1)
+    +navbuckets()
 
-    // buckets header
-    .row.mx-0.mt-0.mt-md-3
-      .col-lg-8.offset-lg-2.p-0.bg-lightgrey.border
-
-        .d-block.my-3.ml-3
-          a.no-hover.d-md-none.h3.mr-2(data-toggle='collapse' href='#bucket-items') Buckets
-            small
-              i.fas.fa-caret-down.small.text-secondary.ml-2
-          .d-none.d-md-inline-block.h3.mr-2 Buckets
-          .d-inline.small
-            a.mx-2(href='home-bookmarks.html') All
-            a(href='home-bookmarks-none.html') Unbucket
-
-        #bucket-items.d-md-block.collapse.ml-3
-          input.input-light.mr-2(type='text' placeholder='Find or create a bucket')
-
-          // buckets list
-          .d-block.mt-3
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
-              i.fas.fa-bookmark.text-danger
-              a.ml-1(href='home-bookmarks-red.html') Arts
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
-              i.fas.fa-bookmark.text-success
-              a.ml-1(href='home-bookmarks-green.html') Culture
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
-              i.fas.fa-bookmark.text-info
-              a.ml-1(href='home-bookmarks-blue.html') Music Videos
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
-              i.fas.fa-bookmark.text-warning
-              a.ml-1(href='home-bookmarks-yellow.html') Technology
     // selected bucket
     .row.mx-0.mt-2.mt-md-3
       .col-lg-8.offset-lg-2.p-0
@@ -65,4 +36,4 @@ block content
           +small3col(['', '0*c1uTLwrFqb4M7P4y.jpeg'], 'none', true, 'danger')
           +small3col(['https://grabr.io/assets/71278b7.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'img', true, 'info')
 
-  include templates/footer.pug
+  +footerbar(true, 1)

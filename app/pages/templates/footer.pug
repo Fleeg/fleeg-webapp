@@ -1,12 +1,36 @@
-// navbar footer
-nav.navbar.navbar-expand
-  .navbar-collapse.justify-content-center
-    .navbar-nav
-      .nav-item.small.mr-3
-        p.nav-link 2018 Fleeg
-      .nav-item.small.mr-1
-        a.nav-link(href='about.html') About
-      .nav-item.small.mr-1
-        a.nav-link(href='#') Terms
-      .nav-item.small.mr-1
-        a.nav-link(href='#') Privacy
+mixin footerbar(internal=false, active=0)
+  - var activeclass = internal ? 'd-none d-lg-block' : 'd-block'
+
+  // navbar footer
+  nav.navbar.navbar-expand(class=activeclass)
+    .navbar-collapse.justify-content-center
+      .navbar-nav
+        .nav-item.small.mr-3
+          p.nav-link 2018 Fleeg
+        .nav-item.small.mr-1
+          a.nav-link(href='about.html') About
+        .nav-item.small.mr-1
+          a.nav-link(href='#') Terms
+        .nav-item.small.mr-1
+          a.nav-link(href='#') Privacy
+
+  if internal
+    //.d-lg-none.my-4
+    nav.navbar.navbar-expand.fixed-bottom.bg-dark.p-1.py-2.d-lg-none
+      .navbar-collapse.justify-content-between
+        .px-1
+          a.nav-link.py-2(href='sec-home.html') 
+            i.fas.fa-home.font-15(class=active == 0 ? 'text-light' : 'text-black')
+        .px-1  
+          a.nav-link.py-2(href='my-bookmarks.html')
+            i.fas.fa-bookmark.font-15(class=active == 1 ? 'text-light' : 'text-black')
+        .px-1
+          a.nav-link.rounded-circle.bg-success.link-icon(href='#')
+            i.fas.fa-plus.text-black.font-15
+        .px-1  
+          a.nav-link.py-2.pr-1.d-inline-block(href='#')
+            i.fas.fa-bell.font-15(class=active == 2 ? 'text-light' : 'text-black')
+            i.fas.fa-circle.text-success.font-05.bg-alert
+        .px-1
+          a.nav-link.py-2(href='settings.html')
+            i.fas.fa-bars.font-15(class=active == 3 ? 'text-light' : 'text-black')

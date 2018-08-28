@@ -2,6 +2,7 @@ extends templates/base.pug
 include templates/header.pug
 include templates/card.pug
 include templates/nav.pug
+include templates/footer.pug
 
 block content
 
@@ -9,7 +10,7 @@ block content
 
   .container-fluid.px-0.pt-1
 
-    +navmenu('home', 5)
+    +navmenu('home', 4)
 
     // more links
     .row.mx-0.mt-2.mt-md-3
@@ -20,4 +21,4 @@ block content
           +article(['', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'doc')
           +article(['', '0*c1uTLwrFqb4M7P4y.jpeg'], 'none')
 
-  include templates/footer.pug
+  +footerbar(true)

@@ -47,6 +47,10 @@ a.no-hover:hover {
   text-decoration: none;
 }
 
+.font-05 {
+  font-size: 0.5rem;
+}
+
 .font-07 {
   font-size: 0.7rem;
 }

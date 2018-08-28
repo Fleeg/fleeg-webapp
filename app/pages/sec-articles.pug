@@ -2,14 +2,15 @@ extends templates/base.pug
 include templates/header.pug
 include templates/card.pug
 include templates/nav.pug
+include templates/footer.pug
 
 block content
 
-  +header(true, true)
+  +header(false, true)
 
   .container-fluid.px-0.pt-1
 
-    +navmenu('search', 1)
+    +navmenu('home', 1)
 
     // more links
     .row.mx-0.mt-2.mt-md-3
@@ -18,9 +19,9 @@ block content
         .row.mx-0
           +article(['Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
           +article(['lHVdOD-zSEdfvq77', '0*lI5-avJvcBbQDmA2.jpeg'])
-          +article(['aZlilaPzxXZeBzwp.', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
+          +article(['aZlilaPzxXZeBzwp.', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', true)
           +article(['2rS1lwtMx1lYgIEH', '0*lI5-avJvcBbQDmA2.jpeg'])
           +article(['qcgD8m1RVn-0Grss', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
           +article(['5Ydk4DROjj7bNVOB', '0*lI5-avJvcBbQDmA2.jpeg'])
 
-  include templates/footer.pug
+  +footerbar(true)

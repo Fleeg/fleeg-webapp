@@ -1,0 +1,28 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+include templates/footer.pug
+
+block content
+
+  +header(false, true)
+
+  .container-fluid.px-0
+
+    +navbuckets()
+
+    // selected bucket
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        h2.mt-2.mt-md-4.border-bottom.py-1
+          span.ml-2.px-3.title-card-list.border-danger
+            i.fas.fa-bookmark.text-danger
+            span.h3  Arts
+
+        .row.mx-0
+          +small3col(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf', true, 'danger')
+          +small3col(['', '0*c1uTLwrFqb4M7P4y.jpeg'], 'none', true, 'danger')
+  
+  +footerbar(true, 1)

@@ -1,0 +1,30 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+include templates/footer.pug
+
+block content
+
+  +header(false, true)
+
+  .container-fluid.px-0
+
+    +navbuckets()
+
+    // selected bucket
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        h2.mt-2.mt-md-4.border-bottom.py-1
+          span.ml-2.px-3.title-card-list.border-success
+            i.fas.fa-bookmark.text-success
+            span.h3  Culture
+
+        .row.mx-0
+          +small3col(['https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', true, 'success')
+          +small3col(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
+                     '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'video', true, 'success')
+          +small3col(['https://cdn-images-1.medium.com/max/400/0*lHVdOD-zSEdfvq77', '0*lI5-avJvcBbQDmA2.jpeg'], 'img', true, 'success')
+
+  +footerbar(true, 1)

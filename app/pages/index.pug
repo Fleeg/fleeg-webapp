@@ -1,6 +1,7 @@
 extends templates/base.pug
 include templates/header.pug
 include templates/searchbar.pug
+include templates/footer.pug
 
 block content
   .position-absolute.h-50.w-100.bg-primary
@@ -20,4 +21,4 @@ block content
         +searchbar(false, false)
 
     .h-10
-    include templates/footer.pug
+    +footerbar()

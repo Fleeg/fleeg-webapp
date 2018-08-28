@@ -2,21 +2,22 @@ extends templates/base.pug
 include templates/header.pug
 include templates/card.pug
 include templates/nav.pug
+include templates/footer.pug
 
 block content
 
-  +header(true, true)
+  +header(false, true)
 
   .container-fluid.px-0.pt-1
 
-    +navmenu('search', 0)
+    +navmenu('home', 0)
 
     .row.mx-0.mt-2.mt-md-4
       // top links
       .col-md-7.col-lg-5.offset-lg-2
         .row.mx-0
           +toparticle(['Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
-          +toparticle(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf')
+          +toparticle(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf', true)
           +topmedia(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
                      '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], true)
 
@@ -24,7 +25,8 @@ block content
       .col-md-5.col-lg-3.mt-4.bg-lightgrey.border
 
         h2.mt-3.mt-md-4
-          span.text-capitalize.ml-3 People
+          span.text-capitalize.ml-3 Start
+          span.text-lowercase  to follow
 
         .row.mx-0.px-3
           +toppeople('0*lI5-avJvcBbQDmA2.jpeg','Angel Johnyson','1.3k')
@@ -34,7 +36,7 @@ block content
 
         .row.px-0.pb-2
           .col.text-right.px-4.py-2
-            a.h5.text-success.text-uppercase(href='search-people.html') See More People >
+            a.h5.text-success.text-uppercase(href='sec-people.html') See More People >
 
     // more links
     .row.mx-0.mt-2.mt-md-3
@@ -46,13 +48,13 @@ block content
         .row.mx-0
           +article(['lHVdOD-zSEdfvq77', '0*lI5-avJvcBbQDmA2.jpeg'])
           +media(['https://i.vimeocdn.com/video/641846397_1280x720.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], true)
-          +article(['aZlilaPzxXZeBzwp.', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
+          +article(['aZlilaPzxXZeBzwp.', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'img', true)
           +article(['', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'doc')
           +article(['2rS1lwtMx1lYgIEH', '0*lI5-avJvcBbQDmA2.jpeg'])
           +article(['qcgD8m1RVn-0Grss', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
           +media(['https://cdn-images-1.medium.com/max/1600/1*ReOoy5DvE7BHJZ46UM5Zsw.jpeg', '0*c1uTLwrFqb4M7P4y.jpeg'])
           +article(['5Ydk4DROjj7bNVOB', '0*lI5-avJvcBbQDmA2.jpeg'])
           +article(['', '0*c1uTLwrFqb4M7P4y.jpeg'], 'none')
-          +media(['https://grabr.io/assets/71278b7.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'])
+          +media(['https://grabr.io/assets/71278b7.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], false, true)
 
-  include templates/footer.pug
+  +footerbar(true)

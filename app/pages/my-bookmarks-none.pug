@@ -1,0 +1,30 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+include templates/footer.pug
+
+block content
+
+  +header(false, true)
+
+  .container-fluid.px-0
+
+    +navbuckets(true)
+
+    // selected bucket
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        h2.mt-2.mt-md-4.border-bottom.py-1
+          span.ml-2.px-3.title-card-list.border-dark
+            i.far.fa-bookmark.text-dark
+            span.h3  Unbucket
+
+        .row.mx-0
+          +small3col(['https://cdn-images-1.medium.com/max/400/0*aZlilaPzxXZeBzwp.', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
+          +small3col(['', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'doc')
+          +small3col(['https://cdn-images-1.medium.com/max/400/0*2rS1lwtMx1lYgIEH', '0*lI5-avJvcBbQDmA2.jpeg'])
+          +small3col(['https://cdn-images-1.medium.com/max/1600/1*ReOoy5DvE7BHJZ46UM5Zsw.jpeg', '0*c1uTLwrFqb4M7P4y.jpeg'])
+
+  +footerbar(true, 1)

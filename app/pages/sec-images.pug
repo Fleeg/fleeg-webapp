@@ -2,14 +2,15 @@ extends templates/base.pug
 include templates/header.pug
 include templates/card.pug
 include templates/nav.pug
+include templates/footer.pug
 
 block content
 
-  +header(true, true)
+  +header(false, true)
 
   .container-fluid.px-0.pt-1
 
-    +navmenu('search', 2)
+    +navmenu('home', 2)
 
     // more links
     .row.mx-0.mt-2.mt-md-3
@@ -17,7 +18,6 @@ block content
 
         .row.mx-0
           +media(['https://cdn-images-1.medium.com/max/1600/1*ReOoy5DvE7BHJZ46UM5Zsw.jpeg', '0*c1uTLwrFqb4M7P4y.jpeg'])
-          +media(['https://grabr.io/assets/71278b7.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'])
-          
+          +media(['https://grabr.io/assets/71278b7.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], false, true)
 
-  include templates/footer.pug
+  +footerbar(true)

@@ -1,5 +1,6 @@
 extends templates/base.pug
 include templates/header.pug
+include templates/footer.pug
 
 block content
   .bg-primary
@@ -23,4 +24,4 @@ block content
                a(href='signup.html') Don't have an account? Sign up here!
 
     .h-20
-    include templates/footer.pug
+    +footerbar()

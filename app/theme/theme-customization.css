@@ -92,3 +92,15 @@ a.link-icon:hover {
   font-size: 2.5rem;
   font-weight: 1000;
 }
+
+.bg-alert {
+  position: relative;
+  right: 7px;
+  top: 1px;
+}
+
+.bg-alert-header {
+  position: relative;
+  right: 7px;
+  top: 5px;
+}

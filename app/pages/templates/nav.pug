@@ -5,25 +5,63 @@ mixin navmenu(type, active=0)
   .bg-white.px-2.sticky-top.border-bottom
     .col.col-lg-10.offset-lg-2.px-0
       .nav.nav-pills.h-scroll.pb-2
-        if type == 'search'
-          a.btn.nav-link.pb-0(href='search.html'          class=active == 0 ? activeclass : '') All
-          a.btn.nav-link.pb-0(href='search-articles.html' class=active == 1 ? activeclass : '') Articles
-          a.btn.nav-link.pb-0(href='search-images.html'   class=active == 2 ? activeclass : '') Images
-          a.btn.nav-link.pb-0(href='search-videos.html'   class=active == 3 ? activeclass : '') Videos
-          a.btn.nav-link.pb-0(href='search-docs.html'     class=active == 4 ? activeclass : '') Documents
-          a.btn.nav-link.pb-0(href='search-people.html'   class=active == 5 ? activeclass : '') People
-
-        if type == 'home'
-          a.btn.nav-link.pb-0(href='home.html'            class=active == 0 ? activeclass : '') For You
-          a.btn.nav-link.pb-0(href='home-bookmarks.html'  class=active == 1 ? activeclass : '') My Bookmarks
-          a.btn.nav-link.pb-0(href='home-articles.html'   class=active == 2 ? activeclass : '') Articles
-          a.btn.nav-link.pb-0(href='home-images.html'     class=active == 3 ? activeclass : '') Images
-          a.btn.nav-link.pb-0(href='home-videos.html'     class=active == 4 ? activeclass : '') Videos
-          a.btn.nav-link.pb-0(href='home-docs.html'       class=active == 5 ? activeclass : '') Documents
-          a.btn.nav-link.pb-0(href='home-people.html'     class=active == 6 ? activeclass : '') People
-
         if type == 'profile'
           a.btn.nav-link.pb-0(href='profile.html'           class=active == 0 ? activeclass : '') Profile
           a.btn.nav-link.pb-0(href='profile-bookmarks.html' class=active == 1 ? activeclass : '') Bookmarks
           a.btn.nav-link.pb-0(href='profile-following.html' class=active == 2 ? activeclass : '') Following
           a.btn.nav-link.pb-0(href='profile-followers.html' class=active == 3 ? activeclass : '') Followers
+
+        else
+          if type == 'home'
+            a.btn.nav-link.pb-0(href='sec-home.html'         class=active == 0 ? activeclass : '') For You
+          if type == 'search'
+            a.btn.nav-link.pb-0(href='sec-search.html'       class=active == 0 ? activeclass : '') All
+
+          a.btn.nav-link.pb-0(href='sec-articles.html'   class=active == 1 ? activeclass : '') Articles
+          a.btn.nav-link.pb-0(href='sec-images.html'     class=active == 2 ? activeclass : '') Images
+          a.btn.nav-link.pb-0(href='sec-videos.html'     class=active == 3 ? activeclass : '') Videos
+          a.btn.nav-link.pb-0(href='sec-docs.html'       class=active == 4 ? activeclass : '') Documents
+          a.btn.nav-link.pb-0(href='sec-people.html'     class=active == 5 ? activeclass : '') People
+
+
+
+mixin navbuckets(newbucket=false)
+  // buckets header
+  .row.mx-0.mt-0.sticky-top.bg-lightgrey.border-bottom
+    .col-lg-8.offset-lg-2.p-0
+
+      .d-block.my-3.ml-3
+        a.no-hover.h3.mr-2(data-toggle='collapse' href='#bucket-items') Buckets
+          small
+            i.fas.fa-caret-down.small.text-secondary.ml-2
+        .d-inline.small
+          a.mx-2(href='my-bookmarks.html') All
+          a(href='my-bookmarks-none.html') Unbucket
+
+      #bucket-items.collapse.ml-3
+        if newbucket
+          input.input-light.mr-2(type='text' value='Open Source' placeholder='Find or create a bucket')
+          small Bucket not found.
+
+          // New bucket
+          .d-block.my-3
+            .d-block.h5.mr-2.text-success
+              a.text-success(href='#') + Create bucket OPEN SOURCE
+
+        else
+          input.input-light.mr-2(type='text' placeholder='Find or create a bucket')
+
+          // buckets list
+          .d-block.mt-3
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-danger
+              a.ml-1(href='my-bookmarks-red.html') Arts
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-success
+              a.ml-1(href='my-bookmarks-green.html') Culture
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-info
+              a.ml-1(href='my-bookmarks-blue.html') Music Videos
+            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+              i.fas.fa-bookmark.text-warning
+              a.ml-1(href='my-bookmarks-yellow.html') Technology

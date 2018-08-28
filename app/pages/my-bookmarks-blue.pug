@@ -1,0 +1,29 @@
+extends templates/base.pug
+include templates/header.pug
+include templates/card.pug
+include templates/nav.pug
+include templates/footer.pug
+
+block content
+
+  +header(false, true)
+
+  .container-fluid.px-0
+
+    +navbuckets()
+
+    // selected bucket
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        h2.mt-2.mt-md-4.border-bottom.py-1
+          span.ml-2.px-3.title-card-list.border-info
+            i.fas.fa-bookmark.text-info
+            span.h3  Music Videos
+
+        .row.mx-0
+          +small3col(['https://i.vimeocdn.com/video/641846397_1280x720.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'video', true, 'info')
+          +small3col(['https://cdn-images-1.medium.com/max/400/0*5Ydk4DROjj7bNVOB', '0*lI5-avJvcBbQDmA2.jpeg'], 'img', true, 'info')
+          +small3col(['https://grabr.io/assets/71278b7.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], 'img', true, 'info')
+
+  +footerbar(true, 1)
