@@ -1,21 +1,35 @@
-const gulp = require('gulp')
-const pug = require('gulp-pug')
+const gulp  = require('gulp')
+const pug   = require('gulp-pug')
+const sass  = require('gulp-sass')
 
-// Copy css theme
-gulp.task('theme', () =>
-  gulp.src('app/theme/*.css')
-      .pipe(gulp.dest('build/theme')))
 
-// Generate html
+// files and folders location
+const SRC       = 'app'
+const SRC_SASS  = `${SRC}/sass/**/*.scss`
+const SRC_PUG   = `${SRC}/pages/**/*.pug`
+
+const DIST      = 'build'
+const DIST_SASS = `${DIST}/css`
+const DIST_PUG  = `${DIST}/pages`
+
+
+// build css
+gulp.task('sass', () =>
+  gulp.src(SRC_SASS)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(DIST_SASS)))
+
+// build html
 gulp.task('pug', () =>
-  gulp.src('app/pages/**/*.pug')
-      .pipe(pug())
-      .pipe(gulp.dest('build')))
+  gulp.src(SRC_PUG)
+    .pipe(pug())
+    .pipe(gulp.dest(DIST_PUG)))
 
-
+// auto build when files change
 gulp.task('watch', () => {
-  gulp.watch('app/pages/**/*.pug', ['pug'])
-  gulp.watch('app/theme/*.css', ['theme'])
+  gulp.watch(SRC_SASS, ['sass'])
+  gulp.watch(SRC_PUG, ['pug'])
 })
 
-gulp.task('default', ['theme', 'pug', 'watch'])
+// task for development
+gulp.task('default', ['sass', 'pug', 'watch'])

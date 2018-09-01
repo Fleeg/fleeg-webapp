@@ -1,10 +1,10 @@
 mixin navmenu(type, active=0)
-  - var activeclass = 'text-success border-bottom-solid'
+  - var activeclass = 'text-success nav-selected-item'
 
   // nav with menu filters
   .bg-white.px-2.sticky-top.border-bottom
     .col.col-lg-10.offset-lg-2.px-0
-      .nav.nav-pills.h-scroll.pb-2
+      .nav.nav-pills.nav-scroll.pb-2
         if type == 'profile'
           a.btn.nav-link.pb-0(href='profile.html'           class=active == 0 ? activeclass : '') Profile
           a.btn.nav-link.pb-0(href='profile-bookmarks.html' class=active == 1 ? activeclass : '') Bookmarks
@@ -53,15 +53,15 @@ mixin navbuckets(newbucket=false)
 
           // buckets list
           .d-block.mt-3
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+            .d-inline-block.h5.text-truncate.nav-bucket-width.text-uppercase.mr-2
               i.fas.fa-bookmark.text-danger
               a.ml-1(href='my-bookmarks-red.html') Arts
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+            .d-inline-block.h5.text-truncate.nav-bucket-width.text-uppercase.mr-2
               i.fas.fa-bookmark.text-success
               a.ml-1(href='my-bookmarks-green.html') Culture
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+            .d-inline-block.h5.text-truncate.nav-bucket-width.text-uppercase.mr-2
               i.fas.fa-bookmark.text-info
               a.ml-1(href='my-bookmarks-blue.html') Music Videos
-            .d-inline-block.h5.text-truncate.bucket-width.text-uppercase.mr-2
+            .d-inline-block.h5.text-truncate.nav-bucket-width.text-uppercase.mr-2
               i.fas.fa-bookmark.text-warning
               a.ml-1(href='my-bookmarks-yellow.html') Technology

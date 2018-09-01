@@ -1,0 +1,16 @@
+// nav style
+
+.nav-selected-item {
+  border-bottom: solid;
+}
+
+.nav-scroll {
+  flex-flow: nowrap;
+  white-space: nowrap;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-bucket-width {
+  width: 160px;
+}

@@ -1,18 +1,10 @@
-/*
- * Fleeg Beta
- * Custom classes to add some customizations over the theme.
- *
- * Note: It will be removed once get these changes on the theme.
- *
- */
+// customization over default theme
 
-
-/* Cutomization over theme */
 body {
   letter-spacing: 0.5px;
 }
 
-h1, h2, h3, h4, h5, h6 {  
+h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
@@ -27,7 +19,7 @@ input[type], textarea {
   border-radius: 0.15rem;
 }
 
-input[type]:focus, textarea:focus,
+input[type]:focus, textarea:focus, 
 .input-group input[type]:focus, .form-control:focus {
   background-color: white;
   border-width: none;
@@ -47,11 +39,10 @@ input[type]:focus, textarea:focus,
 
 .btn {
   border-radius: 0.15rem;
-}
-
-.btn:focus {
-  box-shadow: none;
-  -webkit-box-shadow: none;
+  &:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
 }
 
 [class*="btn-outline-"] {
@@ -67,40 +58,9 @@ small, .small {
 }
 
 .text-body {
-  color: rgba(0,0,0,0.57)!important;
+  color: rgba(0, 0, 0, 0.57) !important;
 }
 
 .rounded {
   border-radius: 0.15rem !important;
-}
-
-.dotsmall {
-  font-size: 2px;
-}
-
-a.link-icon {
-  height: 55px;
-  width: 55px;
-}
-
-a.link-icon:hover {
-  text-decoration: none;
-  border-color: darkgrey !important;
-}
-
-.font-title {
-  font-size: 2.5rem;
-  font-weight: 1000;
-}
-
-.bg-alert {
-  position: relative;
-  right: 7px;
-  top: 1px;
-}
-
-.bg-alert-header {
-  position: relative;
-  right: 7px;
-  top: 5px;
 }

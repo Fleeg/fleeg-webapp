@@ -1,24 +1,19 @@
 doctype html
-html.h-100(lang='en')
+html(lang='en')
   head
     title Fleeg - find, save and share links that matter to you
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
 
-    // including bootstrap 4 with Lux theme
-    link(rel='stylesheet' href='theme/lux-bootstrap.min.css')
-
-    // including custom classes not supported by bootstrap and theme
-    link(rel='stylesheet' href='theme/bootstrap-extensions.css')
-    link(rel='stylesheet' href='theme/theme-customization.css')
-    link(rel='stylesheet' href='theme/header.css')
-    link(rel='stylesheet' href='theme/element-cards.css')
+    // including css
+    link(rel='stylesheet' href='../css/theme.css')
+    link(rel='stylesheet' href='../css/components.css')
 
     // including icons from font awsome
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.1.0/css/all.css' crossorigin='anonymous'
         integrity='sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt')
 
-  body.h-100
+  body
     // content block
     block content
           

@@ -3,7 +3,7 @@ mixin footerbar(internal=false, active=0)
 
   // navbar footer
   if internal
-    .d-lg-none.footer-hight.mt-2
+    .d-lg-none.hight-footer.mt-2
 
   nav.navbar.navbar-expand(class=activeclass)
     .navbar-collapse.justify-content-center
@@ -18,7 +18,7 @@ mixin footerbar(internal=false, active=0)
           a.nav-link(href='#') Privacy
 
   if internal
-    .fixed-bottom.footer-hight.bg-dark.mt-2.d-lg-none
+    .fixed-bottom.hight-footer.bg-dark.mt-2.d-lg-none
     nav.navbar.navbar-expand.fixed-bottom.p-0.d-lg-none
       .navbar-collapse.justify-content-between
         .px-1.pt-3
@@ -33,7 +33,7 @@ mixin footerbar(internal=false, active=0)
         .px-1.pt-3
           a.nav-link.py-2.pr-1.d-inline-block(href='#')
             i.fas.fa-bell.font-15(class=active == 2 ? 'text-light' : 'text-black')
-            i.fas.fa-circle.text-success.font-05.bg-alert
+            i.fas.fa-circle.text-success.font-05.dot-alert-footer
         .px-1.pt-3
           a.nav-link.py-2(href='settings.html')
             i.fas.fa-bars.font-15(class=active == 3 ? 'text-light' : 'text-black')
