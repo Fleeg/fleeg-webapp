@@ -4,21 +4,19 @@ include templates/searchbar.pug
 include templates/footer.pug
 
 block content
-  .position-absolute.h-50.w-100.bg-primary
-  .fixed-top
+  .bg-primary
     +header(true)
   
-  // middle search input and button
-  .container-fluid.h-100
-    .h-25
-    .row.h-25
-      .col.text-center.mt--4
-        h2.display-3.d-md-none.text-light F
-        h2.display-1.d-none.d-md-block.text-light F
-    
-    .row.h-25.mt--4
-      .col-md-10.col-lg-7.mx-auto
-        +searchbar(false, false)
+    // middle search input and button
+    .container-fluid
+      .row
+        .col.text-center.mt--4
+          h2.display-3.d-md-none.text-light F
+          h2.display-1.d-none.d-md-block.text-light F
 
-    .h-10
-    +footerbar()
+      .row.pb-4
+        .col-md-10.col-lg-7.mx-auto
+          +searchbar(false, false)
+      .pb-4
+
+  +footerbar()
