@@ -1,12 +1,13 @@
 // header style
+
 .d-flex-wrap {
   flex-flow: wrap;
 }
 
 .avatar-loggedin-header {
+  background-color: $lightgrey;
   height: 37px;
   width: 37px;
-  background-color: lightgrey;
 }
 
 .dot-alert-header {

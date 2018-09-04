@@ -1,4 +1,5 @@
 // styles for card
+
 .height-card {
   height: 245px;
   margin-left: -5px;
@@ -38,45 +39,44 @@
 }
 
 .image-card {
-  background-position: 50% 50%;
+  background: $lightgrey 50% 50%;
   background-origin: border-box;
   background-size: cover;
-  background-color: lightgrey;
   height: 100%;
   width: 100%;
 }
 
 .avatar-card-small {
+  background-color: $lightgrey;
   height: 40px;
   width: 40px;
-  background-color: lightgrey;
 }
 
 .avatar-card-medium {
+  background-color: $lightgrey;
   height: 70px;
   width: 70px;
-  background-color: lightgrey;
 }
 
 .title-card-list {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid $black;
 }
 
 .bg-playcard {
-  background: rgba(0, 0, 0, 0.7);
+  background: $lightblack;
 }
 
 .icon-card {
-  margin-top: 65px;
   font-size: 112px;
+  margin-top: 65px;
 }
 
 .icon-card-md {
-  margin-top: 40px;
   font-size: 102px;
+  margin-top: 40px;
 }
 
 .icon-card-sm {
-  margin-top: 30px;
   font-size: 62px;
+  margin-top: 30px;
 }

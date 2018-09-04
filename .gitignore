@@ -80,3 +80,6 @@ build
 
 # mac files
 .DS_Store
+
+# ide
+.idea

@@ -4,16 +4,28 @@
   background: none;
 }
 
-a.no-hover:hover {
-  text-decoration: none;
+a {
+  &.no-hover:hover {
+    text-decoration: none;
+  }
+
+  &.link-icon {
+    height: 55px;
+    width: 55px;
+
+    &:hover {
+      border-color: $darkgrey !important;
+      text-decoration: none;
+    }
+  }
 }
 
 .font-05 {
-  font-size: 0.5rem;
+  font-size: .5rem;
 }
 
 .font-07 {
-  font-size: 0.7rem;
+  font-size: .7rem;
 }
 
 .font-1 {
@@ -33,7 +45,7 @@ a.no-hover:hover {
 }
 
 .bg-lightergrey {
-  background-color: #fafafa;
+  background-color: $lightergrey;
 }
 
 .crop-text-block {
@@ -41,10 +53,10 @@ a.no-hover:hover {
 }
 
 .crop-text {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
 }
 
 .crop-text-2 {
@@ -58,20 +70,11 @@ a.no-hover:hover {
 }
 
 .img-fit {
-  max-width: 100%;
+  background-color: $lightgrey;
   max-height: 100%;
-  background-color: lightgrey;
+  max-width: 100%;
 }
 
 .dotsmall {
   font-size: 2px;
-}
-
-a.link-icon {
-  height: 55px;
-  width: 55px;
-  &:hover {
-    text-decoration: none;
-    border-color: darkgrey !important;
-  }
 }

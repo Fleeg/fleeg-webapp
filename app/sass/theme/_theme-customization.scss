@@ -1,47 +1,54 @@
 // customization over default theme
 
 body {
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 1px;
 }
 
-input[type], textarea {
-  background-color: white;
-  border: 1px solid lightgrey;
-  border-radius: 0.15rem;
+textarea,
+input[type] {
+  background-color: $white;
+  border: 1px solid $lightgrey;
+  border-radius: .15rem;
 }
 
 .input-group {
-  border: 1px solid lightgrey;
-  border-radius: 0.15rem;
+  border: 1px solid $lightgrey;
+  border-radius: .15rem;
 }
 
-input[type]:focus, textarea:focus, 
-.input-group input[type]:focus, .form-control:focus {
-  background-color: white;
-  border-width: none;
+textarea:focus,
+input[type]:focus,
+.input-group input[type]:focus,
+.form-control:focus {
+  background-color: $white;
+  border: 1px solid $lightgrey;
+  border-radius: .15rem;
   box-shadow: none;
-  -webkit-box-shadow: none;
-  border: 1px solid lightgrey;
-  border-radius: 0.15rem;
 }
 
-.input-light, input-light:focus {
+.input-light,
+.input-light:focus {
   border: none !important;
-  border-bottom: 1px solid lightgrey !important;
+  border-bottom: 1px solid $lightgrey !important;
   background: none !important;
   padding: 0 5px !important;
   outline: 0;
 }
 
 .btn {
-  border-radius: 0.15rem;
+  border-radius: .15rem;
+
   &:focus {
     box-shadow: none;
-    -webkit-box-shadow: none;
   }
 }
 
@@ -49,18 +56,19 @@ input[type]:focus, textarea:focus,
   border-width: 1px;
 }
 
-small, .small {
+small,
+.small {
   font-size: 85%;
 }
 
 .sticky-top {
-  top: -0.1em;
+  top: -.1em;
 }
 
 .text-body {
-  color: rgba(0, 0, 0, 0.57) !important;
+  color: $lighterblack !important;
 }
 
 .rounded {
-  border-radius: 0.15rem !important;
+  border-radius: .15rem !important;
 }
