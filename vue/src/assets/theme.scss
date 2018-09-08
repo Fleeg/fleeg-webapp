@@ -1,5 +1,6 @@
-// set fonts location
-// $web-font-path: '../webfonts/typeface-nunito-sans/index.css';
+// Overwrite default fonts location
+$web-font-path: ''; // HACK: It is necessary to stop bootswatch to download fonts
+@import 'theme/fonts';
 
 // import theme style from libs
 @import '../../node_modules/bootswatch/dist/lux/variables';

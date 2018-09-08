@@ -1,0 +1,40 @@
+// Default font
+
+$font-location: 'assets/fonts/nunito-sans-latin-';
+
+// nunito-sans-300normal - latin
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local('Nunito Sans Light'),
+       local('Nunito Sans-Light'),
+       url($font-location + '300.woff2') format('woff2'),
+       url($font-location + '300.woff') format('woff');
+}
+
+// nunito-sans-400normal - latin
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('Nunito Sans Regular'),
+       local('Nunito Sans-Regular'),
+       url($font-location + '400.woff2') format('woff2'),
+       url($font-location + '400.woff') format('woff');
+}
+
+
+// nunito-sans-600normal - latin
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local('Nunito Sans SemiBold'),
+       local('Nunito Sans-SemiBold'),
+       url($font-location + '600.woff2') format('woff2'),
+       url($font-location + '600.woff') format('woff');
+}
