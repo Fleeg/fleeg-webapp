@@ -1,0 +1,80 @@
+// Bootstrap structure complements
+
+.bg-none {
+  background: none;
+}
+
+a {
+  &.no-hover:hover {
+    text-decoration: none;
+  }
+
+  &.link-icon {
+    height: 55px;
+    width: 55px;
+
+    &:hover {
+      border-color: $darkgrey !important;
+      text-decoration: none;
+    }
+  }
+}
+
+.font-05 {
+  font-size: .5rem;
+}
+
+.font-07 {
+  font-size: .7rem;
+}
+
+.font-1 {
+  font-size: 1rem;
+}
+
+.font-13 {
+  font-size: 1.3rem;
+}
+
+.font-15 {
+  font-size: 1.5rem;
+}
+
+.font-25 {
+  font-size: 2.5rem;
+}
+
+.bg-lightergrey {
+  background-color: $lightergrey;
+}
+
+.crop-text-block {
+  min-width: 0;
+}
+
+.crop-text {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.crop-text-2 {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+
+.crop-text-3 {
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+
+.img-fit {
+  background-color: $lightgrey;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.dotsmall {
+  font-size: 2px;
+}
