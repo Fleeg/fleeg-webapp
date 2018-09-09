@@ -1,0 +1,35 @@
+<template lang='pug'>
+// search bar
+form.form-block(action='sec-search.html')
+
+  //if header
+    .input-group.input-group
+      input.form-control.p-2.px-md-3.border-0.font-1(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
+
+      if secret
+        .input-group-append
+          button.btn.p-2.bg-none.text-dark(type='button' title='Anonymous search')
+            i.fas.fa-user-secret.font-09
+
+      .input-group-append
+        button.btn.p-2.px-md-3.bg-white.text-success(type='submit' title='Search')
+          i.fas.fa-search.font-09
+
+  //else
+  .input-group.input-group-lg.border-0
+    input.form-control.p-3.font-1(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
+    .input-group-append
+      button.btn.btn-success.p-3(type='submit')
+        fai(icon='search').fa-lg.px-1.d-md-none
+        span.d-none.d-md-inline Search
+</template>
+
+<script>
+export default {
+  name: 'Search'
+}
+</script>
+
+<style scoped lang='scss'>
+
+</style>

@@ -1,9 +1,17 @@
 import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+
+// bootstrap integration
+import BootstrapVue from 'bootstrap-vue'
+
+// font awesome integration
+import './icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+Vue.component('fai', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
