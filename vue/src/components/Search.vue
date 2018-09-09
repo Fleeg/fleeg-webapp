@@ -1,7 +1,6 @@
 <template lang='pug'>
 // search bar
-form.form-block(action='sec-search.html')
-
+div
   //if header
     .input-group.input-group
       input.form-control.p-2.px-md-3.border-0.font-1(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
@@ -17,16 +16,30 @@ form.form-block(action='sec-search.html')
 
   //else
   .input-group.input-group-lg.border-0
-    input.form-control.p-3.font-1(type='text' name='q' placeholder='Search for any link or people' autocomplete='off')
+    input.form-control.p-3.font-1(type='text' placeholder='Search for any link or people'
+                                  autocomplete='off' v-model='queryStr' @keyup.enter='callSearch')
     .input-group-append
-      button.btn.btn-success.p-3(type='submit')
+      button.btn.btn-success.p-3(@click='callSearch')
         fai(icon='search').fa-lg.px-1.d-md-none
         span.d-none.d-md-inline Search
 </template>
 
 <script>
 export default {
-  name: 'Search'
+  name: 'Search',
+  data () {
+    return { queryStr: this.query }
+  },
+  props: {
+    query: String
+  },
+  methods: {
+    callSearch () {
+      if (this.queryStr) {
+        this.$router.push({ path: '/search', query: { q: this.queryStr } })
+      }
+    }
+  }
 }
 </script>
 
