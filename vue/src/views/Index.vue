@@ -25,7 +25,7 @@ import Footer from '@/components/Footer.vue'
 import Search from '@/components/Search.vue'
 
 export default {
-  name: 'home',
+  name: 'index',
   components: {
     Header,
     Footer,

@@ -65,7 +65,7 @@ div
                       consequat, sollicitudin metus in, posuere sem. Etiam euismod felis
                       sed mauris vehicula,
 
-    Footer
+  Footer
 </template>
 
 <script>

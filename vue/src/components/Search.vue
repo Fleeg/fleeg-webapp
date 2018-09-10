@@ -26,7 +26,7 @@ div
 
 <script>
 export default {
-  name: 'Search',
+  name: 'search',
   data () {
     return { queryStr: this.query }
   },
