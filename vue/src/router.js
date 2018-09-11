@@ -21,15 +21,24 @@ export default new Router({
     },
     {
       path: '/signin',
-      component: () => import('./views/SignIn.vue')
+      props: {
+        type: 'signin'
+      },
+      component: () => import('./views/Sign.vue')
     },
     {
       path: '/signup',
-      component: () => import('./views/SignUp.vue')
+      props: {
+        type: 'signup'
+      },
+      component: () => import('./views/Sign.vue')
     },
     {
       path: '/reset-password',
-      component: () => import('./views/ResetPassword.vue')
+      props: {
+        type: 'reset'
+      },
+      component: () => import('./views/Sign.vue')
     }
   ]
 })
