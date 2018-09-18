@@ -1,7 +1,7 @@
 <template lang='pug'>
 div
   .bg-primary
-    Header
+    Header(bg-dark=true)
 
     // middle search input and button
     .container-fluid
@@ -12,7 +12,7 @@ div
 
       .row.pb-4
         .col-md-10.col-lg-7.mx-auto
-         Search
+         Search(large=true)
       .pb-4
 
   Footer
@@ -25,7 +25,7 @@ import Footer from '@/components/Footer.vue'
 import Search from '@/components/Search.vue'
 
 export default {
-  name: 'index',
+  name: 'Index',
   components: {
     Header,
     Footer,

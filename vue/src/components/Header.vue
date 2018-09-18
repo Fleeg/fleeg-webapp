@@ -1,24 +1,19 @@
 <template lang='pug'>
-//- var navbarclass = search ? 'border-bottom py-2' : 'navbar-dark'
-//- var h1class = !search ? 'text-light' : ''
 //- var logolink = external ? 'index.html' : 'sec-home.html'
 
 // navbar top
-nav.navbar.navbar-expand.d-flex-wrap(class='navbar-dark')
+nav.navbar.navbar-expand.d-flex-wrap(:class='navClass')
   .col-6.col-md-2.pl-0.pl-md-3
     router-link.navbar-brand(to='/')
-      h1(class='text-light') Fleeg
+      h1(:class='h1Class') Fleeg
         small
           small
             small
               small
                 small.text-muted Beta
 
-  //if search
-    .col-5.d-none.d-lg-inline.p-0
-      +searchbar(!external)
-    else
-  .offset-lg-5
+  .col-5.d-none.d-lg-inline.p-0(v-if='withSearch')
+    Search
 
   //if external
   // external right menu
@@ -48,15 +43,30 @@ nav.navbar.navbar-expand.d-flex-wrap(class='navbar-dark')
                     '<div><a href="my-bookmarks.html">My Bookmarks</a></div><a href="settings.html">Settings</a>')
             img.rounded-circle.avatar-loggedin-header(src='https://avatars3.githubusercontent.com/u/742808')
 
-  //if search
-    .col-12.d-block.d-lg-none.p-0
-      +searchbar(!external)
+  .col-12.d-block.d-lg-none.p-0(v-if='withSearch')
+    Search
 
 </template>
 
 <script>
+// @ is an alias to /src
+import Search from '@/components/Search.vue'
+
 export default {
-  name: 'Header'
+  name: 'Header',
+  components: {
+    Search
+  },
+  props: {
+    bgDark: Boolean,
+    withSearch: Boolean
+  },
+  data () {
+    return {
+      h1Class: this.bgDark ? 'text-light' : '',
+      navClass: this.bgDark ? 'navbar-dark' : 'border-bottom py-2'
+    }
+  }
 }
 </script>
 

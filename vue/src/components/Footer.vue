@@ -49,6 +49,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
+
 .height-footer {
   height: 50px;
   width: 100%;
@@ -63,4 +64,5 @@ export default {
 .pb-055 {
   padding-bottom: .55rem;
 }
+
 </style>

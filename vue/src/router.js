@@ -39,6 +39,13 @@ export default new Router({
         type: 'reset'
       },
       component: () => import('./views/Sign.vue')
+    },
+    {
+      path: '/search',
+      props: {
+        type: 'search'
+      },
+      component: () => import('./views/Main.vue')
     }
   ]
 })

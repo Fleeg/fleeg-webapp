@@ -1,0 +1,95 @@
+<template lang='pug'>
+div
+  Header(bg-dark=false, with-search=true)
+
+  .container-fluid.px-0.pt-1
+    Nav(:type='type' :active='active' :param='param')
+
+    .row.mx-0.mt-2.mt-md-4
+      // top links
+      .col-md-7.col-lg-5.offset-lg-2
+        //.row.mx-0
+          +toparticle(['Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
+          +toparticle(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf')
+          +topmedia(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
+                     '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], true)
+
+      // people
+      .col-md-5.col-lg-3.mt-4.bg-lightergrey.border
+
+        h2.mt-3.mt-md-4
+          span.text-capitalize.ml-3 People
+
+        //.row.mx-0.px-3
+          +toppeople('0*lI5-avJvcBbQDmA2.jpeg','Angel Johnyson','1.3k')
+          +toppeople('0*c1uTLwrFqb4M7P4y.jpeg','Michelle Smawtz Petz','372', true)
+          +toppeople('1*rR9BfHWbucraC-JqekVjcQ.jpeg','Robert Kalinwvisk Wisebells','3k')
+          +toppeople('1*WEDSxCrKyHQFewfsE9yKAQ.png','Johny Stratuss Anntjel Majetkwonlooyk','704')
+
+        .row.px-0.pb-2
+          .col.text-right.px-4.py-2
+            a.h5.text-success.text-uppercase(href='sec-people.html') See More People >
+
+    // more links
+    .row.mx-0.mt-2.mt-md-3
+      .col-lg-8.offset-lg-2.p-0
+
+        h3.mt-2.mt-md-4.border-bottom.py-1
+          span.ml-2.px-3.title-card-list More Links
+
+        //.row.mx-0
+          +article(['lHVdOD-zSEdfvq77', '0*lI5-avJvcBbQDmA2.jpeg'])
+          +media(['https://i.vimeocdn.com/video/641846397_1280x720.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], true)
+          +article(['aZlilaPzxXZeBzwp.', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
+          +article(['', '1*WEDSxCrKyHQFewfsE9yKAQ.png'], 'doc')
+          +article(['2rS1lwtMx1lYgIEH', '0*lI5-avJvcBbQDmA2.jpeg'])
+          +article(['qcgD8m1RVn-0Grss', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
+          +media(['https://cdn-images-1.medium.com/max/1600/1*ReOoy5DvE7BHJZ46UM5Zsw.jpeg', '0*c1uTLwrFqb4M7P4y.jpeg'])
+          +article(['5Ydk4DROjj7bNVOB', '0*lI5-avJvcBbQDmA2.jpeg'])
+          +article(['', '0*c1uTLwrFqb4M7P4y.jpeg'], 'none')
+          +media(['https://grabr.io/assets/ac99c6c.jpg', '1*rR9BfHWbucraC-JqekVjcQ.jpeg'])
+  Footer
+</template>
+
+<script>
+// @ is an alias to /src
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import Nav from '@/components/Nav.vue'
+
+export default {
+  name: 'Main',
+  components: {
+    Header,
+    Footer,
+    Nav
+  },
+  props: {
+    type: String
+  },
+  methods: {
+    onLoadPage () {
+      if (this.type === 'search') {
+        const query = this.$route.query.q
+        const view = this.$route.query.t
+        this.param = query
+        this.active = view || 'all'
+      }
+    }
+  },
+  watch: {
+    '$route' () {
+      this.onLoadPage()
+    }
+  },
+  data () {
+    return {
+      active: '',
+      param: ''
+    }
+  },
+  created () {
+    this.onLoadPage()
+  }
+}
+</script>

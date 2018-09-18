@@ -1,7 +1,7 @@
 <template lang='pug'>
 div
   .bg-primary
-    Header
+    Header(bg-dark=true)
 
   .container
     .row.my-md-5
@@ -74,7 +74,7 @@ import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
-  name: 'about',
+  name: 'About',
   components: {
     Header,
     Footer
