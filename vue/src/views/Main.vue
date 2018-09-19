@@ -5,7 +5,8 @@ div
   .container-fluid.px-0.pt-1
     Nav(:type='type' :active='active' :param='param')
 
-    .row.mx-0.mt-2.mt-md-4
+    .row.mx-0.mt-2.mt-md-4(v-if='fullPage')
+
       // top links
       .col-md-7.col-lg-5.offset-lg-2
         //.row.mx-0
@@ -20,22 +21,36 @@ div
         h2.mt-3.mt-md-4
           span.text-capitalize.ml-3 People
 
-        //.row.mx-0.px-3
-          +toppeople('0*lI5-avJvcBbQDmA2.jpeg','Angel Johnyson','1.3k')
-          +toppeople('0*c1uTLwrFqb4M7P4y.jpeg','Michelle Smawtz Petz','372', true)
-          +toppeople('1*rR9BfHWbucraC-JqekVjcQ.jpeg','Robert Kalinwvisk Wisebells','3k')
-          +toppeople('1*WEDSxCrKyHQFewfsE9yKAQ.png','Johny Stratuss Anntjel Majetkwonlooyk','704')
+        .row.mx-0.px-3
+          People(v-for='item in people.slice(0, 4)' :key='item.username'
+                 top4=true,
+                 :following='item.following',
+                 :avatar='item.avatar',
+                 :username='item.username',
+                 :fullName='item.fullName',
+                 :userJoined='item.userJoined',
+                 :userFollowers='item.userFollowers')
 
-        .row.px-0.pb-2
+        .row.px-0.pb-2(v-if='people.length > 4')
           .col.text-right.px-4.py-2
-            a.h5.text-success.text-uppercase(href='sec-people.html') See More People >
+            a.h5.text-success.text-uppercase(href='#' @click='toPeople') See More People >
 
     // more links
     .row.mx-0.mt-2.mt-md-3
       .col-lg-8.offset-lg-2.p-0
 
-        h3.mt-2.mt-md-4.border-bottom.py-1
+        h3.mt-2.mt-md-4.border-bottom.py-1(v-if='fullPage')
           span.ml-2.px-3.title-card-list More Links
+
+        .row.mx-0
+          People(v-if='active === "people"' v-for='item in people' :key='item.username'
+                 top4=false,
+                 :following='item.following',
+                 :avatar='item.avatar',
+                 :username='item.username',
+                 :fullName='item.fullName',
+                 :userJoined='item.userJoined',
+                 :userFollowers='item.userFollowers')
 
         //.row.mx-0
           +article(['lHVdOD-zSEdfvq77', '0*lI5-avJvcBbQDmA2.jpeg'])
@@ -56,13 +71,15 @@ div
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import Nav from '@/components/Nav.vue'
+import People from '@/components/People.vue'
 
 export default {
   name: 'Main',
   components: {
     Header,
     Footer,
-    Nav
+    Nav,
+    People
   },
   props: {
     type: String
@@ -75,6 +92,19 @@ export default {
         this.param = query
         this.active = view || 'all'
       }
+
+      this.fullPage = ['all', 'profile', 'for you'].includes(this.active)
+    },
+    toPeople () {
+      let toPath
+      let queries
+
+      if (this.type === 'search') {
+        toPath = '/search'
+        queries = { q: this.param, t: 'people' }
+      }
+
+      this.$router.push({ path: toPath, query: queries })
     }
   },
   watch: {
@@ -82,10 +112,57 @@ export default {
       this.onLoadPage()
     }
   },
+  computed: {
+    people () {
+      return [
+        {
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg',
+          following: false,
+          username: 'angelj',
+          fullName: 'Angel Johnyson',
+          userJoined: new Date('2018-02-05'),
+          userFollowers: 12398
+        },
+        {
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/0*c1uTLwrFqb4M7P4y.jpeg',
+          following: false,
+          username: 'micsmapet',
+          fullName: 'Michelle Smawtz Petz',
+          userJoined: new Date('2017-12-11'),
+          userFollowers: 239
+        },
+        {
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/1*rR9BfHWbucraC-JqekVjcQ.jpeg',
+          following: true,
+          username: 'robertkw',
+          fullName: 'Robert Kalinwvisk Wisebells',
+          userJoined: new Date('2017-11-18'),
+          userFollowers: 2398
+        },
+        {
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/1*WEDSxCrKyHQFewfsE9yKAQ.png',
+          following: false,
+          username: 'johnstratmaj',
+          fullName: 'Johny Stratuss Anntjel Majetkwonlooyk',
+          userJoined: new Date('2018-09-28'),
+          userFollowers: 704
+        },
+        {
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/1*BsvrL330ex3VkgPsTxDsCw.jpeg',
+          following: true,
+          username: 'gregwill',
+          fullName: 'Greg Willson',
+          userJoined: new Date('2016-10-08'),
+          userFollowers: 85
+        }
+      ]
+    }
+  },
   data () {
     return {
       active: '',
-      param: ''
+      param: '',
+      fullPage: false
     }
   },
   created () {
