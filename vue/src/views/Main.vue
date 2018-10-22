@@ -9,10 +9,34 @@ div
 
       // top links
       .col-md-7.col-lg-5.offset-lg-2
-        //.row.mx-0
-          +toparticle(['Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
-          +toparticle(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf')
-          +topmedia(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
+        .row.mx-0
+          TextCard(id='etiam-sapien-magna-aliquet-ut-eros-sed-a3cds09',
+                   type='img',
+                   title='Etiam Sapien Magna, Aliquet ut Eros Sed',
+                   url='https://mylink.test.com/article/a-title-of-some-link',
+                   description='Praesent gravida suscipit mauris, at vestibulum est ' +
+                               'cursus vehicula. Duis ac sollicitudin felis.',
+                   media='https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1',
+                   :published='new Date()',
+                   :bookmarks=3210,
+                   bookmarkColor='#ff0000',
+                   username='angelj',
+                   fullName='Angel Johnyson',
+                   avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+          TextCard(id='etiam-sapien-magna-aliquet-ut-eros-sed-a3cds09',
+                   type='doc',
+                   title='Etiam Sapien Magna, Aliquet ut Eros Sed',
+                   url='https://mylink.test.com/article/a-title-of-some-link',
+                   description='Praesent gravida suscipit mauris, at vestibulum est ' +
+                               'cursus vehicula. Duis ac sollicitudin felis.',
+                   :published='new Date()',
+                   :bookmarks=3210,
+                   username='angelj',
+                   fullName='Angel Johnyson',
+                   avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+          //+toparticle(['Eu_lLnqjWKGm2UK1', '1*WEDSxCrKyHQFewfsE9yKAQ.png'])
+          //+toparticle(['', '0*lI5-avJvcBbQDmA2.jpeg'], 'pdf')
+          //+topmedia(['https://sentry.io/_assets/og/themonitor/05-c0df3a5e02635fdd0eca5fc7c2c1ad8719acd93a37b1d696525c6a81d11ee391.jpg',
                      '1*rR9BfHWbucraC-JqekVjcQ.jpeg'], true)
 
       // people
@@ -71,6 +95,7 @@ div
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import Nav from '@/components/Nav.vue'
+import TextCard from '@/components/TextCard.vue'
 import People from '@/components/People.vue'
 
 export default {
@@ -79,6 +104,7 @@ export default {
     Header,
     Footer,
     Nav,
+    TextCard,
     People
   },
   props: {

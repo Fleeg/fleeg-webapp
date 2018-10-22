@@ -8,11 +8,11 @@
       .h4.text-dark(:class='h4Class')
         router-link.crop-text.crop-text-2(:to='toProfile') {{ fullName }}
       .d-block(:class='spaceClass')
-        small.text-body {{ userFollowers | short }} Followers
+        small.text-body {{ userFollowers | shortNumber }} Followers
       .d-block.mb-3(v-if='!top4')
         small
           router-link(:to='toProfile') @{{ username }}
-          span.text-body  joined in {{ userJoined | date }}
+          span.text-body  joined in {{ userJoined | dateMMYYYY }}
       .d-block
         button.btn.btn-sm.btn-success(v-show='isFollowing' @click='follow') Following
         button.btn.btn-sm.btn-outline-success(v-show='!isFollowing' @click='follow') Follow
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { shortNumber, dateMMYYYY } from '../filters'
 
 export default {
   name: 'People',
@@ -33,22 +34,8 @@ export default {
     userFollowers: Number
   },
   filters: {
-    short (value) {
-      let valueStr = value.toString()
-      const valueSize = valueStr.length
-
-      if (valueSize > 4) {
-        valueStr = `${valueStr.slice(0, -3)}k`
-      } else if (valueSize > 3) {
-        valueStr = `${valueStr[0]}.${valueStr[1]}k`
-      }
-
-      return valueStr
-    },
-    date (value) {
-      const formatter = new Intl.DateTimeFormat('en-us', { month: 'short', year: 'numeric' })
-      return formatter.format(value).replace(' ', ', ')
-    }
+    shortNumber,
+    dateMMYYYY
   },
   methods: {
     follow () {
@@ -57,7 +44,7 @@ export default {
   },
   data () {
     return {
-      toProfile: `/${this.username}`,
+      toProfile: `/@${this.username}`,
       cardClass: !this.top4 ? 'col-md-6 col-lg-4 p-3' : 'py-3 px-0',
       spaceClass: this.top4 ? 'mb-2' : '',
       h4Class: !this.top4 ? 'mb-1' : '',
