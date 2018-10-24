@@ -4,16 +4,18 @@
     .col-8.col-md-7.pl-1
       .d-block.height-card-block-md.mb-1
         .d-flex.flex-row
-          router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(:to='toPreview')
-            |{{ title }}
+          router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(
+            :to='toPreview') {{ title }}
           .pr-2.pr-lg-3.pl-1.flex-fill
             a.btn.float-right.btn.p-0#more-card
               fai(icon='angle-down').fa-2x.px-1.text-body
-            b-popover(:show.sync='moreCard' target='more-card')
-              div
-                button.btn Remove
-              div
-                button.btn Report
+            b-popover(:show.sync='moreCard' placement='bottom' target='more-card')
+              .small
+                a.btn.p-2(href='#') Remove
+              .small
+                a.btn.p-2(href='#') Block
+              .small
+                a.btn.p-2(href='#') Report
         .card-text
           .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
           .text-body.crop-text.crop-text-2 {{ description }}
@@ -44,7 +46,7 @@
 import { shortNumber, dateMMDD, typeIcon } from '../filters'
 
 export default {
-  name: 'TextCard',
+  name: 'TopCard',
   props: {
     id: String,
     type: String,
