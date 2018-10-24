@@ -3,7 +3,8 @@
   .d-flex.flex-row
     .pr-3
       router-link(:to='toProfile')
-        img.rounded-circle.avatar-card-medium.bg-lightergrey(:src='avatar')
+        .rounded-circle.avatar-card-medium.bg-lightergrey(
+                                        :style="`background-image: url('${avatar}')`")
     .px-0.crop-text-block
       .h4.text-dark(:class='h4Class')
         router-link.crop-text.crop-text-2(:to='toProfile') {{ fullName }}
@@ -58,8 +59,10 @@ export default {
 <style scoped lang='scss'>
 
 .avatar-card-medium {
+  background: /*$lightgrey*/ #d3d3d3 50% 50%;
+  background-origin: border-box;
+  background-size: cover;
   height: 70px;
   width: 70px;
 }
-
 </style>

@@ -4,47 +4,50 @@
     .col-8.col-md-7.pl-1
       .d-block.height-card-block-md.mb-1
         .d-flex.flex-row
-          router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(:to='toPreview')
-            |{{ title }}
+          router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(
+            :to='toPreview') {{ title }}
           .pr-2.pr-lg-3.pl-1.flex-fill
-            a.btn.float-right.btn.p-0#more-card
-              fai(icon='angle-down').fa-2x.px-1.text-body
-            b-popover(:show.sync='moreCard' target='more-card')
-              div
-                button.btn Remove
-              div
-                button.btn Report
+            MoreMenu(type='post', :id='id')
         .card-text
           .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
           .text-body.crop-text.crop-text-2 {{ description }}
       .d-flex.flex-row
         .pr-2
           router-link(:to='toProfile')
-            img.rounded-circle.avatar-card-small(:src='avatar')
+            .rounded-circle.avatar-card-small(:style="`background-image: url('${avatar}')`")
         .px-0.crop-text-block
           .small.text-truncate
             router-link(:to='toProfile') {{ fullName }}
+          // TODO: Change data filter based on type
           .small.text-body.crop-text.crop-text-2 {{ published | dateMMDD }}
             fai(icon='circle').px-1.dotsmall.align-middle
             | {{ bookmarks | shortNumber }} bookmarks
         .pr-2.pr-lg-3.pl-1.flex-fill
+          // TODO: Create a component to do it
           a.btn.float-right.text-body.p-0(@click='bookmark')
             fai(:icon=['far', 'bookmark'] v-show='!bookmarkedColor').font-17.px-1
             fai(icon='bookmark' v-show='bookmarkedColor'
                 :style="{ color: bookmarkedColor }").font-17.px-1
 
-    router-link.col-4.image-card(v-if='type === "img"' :to='toPreview'
-                                 :style="`background-image: url('${media}')`")
-    router-link.col-4.no-hover.d-flex.justify-content-center.bg-info(v-if='type !== "img"'
-                                                                     :to='toPreview')
+    router-link.col-4.image-card.d-flex.justify-content-center.align-items-center(
+                                        v-if='type === "img" || type === "video"' :to='toPreview'
+                                        :style="`background-image: url('${media}')`")
+      fai(icon='play').font-25.py-2.px-4.bg-playcard.text-light.rounded(v-if='type === "video"')
+    // TODO: Fix bg-info to change by type
+    router-link.col-4.no-hover.d-flex.justify-content-center.bg-info(:to='toPreview'
+                                              v-if='type !== "img" && type !== "video"')
       fai(:icon='type | typeIcon').fa-lg.px-1.text-white.icon-card-md
 </template>
 
 <script>
 import { shortNumber, dateMMDD, typeIcon } from '../filters'
+import MoreMenu from '@/components/MoreMenu.vue'
 
 export default {
-  name: 'TextCard',
+  name: 'TopCard',
+  components: {
+    MoreMenu
+  },
   props: {
     id: String,
     type: String,
@@ -73,8 +76,7 @@ export default {
     return {
       toProfile: `@${this.username}`,
       toPreview: `@${this.username}/${this.id}`,
-      bookmarkedColor: this.bookmarkColor,
-      moreCard: false
+      bookmarkedColor: this.bookmarkColor
     }
   }
 }
@@ -120,7 +122,7 @@ export default {
 }
 
 .image-card {
-  background: /*$lightgrey*/ 50% 50%;
+  background: /*$lightgrey*/ #d3d3d3 50% 50%;
   background-origin: border-box;
   background-size: cover;
   height: 100%;
@@ -128,17 +130,18 @@ export default {
 }
 
 .avatar-card-small {
-  /*background-color: $lightgrey;*/
+  background: /*$lightgrey*/ #d3d3d3 50% 50%;
+  background-origin: border-box;
+  background-size: cover;
   height: 40px;
   width: 40px;
 }
 
-.title-card-list {
-  border-bottom: 3px solid #000000/*$black*/;
-}
-
 .bg-playcard {
-  /*background: $lightblack;*/
+  background-color: rgba(0, 0, 0, .7) /*$lightblack*/;
+  &.fa-w-14 {
+    width: 70px;
+  }
 }
 
 .icon-card {

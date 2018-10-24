@@ -4,6 +4,14 @@
   background: none;
 }
 
+.btn {
+  &.no-hover:hover, &.no-hover:active {
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+  }
+}
+
 a {
   &.no-hover:hover {
     text-decoration: none;
@@ -16,6 +24,14 @@ a {
     &:hover {
       border-color: $darkgrey !important;
       text-decoration: none;
+    }
+  }
+
+  &.cursor-pointer {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline !important;
     }
   }
 }
