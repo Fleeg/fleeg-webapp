@@ -12,6 +12,7 @@
           .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
           .text-body.crop-text.crop-text-2 {{ description }}
       .d-flex.flex-row
+        // TODO: move to people component
         .pr-2
           router-link(:to='toProfile')
             .rounded-circle.avatar-card-small(:style="`background-image: url('${avatar}')`")
