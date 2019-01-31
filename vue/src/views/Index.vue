@@ -12,7 +12,8 @@ div
 
       .row.pb-4
         .col-md-10.col-lg-7.mx-auto
-         Search(large=true)
+          Search(large=true)
+          span {{ info }}
       .pb-4
 
   Footer
@@ -30,6 +31,15 @@ export default {
     Header,
     Footer,
     Search
+  },
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    this.axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(response => { this.info = response })
   }
 }
 </script>
