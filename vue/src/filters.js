@@ -27,8 +27,8 @@ export function typeIcon (value) {
 }
 
 export function dateMMYYYY (value) {
-  const formatter = new Intl.DateTimeFormat('en-us', { month: 'short', year: 'numeric' })
-  return formatter.format(value).replace(' ', ', ')
+  const formatter = new Intl.DateTimeFormat('en-us', { month: 'short', day: 'numeric', year: 'numeric' })
+  return formatter.format(value)
 }
 
 export function dateMMDD (value) {

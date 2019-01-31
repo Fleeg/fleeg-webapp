@@ -11,7 +11,7 @@ div
       .col-md-7.col-lg-5.offset-lg-2
         .row.mx-0
           TopCard(id='etiam-sapien-magna-aliquet-ut-eros-sed-a36s09',
-                  type='img',
+                  type='article',
                   title='Etiam Sapien Magna, Aliquet ut Eros Sed',
                   url='https://mylink.test.com/article/a-title-of-some-link',
                   description='Praesent gravida suscipit mauris, at vestibulum est ' +
@@ -35,15 +35,15 @@ div
                   fullName='Angel Johnyson',
                   avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
           TopCard(id='etiam-sapien-magna-aliquet-ut-eros-sed-acbdfg',
-                   type='video',
-                   title='Etiam Sapien Magna, Aliquet ut Eros Sed',
-                   url='https://mylink.test.com/article/a-title-of-some-link',
-                   media='https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1',
-                   :published='new Date()',
-                   :bookmarks=2130,
-                   username='angelj',
-                   fullName='Angel Johnyson',
-                   avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+                  type='video',
+                  title='Etiam Sapien Magna, Aliquet ut Eros Sed',
+                  url='https://mylink.test.com/article/a-title-of-some-link',
+                  media='https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1',
+                  :published='new Date()',
+                  :bookmarks=2130,
+                  username='angelj',
+                  fullName='Angel Johnyson',
+                  avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
 
       // people
       .col-md-5.col-lg-3.mt-4.bg-lightergrey.border

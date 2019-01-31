@@ -12,17 +12,8 @@
           .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
           .text-body.crop-text.crop-text-2 {{ description }}
       .d-flex.flex-row
-        // TODO: move to people component
-        .pr-2
-          router-link(:to='toProfile')
-            .rounded-circle.avatar-card-small(:style="`background-image: url('${avatar}')`")
-        .px-0.crop-text-block
-          .small.text-truncate
-            router-link(:to='toProfile') {{ fullName }}
-          // TODO: Change data filter based on type
-          .small.text-body.crop-text.crop-text-2 {{ published | dateMMDD }}
-            fai(icon='circle').px-1.dotsmall.align-middle
-            | {{ bookmarks | shortNumber }} bookmarks
+        PeopleCard(:isMedia='isMedia', :bookmarks='bookmarks', :published='published',
+                   :username='username', :fullName='fullName', :avatar='avatar')
         .pr-2.pr-lg-3.pl-1.flex-fill
           // TODO: Create a component to do it
           a.btn.float-right.text-body.p-0(@click='bookmark')
@@ -30,23 +21,23 @@
             fai(icon='bookmark' v-show='bookmarkedColor'
                 :style="{ color: bookmarkedColor }").font-17.px-1
 
-    router-link.col-4.image-card.d-flex.justify-content-center.align-items-center(
-                                        v-if='type === "img" || type === "video"' :to='toPreview'
-                                        :style="`background-image: url('${media}')`")
+    router-link.col-4.image-card.d-flex.justify-content-center.align-items-center(v-if='displayImage' :to='toPreview'
+                                                                        :style="`background-image: url('${media}')`")
       fai(icon='play').font-25.py-2.px-4.bg-playcard.text-light.rounded(v-if='type === "video"')
     // TODO: Fix bg-info to change by type
-    router-link.col-4.no-hover.d-flex.justify-content-center.bg-info(:to='toPreview'
-                                              v-if='type !== "img" && type !== "video"')
+    router-link.col-4.no-hover.d-flex.justify-content-center.bg-info(v-if='!displayImage' :to='toPreview')
       fai(:icon='type | typeIcon').fa-lg.px-1.text-white.icon-card-md
 </template>
 
 <script>
-import { shortNumber, dateMMDD, typeIcon } from '../filters'
+import { typeIcon } from '../filters'
 import MoreMenu from '@/components/MoreMenu.vue'
+import PeopleCard from '@/components/PeopleCard.vue'
 
 export default {
   name: 'TopCard',
   components: {
+    PeopleCard,
     MoreMenu
   },
   props: {
@@ -64,8 +55,6 @@ export default {
     avatar: String
   },
   filters: {
-    shortNumber,
-    dateMMDD,
     typeIcon
   },
   methods: {
@@ -75,7 +64,8 @@ export default {
   },
   data () {
     return {
-      toProfile: `@${this.username}`,
+      isMedia: (this.type === 'img' || this.type === 'video'),
+      displayImage: (this.type === 'img' || this.type === 'video' || this.type === 'article'),
       toPreview: `@${this.username}/${this.id}`,
       bookmarkedColor: this.bookmarkColor
     }
@@ -84,7 +74,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.height-card {
+.height-card { /* TODO: not used yet */
   height: 245px;
   margin-left: -5px;
   margin-right: -5px;
@@ -96,13 +86,13 @@ export default {
   margin-right: -5px;
 }
 
-.height-card-sm {
+.height-card-sm { /* TODO: not used yet */
   height: 125px;
   margin-left: -5px;
   margin-right: -5px;
 }
 
-.height-card-block {
+.height-card-block { /* TODO: not used yet */
   height: 155px;
 }
 
@@ -110,15 +100,15 @@ export default {
   height: 130px;
 }
 
-.height-card-block-sm {
+.height-card-block-sm { /* TODO: not used yet */
   height: 50px;
 }
 
-.height-card-title {
+.height-card-title { /* TODO: not used yet */
   height: 115px;
 }
 
-.height-card-title-md {
+.height-card-title-md { /* TODO: not used yet */
   height: 90px;
 }
 
@@ -130,14 +120,6 @@ export default {
   width: 100%;
 }
 
-.avatar-card-small {
-  background: /*$lightgrey*/ #d3d3d3 50% 50%;
-  background-origin: border-box;
-  background-size: cover;
-  height: 40px;
-  width: 40px;
-}
-
 .bg-playcard {
   background-color: rgba(0, 0, 0, .7) /*$lightblack*/;
   &.fa-w-14 {
@@ -145,7 +127,7 @@ export default {
   }
 }
 
-.icon-card {
+.icon-card { /* TODO: not used yet */
   font-size: 112px;
   margin-top: 65px;
 }
@@ -155,7 +137,7 @@ export default {
   margin-top: 40px;
 }
 
-.icon-card-sm {
+.icon-card-sm { /* TODO: not used yet */
   font-size: 62px;
   margin-top: 30px;
 }
