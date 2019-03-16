@@ -59,7 +59,7 @@ export default {
 <style scoped lang='scss'>
 
 .avatar-card-medium {
-  background: /*$lightgrey*/ #d3d3d3 50% 50%;
+  background: $lightgrey 50% 50%;
   background-origin: border-box;
   background-size: cover;
   height: 70px;

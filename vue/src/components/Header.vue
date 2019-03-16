@@ -76,7 +76,7 @@ export default {
 }
 
 .avatar-loggedin-header {
-  //background-color: $lightgrey;
+  background-color: $lightgrey;
   height: 37px;
   width: 37px;
 }

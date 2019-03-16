@@ -205,6 +205,6 @@ export default {
 
 <style scoped lang='scss'>
 .title-card-list {
-  border-bottom: 3px solid #000000/*$black*/;
+  border-bottom: 3px solid $black;
 }
 </style>

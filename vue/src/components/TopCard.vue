@@ -113,7 +113,7 @@ export default {
 }
 
 .image-card {
-  background: /*$lightgrey*/ #d3d3d3 50% 50%;
+  background: $lightgrey 50% 50%;
   background-origin: border-box;
   background-size: cover;
   height: 100%;
@@ -121,7 +121,7 @@ export default {
 }
 
 .bg-playcard {
-  background-color: rgba(0, 0, 0, .7) /*$lightblack*/;
+  background-color: $lightblack;
   &.fa-w-14 {
     width: 70px;
   }
