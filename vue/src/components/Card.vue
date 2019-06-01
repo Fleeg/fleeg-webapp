@@ -1,26 +1,26 @@
 <template lang='pug'>
-.col-12.p-0
-  .row.height-card-md.mt-3.mt-md-4
-    .col-8.col-md-7.pl-1
-      .d-block.height-card-block-md.mb-1
-        .height-card-title-md
-          .d-flex.flex-row
-            router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(
+.col-md-6.mt-2.mt-md-4
+  .row.height-card.border.rounded
+    Media(v-if='!isMedia' :link='toPreview' :type='type' :media='media' card='regular')
+    .card-block.py-3(:class='isMedia ? "col-5" : "col-7"')
+      .d-block.height-card-block.mb-1
+        .d-flex.flex-row
+          router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(
               :to='toPreview') {{ title }}
-            .pr-2.pr-lg-3.pl-1.flex-fill
-              MoreMenu(type='post', :id='id')
-          .card-text
-            .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
-            .text-body.crop-text.crop-text-2(v-if='!isMedia') {{ description }}
-        .d-flex.flex-row(v-if='isMedia')
+          .flex-fill
+            MoreMenu(type='post' :id='id')
+        .card-text
+          .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
+          .text-body.crop-text.crop-text-2(v-if='!isMedia') {{ description }}
+        .d-flex.flex-row.pt-2(v-if='isMedia')
           Bookmark(:bookmarkColor='bookmarkColor')
           .small.text-body.p-1 {{ bookmarks | shortNumber }} bookmarks
-      .d-flex.flex-row
+      .d-flex.flex-row.mt-0.mt-xl-3
         PeopleCard(:isMedia='isMedia', :bookmarks='bookmarks', :published='published',
                    :username='username', :fullName='fullName', :avatar='avatar')
-        .pr-2.pr-lg-3.pl-1.flex-fill
+        .pl-1.flex-fill
           Bookmark(v-if='!isMedia' :bookmarkColor='bookmarkColor')
-    Media(:link='toPreview' :type='type' :media='media' card='top')
+    Media(v-if='isMedia' :link='toPreview' :type='type' :media='media' card='regular')
 </template>
 
 <script>
@@ -31,7 +31,7 @@ import Bookmark from '@/components/Bookmark.vue'
 import Media from '@/components/Media.vue'
 
 export default {
-  name: 'TopCard',
+  name: 'Card',
   components: {
     PeopleCard,
     MoreMenu,
@@ -101,17 +101,27 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.height-card-md {
-  height: 185px;
+.height-card {
+  height: 245px;
   margin-left: -5px;
   margin-right: -5px;
 }
 
-.height-card-block-md {
-  height: 130px;
+.height-card-sm { /* TODO: not used yet */
+  height: 125px;
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
-.height-card-title-md {
-  height: 90px;
+.height-card-block {
+  height: 155px;
+}
+
+.height-card-block-sm { /* TODO: not used yet */
+  height: 50px;
+}
+
+.height-card-title {
+  height: 115px;
 }
 </style>

@@ -10,40 +10,19 @@ div
       // top links
       .col-md-7.col-lg-5.offset-lg-2
         .row.mx-0
-          TopCard(id='etiam-sapien-magna-aliquet-ut-eros-sed-a36s09',
-                  type='article',
-                  title='Etiam Sapien Magna, Aliquet ut Eros Sed',
-                  url='https://mylink.test.com/article/a-title-of-some-link',
-                  description='Praesent gravida suscipit mauris, at vestibulum est ' +
-                              'cursus vehicula. Duis ac sollicitudin felis.',
-                  media='https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1',
-                  :published='new Date()',
-                  :bookmarks=3210,
-                  bookmarkColor='#ff0000',
-                  username='angelj',
-                  fullName='Angel Johnyson',
-                  avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-          TopCard(id='etiam-sapien-magna-aliquet-ut-eros-sed-cv85fgh',
-                  type='doc',
-                  title='Etiam Sapien Magna, Aliquet ut Eros Sed',
-                  url='https://mylink.test.com/article/a-title-of-some-link',
-                  description='Praesent gravida suscipit mauris, at vestibulum est ' +
-                              'cursus vehicula. Duis ac sollicitudin felis.',
-                  :published='new Date()',
-                  :bookmarks=3210,
-                  username='angelj',
-                  fullName='Angel Johnyson',
-                  avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
-          TopCard(id='etiam-sapien-magna-aliquet-ut-eros-sed-acbdfg',
-                  type='video',
-                  title='Etiam Sapien Magna, Aliquet ut Eros Sed',
-                  url='https://mylink.test.com/article/a-title-of-some-link',
-                  media='https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1',
-                  :published='new Date()',
-                  :bookmarks=2130,
-                  username='angelj',
-                  fullName='Angel Johnyson',
-                  avatar='https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg')
+          TopCard(v-for='post in posts.slice(0, 3)' :key='post.id'
+            :id='post.id',
+            :type='post.type',
+            :title='post.title',
+            :url='post.url',
+            :description='post.description',
+            :media='post.media',
+            :published='post.published',
+            :bookmarks='post.bookmarks',
+            :bookmarkColor='post.bookmarkColor',
+            :username='post.username',
+            :fullName='post.fullName',
+            :avatar='post.avatar')
 
       // people
       .col-md-5.col-lg-3.mt-4.bg-lightergrey.border
@@ -71,6 +50,21 @@ div
 
         h3.mt-2.mt-md-4.border-bottom.py-1(v-if='fullPage')
           span.ml-2.px-3.title-card-list More Links
+
+        .row.mx-0
+          Card(v-if='active !== "people"' v-for='post in posts' :key='post.id+1'
+            :id='post.id+1',
+            :type='post.type',
+            :title='post.title',
+            :url='post.url',
+            :description='post.description',
+            :media='post.media',
+            :published='post.published',
+            :bookmarks='post.bookmarks',
+            :bookmarkColor='post.bookmarkColor',
+            :username='post.username',
+            :fullName='post.fullName',
+            :avatar='post.avatar')
 
         .row.mx-0
           People(v-if='active === "people"' v-for='item in people' :key='item.username'
@@ -101,6 +95,7 @@ div
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import Nav from '@/components/Nav.vue'
+import Card from '@/components/Card.vue'
 import TopCard from '@/components/TopCard.vue'
 import People from '@/components/People.vue'
 
@@ -110,11 +105,30 @@ export default {
     Header,
     Footer,
     Nav,
+    Card,
     TopCard,
     People
   },
   props: {
-    type: String
+    type: {
+      type: String,
+      required: true
+    }
+  },
+  data () {
+    return {
+      active: '',
+      param: '',
+      fullPage: false
+    }
+  },
+  created () {
+    this.onLoadPage()
+  },
+  watch: {
+    '$route' () {
+      this.onLoadPage()
+    }
   },
   methods: {
     onLoadPage () {
@@ -137,11 +151,6 @@ export default {
       }
 
       this.$router.push({ path: toPath, query: queries })
-    }
-  },
-  watch: {
-    '$route' () {
-      this.onLoadPage()
     }
   },
   computed: {
@@ -188,17 +197,51 @@ export default {
           userFollowers: 85
         }
       ]
+    },
+    posts () {
+      return [
+        {
+          id: 'etiam-sapien-magna-aliquet-ut-eros-sed-a36s09',
+          type: 'article',
+          title: 'Etiam Sapien Magna, Aliquet ut Eros Sed',
+          url: 'https://mylink.test.com/article/a-title-of-some-link',
+          description: 'Praesent gravida suscipit mauris, at vestibulum est ' +
+                      'cursus vehicula. Duis ac sollicitudin felis.',
+          media: 'https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1',
+          published: new Date(),
+          bookmarks: 3210,
+          bookmarkColor: '#ff0000',
+          username: 'angelj',
+          fullName: 'Angel Johnyson',
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg'
+        },
+        {
+          id: 'etiam-sapien-magna-aliquet-ut-eros-sed-cv85fgh',
+          type: 'doc',
+          title: 'Etiam Sapien Magna, Aliquet ut Eros Sed',
+          url: 'https://mylink.test.com/article/a-title-of-some-link',
+          description: 'Praesent gravida suscipit mauris, at vestibulum est ' +
+                      'cursus vehicula. Duis ac sollicitudin felis.',
+          published: new Date(),
+          bookmarks: 3210,
+          username: 'angelj',
+          fullName: 'Angel Johnyson',
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg'
+        },
+        {
+          id: 'etiam-sapien-magna-aliquet-ut-eros-sed-acbdfg',
+          type: 'video',
+          title: 'Etiam Sapien Magna, Aliquet ut Eros Sed',
+          url: 'https://mylink.test.com/article/a-title-of-some-link',
+          media: 'https://cdn-images-1.medium.com/max/400/0*Eu_lLnqjWKGm2UK1',
+          published: new Date(),
+          bookmarks: 2130,
+          username: 'angelj',
+          fullName: 'Angel Johnyson',
+          avatar: 'https://cdn-images-1.medium.com/fit/c/80/80/0*lI5-avJvcBbQDmA2.jpeg'
+        }
+      ]
     }
-  },
-  data () {
-    return {
-      active: '',
-      param: '',
-      fullPage: false
-    }
-  },
-  created () {
-    this.onLoadPage()
   }
 }
 </script>
