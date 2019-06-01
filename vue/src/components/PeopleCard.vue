@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { dateMMDD, dateMMYYYY, shortNumber } from '../filters'
+import { dateMMDD, dateMMYYYY, shortNumber } from '@/filters'
 
 export default {
   name: 'PeopleCard',

@@ -11,21 +11,6 @@ export function shortNumber (value) {
   return valueStr
 }
 
-export function typeIcon (value) {
-  const prefix = 'file-'
-  let type = 'alt'
-
-  if (value === 'pdf') {
-    type = 'pdf'
-  } else if (value === 'doc') {
-    type = 'word'
-  } else if (value === 'ppt') {
-    type = 'powerpoint'
-  }
-
-  return prefix + type
-}
-
 export function dateMMYYYY (value) {
   const formatter = new Intl.DateTimeFormat('en-us', { month: 'short', day: 'numeric', year: 'numeric' })
   return formatter.format(value)

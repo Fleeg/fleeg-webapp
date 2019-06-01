@@ -3,71 +3,98 @@
   .row.height-card-md.mt-3.mt-md-4
     .col-8.col-md-7.pl-1
       .d-block.height-card-block-md.mb-1
-        .d-flex.flex-row
-          router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(
-            :to='toPreview') {{ title }}
-          .pr-2.pr-lg-3.pl-1.flex-fill
-            MoreMenu(type='post', :id='id')
-        .card-text
-          .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
-          .text-body.crop-text.crop-text-2 {{ description }}
+        .height-card-title-md
+          .d-flex.flex-row
+            router-link.no-hover.card-title.h4.text-dark.crop-text.crop-text-2.mb-1.mb-md-2(
+              :to='toPreview') {{ title }}
+            .pr-2.pr-lg-3.pl-1.flex-fill
+              MoreMenu(type='post', :id='id')
+          .card-text
+            .small.text-success.text-truncate.mb-1.mb-md-2 {{ url }}
+            .text-body.crop-text.crop-text-2(v-if='!isMedia') {{ description }}
+        .d-flex.flex-row(v-if='isMedia')
+          Bookmark(:bookmarkColor='bookmarkColor')
+          .small.text-body.p-1 {{ bookmarks | shortNumber }} bookmarks
       .d-flex.flex-row
         PeopleCard(:isMedia='isMedia', :bookmarks='bookmarks', :published='published',
                    :username='username', :fullName='fullName', :avatar='avatar')
         .pr-2.pr-lg-3.pl-1.flex-fill
-          // TODO: Create a component to do it
-          a.btn.float-right.text-body.p-0(@click='bookmark')
-            fai(:icon=['far', 'bookmark'] v-show='!bookmarkedColor').font-17.px-1
-            fai(icon='bookmark' v-show='bookmarkedColor'
-                :style="{ color: bookmarkedColor }").font-17.px-1
-
-    router-link.col-4.image-card.d-flex.justify-content-center.align-items-center(v-if='displayImage' :to='toPreview'
-                                                                        :style="`background-image: url('${media}')`")
-      fai(icon='play').font-25.py-2.px-4.bg-playcard.text-light.rounded(v-if='type === "video"')
-    // TODO: Fix bg-info to change by type
-    router-link.col-4.no-hover.d-flex.justify-content-center.bg-info(v-if='!displayImage' :to='toPreview')
-      fai(:icon='type | typeIcon').fa-lg.px-1.text-white.icon-card-md
+          Bookmark(v-if='!isMedia' :bookmarkColor='bookmarkColor')
+    Media(:link='toPreview' :type='type' :media='media')
 </template>
 
 <script>
-import { typeIcon } from '../filters'
+import { shortNumber } from '@/filters'
 import MoreMenu from '@/components/MoreMenu.vue'
 import PeopleCard from '@/components/PeopleCard.vue'
+import Bookmark from '@/components/Bookmark.vue'
+import Media from '@/components/Media.vue'
 
 export default {
   name: 'TopCard',
   components: {
     PeopleCard,
-    MoreMenu
+    MoreMenu,
+    Bookmark,
+    Media
   },
   props: {
-    id: String,
-    type: String,
-    title: String,
-    url: String,
-    description: String,
-    media: String,
-    published: Date,
-    bookmarks: Number,
-    bookmarkColor: String,
-    username: String,
-    fullName: String,
-    avatar: String
+    id: {
+      type: String,
+      required: true
+    },
+    type: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    },
+    published: {
+      type: Date,
+      required: true
+    },
+    username: {
+      type: String,
+      required: true
+    },
+    fullName: {
+      type: String,
+      required: true
+    },
+    avatar: {
+      type: String,
+      required: true
+    },
+    bookmarks: {
+      type: Number,
+      default: 0
+    },
+    description: {
+      type: String,
+      default: undefined
+    },
+    media: {
+      type: String,
+      default: undefined
+    },
+    bookmarkColor: {
+      type: String,
+      default: undefined
+    }
   },
   filters: {
-    typeIcon
-  },
-  methods: {
-    bookmark () {
-      this.bookmarkedColor = !this.bookmarkedColor ? '#4bbf73' : undefined
-    }
+    shortNumber
   },
   data () {
     return {
-      isMedia: (this.type === 'img' || this.type === 'video'),
-      displayImage: (this.type === 'img' || this.type === 'video' || this.type === 'article'),
-      toPreview: `@${this.username}/${this.id}`,
-      bookmarkedColor: this.bookmarkColor
+      isMedia: ['img', 'video'].includes(this.type),
+      toPreview: `@${this.username}/${this.id}`
     }
   }
 }
@@ -108,37 +135,7 @@ export default {
   height: 115px;
 }
 
-.height-card-title-md { /* TODO: not used yet */
+.height-card-title-md {
   height: 90px;
-}
-
-.image-card {
-  background: $lightgrey 50% 50%;
-  background-origin: border-box;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.bg-playcard {
-  background-color: $lightblack;
-  &.fa-w-14 {
-    width: 70px;
-  }
-}
-
-.icon-card { /* TODO: not used yet */
-  font-size: 112px;
-  margin-top: 65px;
-}
-
-.icon-card-md {
-  font-size: 102px;
-  margin-top: 40px;
-}
-
-.icon-card-sm { /* TODO: not used yet */
-  font-size: 62px;
-  margin-top: 30px;
 }
 </style>
